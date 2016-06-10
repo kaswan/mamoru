@@ -1,0 +1,16 @@
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>created_at</th>      
+    </tr>    
+  </thead>
+  <tbody>
+    <% @user.supervised_users.each do |supervisor|%>
+      <tr>
+        <td><%= supervisor.admin_user.try(:name)%></td>
+        <td><%= supervisor.try(:created_at)%></td>        
+      </tr>
+    <% end %>
+  </tbody>
+</table>  

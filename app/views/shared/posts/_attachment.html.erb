@@ -1,0 +1,24 @@
+
+<% @post.attachments.each do |image| %>
+  <div class="img-thumbnail image-<%=image.id%>">
+    <%= image_tag image.upload.url(:square), alt: image.upload.url(:square) %><br>
+    <%= link_to 'Delete', image, class: 'btn dz-remove', id: image.id, alert: 'Are you ok?' %>
+  </div>
+<% end %>
+
+<script>
+$('.dz-remove').on('click', function(e){
+     e.preventDefault();
+     var id = $(this).attr('id');
+			// make a DELETE ajax request to delete the file
+			$.ajax({
+				type: 'DELETE',
+				url: $(this).attr('href'),
+				success: function(data){
+				
+				  $(".image-" + id).remove();
+					console.log(data.message);
+				}
+			});
+			})
+</script>

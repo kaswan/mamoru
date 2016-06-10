@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Gender</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.try(:name) %></td>
+        <td><%= user.try(:email) %></td>
+        <td><%= user.try(:gender) %></td>
+        <td><%= link_to 'Show', [:admins, user], :class => 'btn btn-show' %></td>
+        <td><%= link_to 'Edit', edit_admins_user_path(user), :class => 'btn btn-edit' %></td>
+        <td><%#= link_to 'Destroy', [:admins, user], method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-delete' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User', new_admins_user_path %>

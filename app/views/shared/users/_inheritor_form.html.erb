@@ -1,0 +1,22 @@
+<% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+	
+	<%= f.simple_fields_for :inheritor_informations do |i| %>
+		<%= render '/shared/users/inheritor_information_fields', :i => i, :f => f %>
+		<%= i.link_to_remove "Remove this Inheritor" %>
+	<% end %>
+	<p><%= f.link_to_add "Add Inheritor", :inheritor_informations %></p>
+  <%= hidden_field_tag :page_type, 'inheritor' %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>

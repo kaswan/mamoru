@@ -1,0 +1,7 @@
+<h1>Inheritor Information</h1>
+
+<%= simple_nested_form_for  ([:admins, @user]) do |f| %>
+  <%= render '/shared/users/inheritor_form', :f => f %>
+<% end %>
+
+<%= link_to 'Back', admins_users_path %>

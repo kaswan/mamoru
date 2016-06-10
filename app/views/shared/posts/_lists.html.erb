@@ -1,0 +1,16 @@
+<% @posts.each do |post| %>
+      <tr>
+        <td><%= image_tag post.parent.image.exists? ? post.parent.image.url.try(:icon) : post.parent.try(:image_url) %><%= post.parent.try(:name) %></td>
+        <td><%= link_to 'Show', post %></td>
+        <td><%= link_to 'Edit', {:controller => 'posts', :action => :edit, :id => post} %></td>
+        <td><%= link_to 'Destroy', {:controller => 'posts', :action => :destroy, :id => post}, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+      <tr>
+        <td colspan="4"><%= h nl2br(post.try(:message)) %></td>
+      </tr>
+      <tr>
+        <td colspan="4">
+          <%= render_gallery_for post.attachments.all %>          
+        </td>
+      </tr>
+    <% end %>

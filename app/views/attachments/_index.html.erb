@@ -1,0 +1,5 @@
+<% @attachments.each do |image| %>
+  <div class="img-thumbnail">
+    <%= image_tag image.upload.url(:thumb), alt: image.upload.url(:thumb) %>
+  </div>
+<% end unless @attachments.nil? %>

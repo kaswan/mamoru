@@ -1,0 +1,7 @@
+<h1>Editing Users Profile</h1>
+
+<%= simple_nested_form_for @user, {:url => "/profiles/#{current_user.id}"} do |f| %>
+  <%= render '/shared/users/form', :f => f %>
+<% end %>
+
+<%= link_to 'Back', profiles_path %>

@@ -1,0 +1,14 @@
+<%= i.input :name %>
+<%= i.input :furigana %>
+<div class="form-group">
+	<%= i.label :gender %>
+	<%= i.radio_button :gender, 'male' %>男性
+	<%= i.radio_button :gender, 'female' %>女性
+</div>
+<%= i.label :date_of_birth %>
+<%= i.date_field :date_of_birth %>
+<%= i.input :postalcode %>
+<%= i.association :prefecture %>
+<%= i.input :address %>
+<%= i.input :occupation %>
+<%= i.input :remarks %>

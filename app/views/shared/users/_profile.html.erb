@@ -1,0 +1,11 @@
+<%= show_for @user do |user| %>
+  <%= user.attribute :name %>
+  <%= user.attribute :email %>
+  <%= user.attribute :gender, :value => :camelize %>
+
+  <%= user.attribute :image do %>
+    <%= image_tag((@user.image.exists? ? @user.image.url(:square) : @user.image_url), class: 'media-object') if @user.image.url %>
+  <% end  %>
+	<%= user.attribute :last_sign_in_at, :format => :short, :if_blank => "Administrator did not access yet", :wrapper_html => { :id => "sign_in_timestamp" } %>
+  <%= user.attribute :created_at, :format => :short %>
+<% end %>

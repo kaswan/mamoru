@@ -1,0 +1,27 @@
+
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+	<div class="form-group">
+	  <%= f.label :image %>
+	  <%= image_tag((@user.image.exists? ? @user.image.url(:icon) : @user.image_url))%>
+    <%= f.file_field :image, class: 'form-control'%>
+	</div>
+	<%= f.simple_fields_for :user_profile do |p| %>
+		<%= render '/shared/users/user_profile_fields', :p => p, :f => f %>
+	<% end %>
+	
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+

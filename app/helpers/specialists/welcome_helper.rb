@@ -1,0 +1,2 @@
+module Specialists::WelcomeHelper
+end

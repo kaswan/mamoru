@@ -1,0 +1,15 @@
+<%= p.input :name %>
+<%= p.input :furigana %>
+<div class="form-group">
+	<%= f.label :gender %>
+	<%= f.radio_button :gender, 'male' %>男性
+	<%= f.radio_button :gender, 'female' %>女性
+</div>
+<%= p.label :date_of_birth %>
+<%= p.date_field :date_of_birth %>
+<%= p.input :postalcode %>
+<%= p.association :prefecture %>
+<%= p.input :address %>
+<%= p.input :occupation %>
+<%= p.input :interest %>
+<%= p.input :remarks %>

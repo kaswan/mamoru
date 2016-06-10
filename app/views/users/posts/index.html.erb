@@ -1,0 +1,23 @@
+<%= render "form" %>
+
+<div class="index">
+  <%= render "/shared/posts/attachment" %>
+</div>
+
+<hr>
+<div class="infinite-table">
+<table>
+  <thead>
+    <tr>
+      <th colspan="6"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= render :partial => '/shared/posts/lists', :object => @posts if @posts %>    
+  </tbody>
+</table>
+<p class="pagination">
+    <%= link_to_next_page(@posts, 'Next Page', :remote => true) if @posts %>
+  </p>
+</div>

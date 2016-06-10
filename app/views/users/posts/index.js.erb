@@ -1,0 +1,13 @@
+$(".index").html("<%= escape_javascript(render('/shared/posts/attachment')) %>")
+
+// Append new data
+$("<%=j render(:partial => '/shared/posts/lists', :object => @posts) %>")
+  .appendTo($(".infinite-table table"));
+
+// Update pagination link
+<% if @posts.last_page? %>
+  $('.pagination').html("");
+<% else %>
+  $('.pagination')
+    .html("<%=j link_to_next_page(@posts, 'Next Page', :remote => true) %>");
+<% end %>

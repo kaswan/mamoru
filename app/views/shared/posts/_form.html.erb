@@ -1,0 +1,20 @@
+
+  <div class="post_id" id=<%=@post.id%>></div>
+  <div class="fallback">
+    <%= file_field_tag :avatar %><br>    
+  </div>
+  
+  <div class="form-inputs">  
+  	  <%=f.association :post_type, as: :radio_buttons %>
+  	  <%=f.input :message %>
+    </div>
+    <%= f.hidden_field  :pending_status %>
+    <div class="form-actions">
+      <%= f.button :submit, :id => 'submit_btn' %>
+    </div>
+
+<script>
+  $('#submit_btn').on('click', function(){
+    $("#post_pending_status").val(false);
+  })
+</script>

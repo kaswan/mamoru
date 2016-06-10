@@ -1,0 +1,18 @@
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Gender</th>
+      <th>Relationship</th>
+    </tr>    
+  </thead>
+  <tbody>
+    <% @user.inheritor_informations.each do |inheritor|%>
+      <tr>
+        <td><%= inheritor.try(:name)%></td>
+        <td><%= inheritor.try(:gender)%></td>
+        <td><%= inheritor.try(:occupation)%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>  

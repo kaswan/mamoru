@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Users Profile</h1>
+
+<%= render '/shared/users/profile' %>
+
+<br>
+
+<%= link_to 'Edit Profile', edit_profile_path(@user) %> |
+<%= link_to 'Change Password', edit_user_registration_path %>
