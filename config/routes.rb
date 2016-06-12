@@ -16,6 +16,11 @@ Rails.application.routes.draw do
       end
     end
     resources :posts
+    resources :study_courses do
+      member do
+        get :tutorial
+      end
+    end
   end
   
 #  devise_scope :admin_user do    

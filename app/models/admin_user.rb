@@ -34,6 +34,10 @@ class AdminUser < ActiveRecord::Base
   accepts_nested_attributes_for :supervised_users, allow_destroy: true  
   accepts_nested_attributes_for :attachments, allow_destroy: true
           
+  before_save do
+    self.name = self.email.split('@').first if self.name().nil?
+  end
+  
   def self.find_for_oauth(auth_hash)    
     user = find_or_create_by(email: auth_hash.info.email)
     user.email = auth_hash.info.email

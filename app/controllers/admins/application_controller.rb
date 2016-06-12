@@ -1,5 +1,5 @@
 class Admins::ApplicationController < ApplicationController
-  before_filter :not_found_if_not_broz
+  #before_filter :not_found_if_not_broz
   before_filter :authenticate_admin_user!
   before_filter :session_check
   before_filter :set_domain

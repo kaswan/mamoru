@@ -1,0 +1,9 @@
+<%= show_for @study_course do |s| %>
+  <%= s.attribute :name %>
+  <%= s.attribute :summary %>
+  <%= s.attribute :is_free %>
+  <%= s.attribute :price %>
+<% end %>
+
+<%= link_to 'Edit', edit_admins_study_course_path(@study_course) %> |
+<%= link_to 'Back', admins_study_courses_path %>

@@ -43,16 +43,16 @@ Rails.application.configure do
     
     
   # Paperclip.options[:command_path] = ENV['PAPERCLIP_PATH'] || nil
-  Paperclip.options[:command_path] = "/usr/local/Cellar/imagemagick/6.7.7-6/bin/"
-  Paperclip.options[:image_magick_path] = "/usr/local/Cellar/imagemagick/6.7.7-6/bin/"
+  Paperclip.options[:command_path] = "/usr/local/Cellar/imagemagick/6.9.3-0_2/bin/"
+  Paperclip.options[:image_magick_path] = "/usr/local/Cellar/imagemagick/6.9.3-0_2/bin/"
   
   config.paperclip_defaults = {
     :storage => :s3,
     :s3_protocol => "https",
     :s3_credentials => {      
       :bucket => "mamoru-development",
-      :access_key_id => "AKIAIKFYPCO64BUGJBHA",
-      :secret_access_key => "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"
+      :access_key_id => "AKIAISRLB7R3TFFOTOKA",
+      :secret_access_key => "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"
     }
   }
   

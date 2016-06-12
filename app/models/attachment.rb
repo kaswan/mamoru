@@ -3,7 +3,7 @@ class Attachment < ActiveRecord::Base
   belongs_to :relation, :polymorphic => true
   
   has_attached_file :upload, 
-                        preserve_files: "true",
+                        #preserve_files: "true",
                         styles: {
                           icon:     ["50x50#",  :jpg],
                           square:   ["100x100#",  :jpg], 

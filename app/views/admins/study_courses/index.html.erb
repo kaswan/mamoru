@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Admins Study Courses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Summary</th>
+      <th>Is free</th>
+      <th>Price</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @study_courses.each do |study_course| %>
+      <tr>
+        <td><%= study_course.name %></td>
+        <td><%= study_course.summary %></td>
+        <td><%= study_course.is_free %></td>
+        <td><%= study_course.price %></td>
+        <td><%= link_to 'Show', [:admins, study_course] %></td>
+        <td><%= link_to 'Edit', edit_admins_study_course_path(study_course) %></td>
+        <td><%= link_to 'Destroy', [:admins, study_course], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Study course', new_admins_study_course_path %>
