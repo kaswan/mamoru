@@ -1,0 +1,11 @@
+<%= show_for @specialist do |specialist| %>
+  <%= specialist.attribute :name %>
+  <%= specialist.attribute :email %>
+  <%= (specialist.attribute :gender, :value => :camelize) if @specialist.try(:gender) %>
+
+  <%= specialist.attribute :image do %>
+    <%= image_tag((@specialist.image.exists? ? @specialist.image.url(:square) : @specialist.image_url), class: 'media-object') if @specialist.image.url %>
+  <% end  %>
+	<%= specialist.attribute :last_sign_in_at, :format => :short, :if_blank => "Administrator did not access yet", :wrapper_html => { :id => "sign_in_timestamp" } %>
+  <%= specialist.attribute :created_at, :format => :short %>
+<% end %>

@@ -41,6 +41,7 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :supervised_users, allow_destroy: true
   
   before_save do
+    self.name = self.email.split('@').first if self.name.nil?
     self.name = self.user_profile.name if self.user_profile && self.user_profile.name 
   end
   

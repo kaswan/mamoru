@@ -1,0 +1,27 @@
+
+  <% if @specialist.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@specialist.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @specialist.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+	<div class="form-group">
+	  <%= f.label :image %>
+	  <%= image_tag((@specialist.image.exists? ? @specialist.image.url(:icon) : @specialist.image_url))%>
+    <%= f.file_field :image, class: 'form-control'%>
+	</div>
+	<%= f.simple_fields_for :specialist_profile do |p| %>
+		<%= render '/shared/specialists/specialist_profile_fields', :p => p, :f => f %>
+	<% end %>
+	
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+

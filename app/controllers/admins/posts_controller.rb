@@ -1,5 +1,5 @@
 class Admins::PostsController < Admins::ApplicationController
-  before_action :set_users_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :set_pending_post, only: [:index, :attachment]
   # GET /users/posts
   # GET /users/posts.json
@@ -24,7 +24,7 @@ class Admins::PostsController < Admins::ApplicationController
   # POST /users/posts
   # POST /users/posts.json
   def create
-    @post = Post.new(users_post_params)
+    @post = Post.new(post_params)
     @post.parent = current_admin_user
     respond_to do |format|
       if @post.save
@@ -41,7 +41,7 @@ class Admins::PostsController < Admins::ApplicationController
   # PATCH/PUT /users/posts/1.json
   def update    
     respond_to do |format|
-      if @post.update(users_post_params)
+      if @post.update(post_params)
         format.html { redirect_to admins_posts_path, notice: 'Post was successfully updated.' }
         format.json { render :index, status: :ok }
       else
@@ -63,12 +63,12 @@ class Admins::PostsController < Admins::ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_users_post
+    def set_post
       @post = Post.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def users_post_params
+    def post_params
       params.require(:post).permit(:post_type_id, :message, :parent_type, :parent_id, :pending_status,
       attachments_attributes: [:id, :upload, :parent_type, :parent_id, :relation_type, :relation_id])
     end

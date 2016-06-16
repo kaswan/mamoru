@@ -1,0 +1,8 @@
+<%= show_for @tutorial do |s| %>
+  <%= s.attribute :title %>
+  <%= s.attribute :summary %>
+  <%= s.attribute :is_free %>
+<% end %>
+
+<%= link_to 'Edit', edit_admins_tutorial_path(@tutorial) %> |
+<%= link_to 'Back', admins_tutorials_path %>

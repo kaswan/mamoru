@@ -10,4 +10,17 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require jquery
+//= require jquery.turbolinks
+//= require hermitage
+//= require jquery_ujs
+//= require jquery_nested_form
+//= require dropzone
+//= require jquery.infinite-pages
+//= require alertify
+//= require turbolinks
 //= require_tree .
+
+$(function(){
+  alertify.parent(document.body);
+});

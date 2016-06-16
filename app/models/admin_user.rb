@@ -35,7 +35,7 @@ class AdminUser < ActiveRecord::Base
   accepts_nested_attributes_for :attachments, allow_destroy: true
           
   before_save do
-    self.name = self.email.split('@').first if self.name().nil?
+    self.name = self.email.split('@').first if self.name.nil?
   end
   
   def self.find_for_oauth(auth_hash)    

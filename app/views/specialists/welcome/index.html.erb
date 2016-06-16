@@ -1,18 +1,12 @@
 <% if current_specialist %>
   <div class="page-header">
-    <h1>Your account info...</h1>
+    <h1><%= current_specialist.name %></h1>
   </div>
   <div class="panel panel-default">
     <div class="panel-body">
       <ul>
-      	<li><strong>Email:</strong> <%= current_specialist.email %></li>
-        <li><strong>Name:</strong> <%= current_specialist.name %></li>
-        <li><strong>Gender:</strong> <%= current_specialist.gender %></li>        
-        <li><strong>Location:</strong> <%= current_specialist.location %></li>
-        <li><strong>Avatar URL:</strong> <%= current_specialist.image_url %></li>
-        <li><strong>URL:</strong> <%= current_specialist.url %></li>
-        <li><strong>Provider:</strong> <%= current_specialist.provider %></li>
-        <li><strong>uID:</strong> <%= current_specialist.uid %></li>
+        <li><strong><%= link_to "Posts", specialists_posts_path %></strong></li>
+        <li><strong><%= link_to 'Change Password', edit_specialist_registration_path %></strong></li>
       </ul>
     </div>
   </div>

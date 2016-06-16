@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   namespace :specialists do
     root :to => 'welcome#index'
+    resources :profiles, only: [:index, :edit, :update]
+    resources :posts
   end
   devise_for :specialists, path: :specialists, path_names: { sign_in: :login, sign_out: :logout }, controllers: { sessions: "specialists/sessions", passwords: "specialists/passwords", registrations: "specialists/registrations", unlocks: "specialists/unlocks" }
     
@@ -15,12 +17,12 @@ Rails.application.routes.draw do
         get :supervisor
       end
     end
+    resources :specialists
     resources :posts
     resources :study_courses do
-      member do
-        get :tutorial
-      end
+      resources :tutorial
     end
+    resources :tutorial
   end
   
 #  devise_scope :admin_user do    

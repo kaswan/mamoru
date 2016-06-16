@@ -1,0 +1,2 @@
+module Specialists::PostsHelper
+end

@@ -1,10 +1,10 @@
-class Users::PostsController < Users::ApplicationController
+class Specialists::PostsController < Specialists::ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :set_pending_post, only: [:index, :attachment]
   # GET /users/posts
   # GET /users/posts.json
   def index
-    @posts = current_user.posts.active.page(params[:page] || 1).per(2)
+    @posts = current_specialist.posts.active.page(params[:page] || 1).per(2)
   end
 
   # GET /users/posts/1
@@ -25,7 +25,7 @@ class Users::PostsController < Users::ApplicationController
   # POST /users/posts.json
   def create
     @post = Post.new(post_params)
-    @post.parent = current_user
+    @post.parent = current_specialist
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
@@ -42,7 +42,7 @@ class Users::PostsController < Users::ApplicationController
   def update    
     respond_to do |format|
       if @post.update(post_params)
-        format.html { redirect_to posts_path, notice: 'Post was successfully updated.' }
+        format.html { redirect_to specialists_posts_path, notice: 'Post was successfully updated.' }
         format.json { render :index, status: :ok }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class Users::PostsController < Users::ApplicationController
   def destroy
     @post.destroy
     respond_to do |format|
-      format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
+      format.html { redirect_to specialists_posts_url, notice: 'Post was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -78,8 +78,8 @@ class Users::PostsController < Users::ApplicationController
     end
     
     def set_pending_post
-      current_user.build_pending_post(:pending_status => true).save(validate: false) unless current_user.pending_post
-      @post = current_user.pending_post
+      current_specialist.build_pending_post(:pending_status => true).save(validate: false) unless current_specialist.pending_post
+      @post = current_specialist.pending_post
     end
     
 end

@@ -27,7 +27,7 @@ class Admins::StudyCoursesController < Admins::ApplicationController
   # POST /admins/study_courses.json
   def create
     @study_course = StudyCourse.new(study_course_params)
-    @study_course.parent = current_admin_user
+#    @study_course.parent = current_admin_user
     respond_to do |format|
       if @study_course.save
         format.html { redirect_to [:admins, @study_course], notice: 'Study course was successfully created.' }

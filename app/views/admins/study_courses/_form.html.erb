@@ -1,4 +1,4 @@
-<%= simple_form_for([:admins, @study_course]) do |f| %>
+<%= simple_nested_form_for([:admins, @study_course]) do |f| %>
   <%= f.error_notification %>
   <%= f.simple_fields_for :attachment do |a| %>
     <%= f.label :image %>
@@ -11,8 +11,12 @@
     <%= f.input :is_free %>
     <%= f.input :price %>
   </div>
-
+  <%= f.label :parent, 'Specialist' %>
+  <%= f.select :parent_id, Specialist.all.collect {|c| [ c.name, c.id ] } %>
+  <%= f.hidden_field :parent_type, value: 'Specialist'%>
   <div class="form-actions">
     <%= f.button :submit %>
   </div>
+  
+  
 <% end %>
