@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160610080127) do
+ActiveRecord::Schema.define(version: 20160617083520) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -45,6 +45,14 @@ ActiveRecord::Schema.define(version: 20160610080127) do
   create_table "attachments", force: :cascade do |t|
     t.string   "title",               limit: 255
     t.string   "relation_type",       limit: 255
+    t.datetime "image_updated_at"
+    t.integer  "image_file_size",     limit: 4
+    t.string   "image_content_type",  limit: 255
+    t.string   "image_file_name",     limit: 255
+    t.datetime "video_updated_at"
+    t.integer  "video_file_size",     limit: 4
+    t.string   "video_content_type",  limit: 255
+    t.string   "video_file_name",     limit: 255
     t.integer  "relation_id",         limit: 4
     t.string   "parent_type",         limit: 255,                 null: false
     t.integer  "parent_id",           limit: 4,                   null: false
