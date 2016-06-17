@@ -72,6 +72,6 @@ class Admins::StudyCoursesController < Admins::ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def study_course_params
       params.require(:study_course).permit(:parent_type, :parent_id, :name, :summary, :attachment_id, :is_free, :price, :attachment_id, :payment_type_id, :deleted,
-      attachment_attributes: [:id, :upload, :parent_type, :parent_id, :relation_type, :relation_id])
+      attachment_attributes: [:id, :image, :parent_type, :parent_id, :relation_type, :relation_id])
     end
 end

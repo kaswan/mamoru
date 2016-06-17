@@ -5,7 +5,7 @@ $(document).ready(function(){
   var dropzone = new Dropzone (".post_edit", {
 	acceptedFiles: ".jpeg,.jpg,.png,.gif",
     maxFilesize: 10, // set the maximum file size to 256 MB
-    paramName: "post[attachments_attributes][][upload]", // Rails expects the file upload to be something like model[field_name]
+    paramName: "post[attachments_attributes][][image]", // Rails expects the file upload to be something like model[field_name]
     addRemoveLinks: false // don't show remove links on dropzone itself.
   });
 

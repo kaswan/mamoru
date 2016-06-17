@@ -20,9 +20,9 @@ Rails.application.routes.draw do
     resources :specialists
     resources :posts
     resources :study_courses do
-      resources :tutorial
+      resources :tutorials
     end
-    resources :tutorial
+    resources :tutorials
   end
   
 #  devise_scope :admin_user do    

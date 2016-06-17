@@ -70,11 +70,11 @@ class Admins::PostsController < Admins::ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
       params.require(:post).permit(:post_type_id, :message, :parent_type, :parent_id, :pending_status,
-      attachments_attributes: [:id, :upload, :parent_type, :parent_id, :relation_type, :relation_id])
+      attachments_attributes: [:id, :image, :parent_type, :parent_id, :relation_type, :relation_id])
     end
     
     def attachment_params
-      params.require(:attachment).permit(:upload, :parent_type, :parent_id, :relation_type, :relation_id)
+      params.require(:attachment).permit(:image, :parent_type, :parent_id, :relation_type, :relation_id)
     end
     
     def set_pending_post

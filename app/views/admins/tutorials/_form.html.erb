@@ -1,10 +1,20 @@
-<%= simple_form_for([:admins, @tutorial]) do |f| %>
+<%= simple_form_for([:admins, @study_course, @tutorial]) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
     <%= f.input :title %>
     <%= f.input :summary %>
     <%= f.input :is_free %>
+    <%= f.simple_fields_for :attachment do |a| %>
+      <%= f.label :upload %>      
+      <%= a.file_field :upload %>
+      <%= (link_to @tutorial.attachment.try(:upload_file_name), @tutorial.attachment.try(:upload).url, target: '_blank') if @tutorial.attachment && @tutorial.attachment.upload.exists? %><br>
+      <%= f.label :video %>      
+      <%= a.file_field :video %>
+      <%= a.hidden_field :parent_type, value: @study_course.class %>
+      <%= a.hidden_field :parent_id, value: @study_course.id %><br>
+      <%= video_tag  @tutorial.attachment.video.url(:medium), controls: true, style: "max-width: 50%;" if @tutorial.attachment && @tutorial.attachment.video.exists? %>
+    <% end %>
   </div>
 
   <div class="form-actions">

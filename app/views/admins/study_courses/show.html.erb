@@ -1,9 +1,30 @@
-<%= show_for @study_course do |s| %>
-  <%= s.attribute :name %>
-  <%= s.attribute :summary %>
-  <%= s.attribute :is_free %>
-  <%= s.attribute :price %>
-<% end %>
-
+<table class="table table-reflow">
+  <tr><th>Course Name</th><td><%= @study_course.try(:name) %></td></tr>
+  <tr><th>Summary</th><td><%= h nl2br(@study_course.try(:summary)) %></td></tr>
+  <tr><th>Free</th><td><%= @study_course.try(:is_free) ? 'Yes' : 'No' %></td></tr>
+  <tr><th>Price</th><td><%= @study_course.try(:price) %></td></tr>
+</table>
 <%= link_to 'Edit', edit_admins_study_course_path(@study_course) %> |
 <%= link_to 'Back', admins_study_courses_path %>
+
+<br>
+<table class="table table-striped">
+  <thead>
+  	<th>Title</th>
+  	<th>Demo</th>
+  	<th>Update</th>
+  	<th></th>
+  	<th></th>
+  </thead>
+<% @study_course.tutorials.each do |tutorial| %>
+  <tr>
+  <td><%= tutorial.try :title %></td>
+  <td><%= tutorial.try(:is_free) ? 'Yes' : 'No' %></td>
+  <td><%= tutorial.try :updated_at %></td>
+  <td><%= link_to 'Show', admins_study_course_tutorial_path(@study_course,tutorial) %></td>
+  <td><%= link_to 'Edit', edit_admins_study_course_tutorial_path(@study_course,tutorial) %></td>
+  <td><%= link_to 'Destroy', [:admins, @study_course, tutorial], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+<%= link_to 'New Tutorial', new_admins_study_course_tutorial_path(@study_course.id) %>

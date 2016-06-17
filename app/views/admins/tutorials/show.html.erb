@@ -1,8 +1,10 @@
 <%= show_for @tutorial do |s| %>
   <%= s.attribute :title %>
-  <%= s.attribute :summary %>
+  <%= h nl2br(s.attribute :summary) %>
   <%= s.attribute :is_free %>
+  <%= (link_to @tutorial.attachment.try(:upload_file_name), @tutorial.attachment.try(:upload).url, target: '_blank') if @tutorial.attachment && @tutorial.attachment.upload.exists? %><br>
+  <%= video_tag  @tutorial.attachment.video.url(:medium), controls: true, style: "max-width: 50%;" if @tutorial.attachment && @tutorial.attachment.video.exists? %>
 <% end %>
 
-<%= link_to 'Edit', edit_admins_tutorial_path(@tutorial) %> |
-<%= link_to 'Back', admins_tutorials_path %>
+<%= link_to 'Edit', edit_admins_study_course_tutorial_path(@study_course, @tutorial) %> |
+<%= link_to 'Back', [:admins, @study_course] %>

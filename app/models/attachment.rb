@@ -2,7 +2,7 @@ class Attachment < ActiveRecord::Base
   belongs_to :parent, :polymorphic => true
   belongs_to :relation, :polymorphic => true
   
-  has_attached_file :upload, 
+  has_attached_file :image, 
                         #preserve_files: "true",
                         styles: {
                           icon:     ["50x50#",  :jpg],
@@ -21,9 +21,23 @@ class Attachment < ActiveRecord::Base
                           midium:   "-quality 80 -strip",
                           large:    "-quality 80 -strip",                        
                           original: "-quality 95 -strip" }
-  validates_attachment :upload, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }
+      
+  has_attached_file :video, styles: {
+        :medium => {
+          :geometry => "640x480",
+          :format => 'mp4'
+        },
+        :thumb => { :geometry => "160x120", :format => 'jpeg', :time => 10}
+    }, :processors => [:transcoder]
+      
+  has_attached_file :upload
+  
+  validates_attachment :image, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }    
+  validates_attachment_content_type :video, content_type: /\Avideo\/.*\Z/
+  validates_attachment :upload, content_type: { content_type: "application/pdf" }
+    
 #  do_not_validate_attachment_file_type :image
     before_save do
-      self.parent = self.relation.parent
+      self.parent = self.relation.parent unless self.parent
     end
 end

@@ -60,6 +60,8 @@ gem 'omniauth-facebook'
 
 gem 'aws-sdk', '< 2.0'
 gem "paperclip", "~> 4.2"
+gem 'paperclip-av-transcoder'
+gem "paperclip-ffmpeg"
 gem 'dropzonejs-rails'
 gem 'hermitage'
 

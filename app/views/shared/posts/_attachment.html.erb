@@ -1,7 +1,7 @@
 
 <% @post.attachments.each do |image| %>
   <div class="img-thumbnail image-<%=image.id%>">
-    <%= image_tag image.upload.url(:square), alt: image.upload.url(:square) %><br>
+    <%= image_tag image.image.url(:square), alt: image.image.url(:square) %><br>
     <%= link_to 'Delete', image, class: 'btn dz-remove', id: image.id, alert: 'Are you ok?' %>
   </div>
 <% end %>

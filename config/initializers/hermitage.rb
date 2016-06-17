@@ -30,11 +30,6 @@
 #
 # end
 
-Hermitage.configure :attachments do
-  original -> item { item.upload.url(:large) }
-  thumbnail -> item { item.upload.url(:thumb) }
-end
-
 Hermitage.configure :default do
   original -> item { item.image.url(:large) }
   thumbnail -> item { item.image.url(:thumb) }
