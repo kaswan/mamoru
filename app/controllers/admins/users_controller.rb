@@ -78,7 +78,7 @@ class Admins::UsersController < Admins::ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
 #      params.fetch(:user, {})
-      params.require(:user).permit(:name, :email, :gender, :image, 
+      params.require(:user).permit(:name, :email, :password, :gender, :image, 
         user_profile_attributes: [:id, :name, :furigana, :date_of_birth, :postalcode, :prefecture_id, :address, :occupation, :interest, :remarks], 
         inheritor_informations_attributes: [:id, :name, :furigana, :gender, :date_of_birth, :postalcode, :prefecture_id, :address, :occupation, :relationship, :remarks, :_destroy],
         supervised_users_attributes: [:id,:admin_user_id, :user_id, :deleted])

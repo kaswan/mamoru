@@ -15,10 +15,12 @@ class Admins::SpecialistsController < Admins::ApplicationController
   # GET /admins/specialists/new
   def new
     @specialist = Specialist.new
+    @specialist.build_specialist_profile
   end
 
   # GET /admins/specialists/1/edit
   def edit
+    @specialist.build_specialist_profile unless @specialist.specialist_profile
   end
 
   # POST /admins/specialists
@@ -69,7 +71,7 @@ class Admins::SpecialistsController < Admins::ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def specialist_params
-      params.require(:specialist).permit(:name, :email, :gender, :image, 
+      params.require(:specialist).permit(:name, :email, :gender, :image, :password,
                            specialist_profile_attributes: [:id, :name, :furigana, :date_of_birth, :postalcode, :prefecture_id, :address, :qualification, :specialized_field, :introduction, :home_page_url, :remarks]
                           )
     end
