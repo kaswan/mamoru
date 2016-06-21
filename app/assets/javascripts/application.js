@@ -18,6 +18,7 @@
 //= require dropzone
 //= require jquery.infinite-pages
 //= require alertify
+//= require init_fancybox
 //= require turbolinks
 //= require_tree .
 

@@ -18,8 +18,32 @@
 <% end %>
 
 
+
+
+
 <%= month_calendar do |date| %>
   <%= date %>
-  
+	<%= link_to "Schedule", "##{date}", class: "fancybox" %>
+	<div style="display:none;">
+  	<div id="<%= date %>">
+  		<%= simple_form_for([:admins, Schedule.new()]) do |f| %>
+        <%= f.error_notification %>
+
+        <div class="form-inputs">
+          <%= f.hidden_field :start_date, value: date %>
+          <%= f.hidden_field :parent_type, value: current_admin_user.class %>
+          <%= f.hidden_field :parent_id, value: current_admin_user.id %><br>
+    
+          <%= f.simple_fields_for :schedule_entities do |a| %>
+            <%=a.time :start_at%>
+          <% end %>
+        </div>
+
+        <div class="form-actions">
+          <%= f.button :submit %>
+        </div>
+      <% end %>
+ 		</div>
+	</div>  
 <% end %>
 

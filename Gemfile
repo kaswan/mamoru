@@ -77,3 +77,6 @@ gem 'jquery-infinite-pages'
 
 # https://github.com/excid3/simple_calendar
 gem "simple_calendar", "~> 2.0"
+
+
+gem 'fancybox2-rails'

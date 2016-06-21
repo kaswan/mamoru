@@ -10,7 +10,7 @@ class Attachment < ActiveRecord::Base
                           thumb:    ["150x150#",  :jpg],
                           thumb_m:  ["75x75#",  :jpg],
                           small:    ["180x240>", :jpg],                                                
-                          midium:   ["375x500>", :jpg],
+                          medium:   ["375x500>", :jpg],
                           large:    ["768x1024>", :jpg]},
                         convert_options: {
                           icon:     "-quality 80 -strip",
@@ -18,7 +18,7 @@ class Attachment < ActiveRecord::Base
                           thumb:    "-quality 80 -strip",
                           thumb_m:  "-quality 75 -strip",
                           small:    "-quality 80 -strip",                        
-                          midium:   "-quality 80 -strip",
+                          medium:   "-quality 80 -strip",
                           large:    "-quality 80 -strip",                        
                           original: "-quality 95 -strip" }
       

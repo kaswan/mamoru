@@ -18,9 +18,13 @@
 //= require dropzone
 //= require jquery.infinite-pages
 //= require alertify
+//= require fancybox
+//= require ../init_fancybox
+//= require ../infinite_table
 //= require turbolinks
 //= require_tree .
 
 $(function(){
   alertify.parent(document.body);
 });
+
