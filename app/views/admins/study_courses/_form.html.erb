@@ -11,7 +11,7 @@
     <%= f.input :is_free %>
     <%= f.input :price %>
   </div>
-  <%= f.label :parent, 'Specialist' %>
+  <%= f.label :parent %>
   <%= f.select :parent_id, Specialist.all.collect {|c| [ c.name, c.id ] } %>
   <%= f.hidden_field :parent_type, value: 'Specialist'%>
   <div class="form-actions">
