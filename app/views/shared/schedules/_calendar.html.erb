@@ -1,0 +1,46 @@
+<%= month_calendar(events: @schedules, attribute: :start_date) do |date, schedules| %>
+  <%= l date, format: :short %> <%= HolidayJp.holiday?(date).try :name %>
+  <button type="button" style="float:right;" class="btn btn-default btn-sm">
+      <%= link_to "", "##{date}", class: "fancybox glyphicon glyphicon-pencil" %>
+   </button>
+  <br>    
+  <% schedules.map(&:schedule_entities).each do |entity| %>
+    <% entity.each do |e| %>
+    <%= l e.start_time, format: :hour_minute %><%= "(#{e.client.name}様)" if e.client %><br>
+    <% end %>
+  <% end %>
+ 
+  
+  <div style="display:none;width:60%;">
+    <div id="<%= date %>">
+      <%= l date, format: :long %><br>
+      <% schedule = schedules.first || Schedule.new() %>
+      <% schedule.schedule_entities.build if schedule.schedule_entities.blank? %>
+      <%= simple_nested_form_for(schedule) do |f| %>
+        <%= f.error_notification %>
+        <div class="form-inputs">
+          <%= f.hidden_field :start_date, value: date %>
+          <%= f.hidden_field :schedule_type, value: 'Reservation' %>
+          <%= f.hidden_field :parent_type, value: user.class %>
+          <%= f.hidden_field :parent_id, value: user.id %><br>
+      
+          <%= f.simple_fields_for :schedule_entities do |a| %>
+            <%= a.hidden_field :date, value: date %>
+            <% unless a.object.client %>
+              <%= a.input :start_time, as: :time, minute_step: 30, start_hour: 8, end_hour: 23, prompt: { :hour => "時", :minute => '分' }, required: false %>
+              <%= a.link_to_remove "Remove this Time" %>
+            <% else %>
+              <%= l a.object.start_time, format: :hour_minute %>
+              <%= "Reserved By #{a.object.client.name}"%>
+            <% end %>
+          <% end %>
+          <p><%= f.link_to_add "Add Time", :schedule_entities %></p>
+        </div>
+        <div class="form-actions">
+          <%= f.button :submit %>
+        </div>
+      <% end %>
+    </div>
+  </div>  
+<% end %>
+

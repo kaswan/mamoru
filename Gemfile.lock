@@ -89,6 +89,7 @@ GEM
       coffee-rails
       jquery-rails
       rails (>= 3.2)
+    holiday_jp (0.4.3)
     httpauth (0.2.1)
     i18n (0.7.0)
     jbuilder (2.5.0)
@@ -253,6 +254,7 @@ DEPENDENCIES
   dropzonejs-rails
   fancybox2-rails
   hermitage
+  holiday_jp
   jbuilder (~> 2.0)
   jquery-infinite-pages
   jquery-rails

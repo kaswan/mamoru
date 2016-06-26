@@ -194,6 +194,7 @@ ja:
       default: ! '%Y/%m/%d %H:%M:%S'
       long: ! '%Y年%m月%d日(%a) %H時%M分%S秒 %z'
       short: ! '%y/%m/%d %H:%M'
+      hour_minute: ! '%H時%M分'
     pm: 午後
   # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
   activemodel:
@@ -296,16 +297,17 @@ ja:
         created_at: "登録日時"
       
       schedule:
-        type: "予定の種類"
+        schedule_type: "予定の種類"
         title: "タイトル"
         public_title: "公開用タイトル"
         remark: "メモ"
-      schedule_entitie:
+        
+      schedule_entity:
         type: "予定の種類"
         title: "タイトル"
         date: "日付"
-        start_at: "開始時間"
-        end_at: "終了時間"
+        start_time: "開始時間"
+        end_time: "終了時間"
         remark: "メモ"
         editable: "共有者による変更"                  
       attachment:

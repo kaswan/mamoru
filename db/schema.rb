@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160621022800) do
+ActiveRecord::Schema.define(version: 20160625223523) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -227,8 +227,8 @@ ActiveRecord::Schema.define(version: 20160621022800) do
     t.string   "title",       limit: 255
     t.text     "remark",      limit: 65535
     t.date     "date"
-    t.time     "start_at"
-    t.time     "end_at"
+    t.time     "start_time"
+    t.time     "end_time"
     t.boolean  "editable",                  default: true
     t.boolean  "deleted",                   default: false
     t.datetime "created_at",                                null: false
@@ -236,17 +236,17 @@ ActiveRecord::Schema.define(version: 20160621022800) do
   end
 
   create_table "schedules", force: :cascade do |t|
-    t.string   "type",         limit: 255
-    t.string   "parent_type",  limit: 255,                   null: false
-    t.integer  "parent_id",    limit: 4,                     null: false
-    t.string   "title",        limit: 255
-    t.string   "public_title", limit: 255
-    t.text     "remark",       limit: 65535
-    t.date     "start_date",                                 null: false
+    t.string   "schedule_type", limit: 255
+    t.string   "parent_type",   limit: 255,                   null: false
+    t.integer  "parent_id",     limit: 4,                     null: false
+    t.string   "title",         limit: 255
+    t.string   "public_title",  limit: 255
+    t.text     "remark",        limit: 65535
+    t.date     "start_date",                                  null: false
     t.date     "end_date"
-    t.boolean  "deleted",                    default: false
-    t.datetime "created_at",                                 null: false
-    t.datetime "updated_at",                                 null: false
+    t.boolean  "deleted",                     default: false
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
   end
 
   create_table "specialist_profiles", force: :cascade do |t|

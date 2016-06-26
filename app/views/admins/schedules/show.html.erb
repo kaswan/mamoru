@@ -1,0 +1,6 @@
+<%= show_for @schedule do |s| %>
+  <%= s.attribute :start_date %>
+<% end %>
+
+<%= link_to 'Edit', edit_schedule_path(@schedule) %> |
+<%= link_to 'Back', schedules_path %>

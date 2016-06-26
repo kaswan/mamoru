@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
   
   resources :attachments, only: [:index, :create, :destroy]
-
+  resources :schedules
+  
   namespace :specialists do
     root :to => 'welcome#index'
     resources :profiles, only: [:index, :edit, :update]
     resources :posts
+    resources :schedules
   end
   devise_for :specialists, path: :specialists, path_names: { sign_in: :login, sign_out: :logout }, controllers: { sessions: "specialists/sessions", passwords: "specialists/passwords", registrations: "specialists/registrations", unlocks: "specialists/unlocks" }
     
@@ -23,7 +25,9 @@ Rails.application.routes.draw do
       resources :tutorials
     end
     resources :tutorials
+    resources :schedules
   end
+  
   
 #  devise_scope :admin_user do    
 #    get '/admins/auth/:provider/callback', to: 'admins/omniauth_callbacks#sync'

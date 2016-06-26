@@ -1,0 +1,2 @@
+module Specialists::SchedulesHelper
+end
