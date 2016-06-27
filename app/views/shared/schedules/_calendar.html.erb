@@ -1,9 +1,9 @@
 <%= month_calendar(events: @schedules, attribute: :start_date) do |date, schedules| %>
   <%= l date, format: :short %> <%= HolidayJp.holiday?(date).try :name %>
-  <button type="button" style="float:right;" class="btn btn-default btn-sm">
-      <%= link_to "", "##{date}", class: "fancybox glyphicon glyphicon-pencil" %>
-   </button>
-  <br>    
+  <%#= link_to '<i class="glyphicon glyphicon-pencil"></i>'.html_safe, "##{date}", class: "fancybox fancybox.iframe btn btn-default btn-sm", style: 'float:right;', 'data-width' => "640", 'data-height' => "360" %>
+  <%= link_to '<i class="glyphicon glyphicon-pencil"></i>'.html_safe, "##{date}", class: "fancybox btn btn-default btn-sm", style: 'float:right;', 'data-width' => "640", 'data-height' => "360" %>
+  <br>
+  
   <% schedules.map(&:schedule_entities).each do |entity| %>
     <% entity.each do |e| %>
     <%= l e.start_time, format: :hour_minute %><%= "(#{e.client.name}様)" if e.client %><br>
@@ -11,7 +11,7 @@
   <% end %>
  
   
-  <div style="display:none;width:60%;">
+  <div style="display:none;width:400px;">
     <div id="<%= date %>">
       <%= l date, format: :long %><br>
       <% schedule = schedules.first || Schedule.new() %>
@@ -44,3 +44,13 @@
   </div>  
 <% end %>
 
+<script>
+$('.fancybox').fancybox({
+    fitToView: false,
+    autoSize: false,
+    afterLoad: function () {
+        this.width = $(this.element).data("width");
+        this.height = $(this.element).data("height");
+    }
+});
+</script>

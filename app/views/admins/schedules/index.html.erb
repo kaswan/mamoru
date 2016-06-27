@@ -1,6 +1,8 @@
 <h1>Schedules</h1>
 
-<%= render '/shared/schedules/calendar', user: current_admin_user %>
+<div id="schedules_calendar">
+  <%= render '/shared/schedules/calendar', user: current_admin_user %>
+</div>
 <br>
 
 <%= link_to 'New Schedule', new_admins_schedule_path %>

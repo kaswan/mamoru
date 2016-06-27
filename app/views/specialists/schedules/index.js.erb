@@ -1,0 +1,1 @@
+$("#schedules_calendar").html("<%= escape_javascript render(partial: "/shared/schedules/calendar", locals: {events: @schedules, user: current_specialist}) %>");

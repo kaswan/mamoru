@@ -2,11 +2,13 @@
   .has-events {
     background-color: #D0F9D8;
   }
-  .has-holiday {
-    background-color: #E0B1A6;
-  }
-  .has-weekend {
-    
+  
+  .sat {
+    background-color: #def !important;
+  } 
+  .has-holiday, .sun {
+    background-color: #fdd !important;
   }
   
+  .prev-month, .next-month { color: #aaa; }
 }
