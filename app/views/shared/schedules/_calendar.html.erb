@@ -11,9 +11,9 @@
   <% end %>
  
   
-  <div style="display:none;width:400px;">
-    <div id="<%= date %>">
-      <%= l date, format: :long %><br>
+  <div style="display:none;">
+    <div id="<%= date %>" style="min-width:400px">
+      <h3><%= l date, format: :long %></h3>
       <% schedule = schedules.first || Schedule.new() %>
       <% schedule.schedule_entities.build if schedule.schedule_entities.blank? %>
       <%= simple_nested_form_for(schedule) do |f| %>
@@ -25,7 +25,7 @@
           <%= f.hidden_field :parent_id, value: user.id %><br>
       
           <%= f.simple_fields_for :schedule_entities do |a| %>
-            <%= a.hidden_field :date, value: date %>
+            <%#= a.hidden_field :schedule_date, value: date %>
             <% unless a.object.client %>
               <%= a.input :start_time, as: :time, minute_step: 30, start_hour: 8, end_hour: 23, prompt: { :hour => "時", :minute => '分' }, required: false %>
               <%= a.link_to_remove "Remove this Time" %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160625223523) do
+ActiveRecord::Schema.define(version: 20160628075806) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -221,18 +221,18 @@ ActiveRecord::Schema.define(version: 20160625223523) do
   end
 
   create_table "schedule_entities", force: :cascade do |t|
-    t.integer  "schedule_id", limit: 4,                     null: false
-    t.string   "client_type", limit: 255
-    t.integer  "client_id",   limit: 4
-    t.string   "title",       limit: 255
-    t.text     "remark",      limit: 65535
-    t.date     "date"
+    t.integer  "schedule_id",   limit: 4,                     null: false
+    t.string   "client_type",   limit: 255
+    t.integer  "client_id",     limit: 4
+    t.string   "title",         limit: 255
+    t.text     "remark",        limit: 65535
+    t.date     "schedule_date"
     t.time     "start_time"
     t.time     "end_time"
-    t.boolean  "editable",                  default: true
-    t.boolean  "deleted",                   default: false
-    t.datetime "created_at",                                null: false
-    t.datetime "updated_at",                                null: false
+    t.boolean  "editable",                    default: true
+    t.boolean  "deleted",                     default: false
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
   end
 
   create_table "schedules", force: :cascade do |t|
@@ -257,6 +257,7 @@ ActiveRecord::Schema.define(version: 20160625223523) do
     t.string   "postalcode",        limit: 255
     t.integer  "prefecture_id",     limit: 4
     t.string   "address",           limit: 255
+    t.string   "enterprise",        limit: 255
     t.string   "qualification",     limit: 255
     t.string   "specialized_field", limit: 255
     t.text     "introduction",      limit: 65535

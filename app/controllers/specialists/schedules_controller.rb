@@ -72,6 +72,6 @@ class Specialists::SchedulesController < Specialists::ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def schedule_params
       params.require(:schedule).permit(:start_date, :parent_type, :parent_id, :schedule_type, :title, :public_title,
-            schedule_entities_attributes: [:id, :schedule_id, :title, :client_type, :client_id, :date, :start_time, :end_time, :_destroy])
+            schedule_entities_attributes: [:id, :schedule_id, :title, :client_type, :client_id, :schedule_date, :start_time, :end_time, :_destroy])
     end
 end

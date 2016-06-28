@@ -39,6 +39,7 @@ Rails.application.routes.draw do
     root :to => 'welcome#index'
     resources :profiles, only: [:index, :edit, :update]
     resources :posts
+    resources :consults
   end
   devise_scope :user do    
     get '/users/auth/:provider/callback', to: 'users/omniauth_callbacks#sync'

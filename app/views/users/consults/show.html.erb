@@ -1,0 +1,47 @@
+<div class="main_box_in">
+  <h1>専門家相談予約</h1>
+    <h2>名前</h2>
+      <div class="stwo">
+        <%= image_tag @specialist.image.url(:thumb)%>
+      </div>
+      <div class="stwo1">
+        <h3><%= @specialist.specialist_profile.try(:name) + "（#{@specialist.specialist_profile.furigana}）"%></h3>
+        <p>所属：<%=@specialist.specialist_profile.try(:enterprise)%>&nbsp;<%= link_to_if @specialist.specialist_profile.home_page_url, "（ホームページ）", @specialist.specialist_profile.home_page_url, target: '_blank' %>
+      </div>
+
+      <h2>専門分野</h2>
+      <p><%=@specialist.specialist_profile.try(:specialized_field)%></p>
+      
+      <h2>自己紹介</h2>
+      <p><%=@specialist.specialist_profile.try(:introduction)%></p>
+      <% schedule_date_time = {} %>
+      <% @specialist.schedules.joins(:schedule_entities).where(:schedule_type => 'Reservation', :start_date => Date.today..Date.today+7, :schedule_entities => {:editable => true}).map(&:schedule_entities).each{|entity| entity.each {|e| ((schedule_date_time[l(e.schedule_date,format: :short)] ||={})[e.start_time.strftime("%H:%M")] ||=[]) << e.id }} %>
+      <h2>予約日時選択</h2>
+      <table class="sche">
+        <thead>
+          <tr>
+            <th>時間</th>
+            <% (Date.today..Date.today+7).each do |day| %>
+            <td><%= l day, format: :short %><br>（<%= t('date.abbr_day_names')[day.wday] %>）</td>
+            <% end %>
+         </tr>
+       </thead>
+       <tbody>
+         <% start_time = Date.today.to_datetime + 8.hour %>
+         <% end_time = Date.today.to_datetime + 23.hour %>
+         <% min = 30.0/(24*60) %>
+         <% start_time.step(end_time, min) do |time| %>
+         	 <% time = time.strftime("%H:%M") %>
+           <tr>
+             <th><%= time %></th>
+             <% (Date.today..Date.today+7).each do |day| %>
+               <% day = l(day, format: :short) %>
+               <td><%= raw(schedule_date_time[day].blank? ? '&#x00D7;' : schedule_date_time[day][time].blank? ? '&#x00D7;' : (link_to '&#9678;'.html_safe, {controller: :consults, action: :show, id: schedule_date_time[day][time].first}, class: 'yes')) %></td>
+             <% end %>
+           </tr>
+         <% end %>
+      </tobdy>
+    </table>
+  </div>  
+
+<%= link_to 'Back', consults_path %>

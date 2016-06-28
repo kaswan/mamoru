@@ -1,0 +1,31 @@
+<h2>専門家の選択</h2>
+<div class="box2">
+  <% @specialists.includes(:specialist_profile, :schedules => :schedule_entities).each do |specialist| %>
+    <% schedule_date_time = {} %>
+    <% specialist.schedules.joins(:schedule_entities).where(:schedule_type => 'Reservation', :schedule_entities => {:editable => true}).order(:start_date).map(&:schedule_entities).each{|entity| entity.order(:start_time).each {|e| ((schedule_date_time[l(e.schedule_date,format: :long)] ||={})[e.start_time.strftime("%H:%M")] ||=[]) << e.id }} %>
+    
+    <div class="two2">
+      <div class="stwo">
+        <%= image_tag specialist.image.url(:thumb)%>
+      </div> 
+      <div class="stwo1">
+        <div class="course_button2"><a href="#nearest-date-<%= specialist.id %>" class="fancybox">一番近い日時で予約</a></div>
+        <div style="display:none">
+        	<div id="nearest-date-<%= specialist.id %>" style="min-width:300px">
+        	   <h2><%= schedule_date_time.first.first %></h2>
+        	   <% schedule_date_time.first.last.each do |time| %>
+        	     <span class="btn btn-success btn-sm"><%= link_to time.first, {action: :show, id: time.last.first} %></span>
+        	   <% end %>
+        	</div>
+        </div>
+        <div class="course_button1"><%= link_to '詳細をみて予約', {controller: :consults, action:  :show, id: specialist} %></div>
+      </div>
+      <div class="course_title">
+        <p><%=specialist.name + "（#{specialist.specialist_profile.furigana}）"%></p>
+        <div class="course_pr">
+            <%=specialist.specialist_profile.try(:introduction) %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
