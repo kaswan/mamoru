@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160628075806) do
+ActiveRecord::Schema.define(version: 20160629042953) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -297,6 +297,24 @@ ActiveRecord::Schema.define(version: 20160628075806) do
 
   add_index "specialists", ["email"], name: "index_specialists_on_email", unique: true, using: :btree
   add_index "specialists", ["reset_password_token"], name: "index_specialists_on_reset_password_token", unique: true, using: :btree
+
+  create_table "specialized_field_relations", force: :cascade do |t|
+    t.integer  "specialized_field_id", limit: 4, null: false
+    t.integer  "specialist_id",        limit: 4, null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+  end
+
+  add_index "specialized_field_relations", ["specialist_id"], name: "index_specialized_field_relations_on_specialist_id", using: :btree
+  add_index "specialized_field_relations", ["specialized_field_id"], name: "index_specialized_field_relations_on_specialized_field_id", using: :btree
+
+  create_table "specialized_fields", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.integer  "sort_no",    limit: 4
+    t.boolean  "deleted",                default: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+  end
 
   create_table "study_courses", force: :cascade do |t|
     t.string   "parent_type",     limit: 255,                   null: false

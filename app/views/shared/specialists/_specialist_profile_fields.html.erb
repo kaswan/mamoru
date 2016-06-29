@@ -12,7 +12,12 @@
 <%= p.input :address %>
 <%= p.input :enterprise %>
 <%= p.input :qualification %>
-<%= p.input :specialized_field %>
+<%= p.label :specialized_field %>
+<%= f.fields_for :specialized_field_relations do |f|%>
+   <%= f.select :specialized_field_id, SpecializedField.order(:sort_no).map{|sf| [sf.name, sf.id]}, {:prompt =>"選択してください"}, :class => "specialized-field"%>
+   <%= f.link_to_remove "削除", :class => "btn btn-delete" %>
+<% end %>
+<span><%= f.link_to_add "追加", :specialized_field_relations, :class => "btn btn-add" %></span>
 <%= p.input :introduction %>
 <%= p.input :home_page_url %>
 <%= p.input :remarks %>

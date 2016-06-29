@@ -32,13 +32,17 @@ class Specialist < ActiveRecord::Base
   has_many :schedules, as: :parent, dependent: :destroy
   has_many :schedule_entities, through: :schedules
   has_many :reservations, class_name: 'ScheduleEntity', as: :client
+  has_many :specialized_field_relations, dependent: :destroy
   
   accepts_nested_attributes_for :specialist_profile
   accepts_nested_attributes_for :attachments, allow_destroy: true
+  accepts_nested_attributes_for :specialized_field_relations, allow_destroy: true
   
   before_save do
     self.name = self.email.split('@').first if self.name.nil?
     self.name = self.specialist_profile.name if self.specialist_profile && self.specialist_profile.name
+    self.email = email.downcase
   end
+  
   
 end

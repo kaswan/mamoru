@@ -1,4 +1,4 @@
-json.array!(@users_consults) do |users_consult|
-  json.extract! users_consult, :id
-  json.url users_consult_url(users_consult, format: :json)
+json.array!(@specialists) do |specialist|
+  json.extract! specialist, :id
+  json.url consult_url(specialist, format: :json)
 end

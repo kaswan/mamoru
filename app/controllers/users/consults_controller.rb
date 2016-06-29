@@ -4,7 +4,8 @@ class Users::ConsultsController < Users::ApplicationController
   # GET /users/consults
   # GET /users/consults.json
   def index
-    @specialists = Specialist.joins(:specialist_profile).all
+    @specialists = Specialist.joins(:specialist_profile).all.page(params[:page] || 1).per(2)
+    #@posts = current_user.posts.active.page(params[:page] || 1).per(2)
   end
 
   # GET /users/consults/1
