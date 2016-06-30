@@ -1,4 +1,6 @@
 <h2>専門家の選択</h2>
+<label>相談内容の選択</label>
+<%= select_tag :field_select, options_for_select(SpecializedField.where(:deleted => false).order(:sort_no).map{|f|["#{f.name}に関する相談", f.id]}), {:prompt =>"相談内容を選んでください"}%>
 <div class="box2">
   <div class="infinite-table">
     <table>
@@ -11,3 +13,20 @@
     </p>
   </div>
 </div>
+
+<%= javascript_tag do %>
+$("select#field_select").change(function(){
+        $.ajax({
+            url: "/consults/search",
+            type: "GET",
+            data: {specialized_field_id: $(":selected").attr("value")},
+            dataType: "html",
+            success: function(data) {
+               $('.infinite-table').html(data)
+            },
+            error: function(data) {
+                alert("エラーが発生しました");
+            }
+        });
+    });
+<% end %>

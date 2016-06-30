@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160629042953) do
+ActiveRecord::Schema.define(version: 20160630081155) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -45,6 +45,9 @@ ActiveRecord::Schema.define(version: 20160629042953) do
   create_table "attachments", force: :cascade do |t|
     t.string   "title",               limit: 255
     t.string   "relation_type",       limit: 255
+    t.integer  "relation_id",         limit: 4
+    t.string   "parent_type",         limit: 255,                 null: false
+    t.integer  "parent_id",           limit: 4,                   null: false
     t.datetime "image_updated_at"
     t.integer  "image_file_size",     limit: 4
     t.string   "image_content_type",  limit: 255
@@ -53,9 +56,6 @@ ActiveRecord::Schema.define(version: 20160629042953) do
     t.integer  "video_file_size",     limit: 4
     t.string   "video_content_type",  limit: 255
     t.string   "video_file_name",     limit: 255
-    t.integer  "relation_id",         limit: 4
-    t.string   "parent_type",         limit: 255,                 null: false
-    t.integer  "parent_id",           limit: 4,                   null: false
     t.boolean  "deleted",                         default: false
     t.datetime "created_at",                                      null: false
     t.datetime "updated_at",                                      null: false
@@ -250,21 +250,20 @@ ActiveRecord::Schema.define(version: 20160629042953) do
   end
 
   create_table "specialist_profiles", force: :cascade do |t|
-    t.integer  "specialist_id",     limit: 4,     null: false
-    t.string   "name",              limit: 255
-    t.string   "furigana",          limit: 255
+    t.integer  "specialist_id", limit: 4,     null: false
+    t.string   "name",          limit: 255
+    t.string   "furigana",      limit: 255
     t.date     "date_of_birth"
-    t.string   "postalcode",        limit: 255
-    t.integer  "prefecture_id",     limit: 4
-    t.string   "address",           limit: 255
-    t.string   "enterprise",        limit: 255
-    t.string   "qualification",     limit: 255
-    t.string   "specialized_field", limit: 255
-    t.text     "introduction",      limit: 65535
-    t.string   "home_page_url",     limit: 255
-    t.text     "remarks",           limit: 65535
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
+    t.string   "postalcode",    limit: 255
+    t.integer  "prefecture_id", limit: 4
+    t.string   "address",       limit: 255
+    t.string   "enterprise",    limit: 255
+    t.string   "qualification", limit: 255
+    t.text     "introduction",  limit: 65535
+    t.string   "home_page_url", limit: 255
+    t.text     "remarks",       limit: 65535
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   add_index "specialist_profiles", ["specialist_id"], name: "index_specialist_profiles_on_specialist_id", unique: true, using: :btree
@@ -317,20 +316,22 @@ ActiveRecord::Schema.define(version: 20160629042953) do
   end
 
   create_table "study_courses", force: :cascade do |t|
-    t.string   "parent_type",     limit: 255,                   null: false
-    t.integer  "parent_id",       limit: 4,                     null: false
-    t.string   "name",            limit: 255
-    t.text     "summary",         limit: 65535
-    t.integer  "attachment_id",   limit: 4
-    t.integer  "payment_type_id", limit: 4
+    t.string   "parent_type",          limit: 255,                   null: false
+    t.integer  "parent_id",            limit: 4,                     null: false
+    t.string   "name",                 limit: 255
+    t.text     "summary",              limit: 65535
+    t.text     "recommend_for",        limit: 65535
+    t.integer  "specialized_field_id", limit: 4
+    t.integer  "payment_type_id",      limit: 4
     t.boolean  "is_free"
-    t.integer  "price",           limit: 4
-    t.boolean  "deleted",                       default: false
-    t.datetime "created_at",                                    null: false
-    t.datetime "updated_at",                                    null: false
+    t.integer  "price",                limit: 4
+    t.boolean  "deleted",                            default: false
+    t.datetime "created_at",                                         null: false
+    t.datetime "updated_at",                                         null: false
   end
 
   add_index "study_courses", ["parent_id"], name: "index_study_courses_on_parent_id", using: :btree
+  add_index "study_courses", ["specialized_field_id"], name: "index_study_courses_on_specialized_field_id", using: :btree
 
   create_table "supervised_users", force: :cascade do |t|
     t.integer  "admin_user_id", limit: 4,                 null: false

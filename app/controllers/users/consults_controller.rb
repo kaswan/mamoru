@@ -5,7 +5,6 @@ class Users::ConsultsController < Users::ApplicationController
   # GET /users/consults.json
   def index
     @specialists = Specialist.joins(:specialist_profile).all.page(params[:page] || 1).per(2)
-    #@posts = current_user.posts.active.page(params[:page] || 1).per(2)
   end
 
   # GET /users/consults/1
@@ -62,6 +61,20 @@ class Users::ConsultsController < Users::ApplicationController
     end
   end
 
+  def search
+    if params[:specialized_field_id] && !params[:specialized_field_id].blank?
+      @specialists = Specialist.joins(:specialist_profile, :specialized_field_relations).where(specialized_field_relations: {specialized_field_id: params[:specialized_field_id]}).all.page(params[:page] || 1).per(2)
+    else
+      @specialists = Specialist.joins(:specialist_profile).all.page(params[:page] || 1).per(2)
+    end
+    render layout: false if request.xhr?
+  end
+  
+  # 予約する
+  def appointment   
+    
+  end
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_specialist

@@ -25,7 +25,7 @@ Rails.application.routes.draw do
       resources :tutorials
     end
     resources :tutorials
-    resources :schedules
+    resources :schedules    
   end
   
   
@@ -39,8 +39,25 @@ Rails.application.routes.draw do
     root :to => 'welcome#index'
     resources :profiles, only: [:index, :edit, :update]
     resources :posts
-    resources :consults
+    resources :consults do
+      member do
+        get :appointment
+      end
+      collection do
+        get :search
+      end
+    end
+    
+    namespace :study do
+      root :to => 'courses#index'
+      resources :courses, only: [:index, :show] do
+        collection do
+          get :search
+        end
+      end
+    end
   end
+  
   devise_scope :user do    
     get '/users/auth/:provider/callback', to: 'users/omniauth_callbacks#sync'
   end

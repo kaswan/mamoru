@@ -332,6 +332,8 @@ ja:
         parent: "講師"
         name: "講座名"
         summary: "講座概要"
+        recommend_for: "おすすめポイント"
+        specialized_field: "講座カテゴリ"
         is_free: "無料"
         price: "セット料金"
         image: "講座紹介画像"

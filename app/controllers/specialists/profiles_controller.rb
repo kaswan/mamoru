@@ -45,7 +45,7 @@ class Specialists::ProfilesController < Specialists::ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def specialists_profile_params
       params.require(:specialist).permit(:name, :email, :gender, :image, 
-                     specialist_profile_attributes: [:id, :name, :furigana, :date_of_birth, :postalcode, :prefecture_id, :address, :qualification, :specialized_field, :introduction, :home_page_url, :remarks],
+                     specialist_profile_attributes: [:id, :name, :furigana, :date_of_birth, :postalcode, :prefecture_id, :address, :qualification, :enterprise, :introduction, :home_page_url, :remarks],
                      specialized_field_relations_attributes: [:id, :specialized_field_id]
                     )
     end

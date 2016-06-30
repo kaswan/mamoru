@@ -26,6 +26,7 @@ class User < ActiveRecord::Base
       
   
   has_one  :user_profile, dependent: :destroy, autosave: true
+  has_one  :profile, class_name: 'UserProfile'
   has_many :inheritor_informations, dependent: :destroy
   has_many :property_informations, dependent: :destroy
   has_many :payment_informations, dependent: :destroy

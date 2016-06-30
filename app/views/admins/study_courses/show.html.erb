@@ -1,8 +1,11 @@
 <table class="table table-reflow">
-  <tr><th>Course Name</th><td><%= @study_course.try(:name) %></td></tr>
-  <tr><th>Summary</th><td><%= h nl2br(@study_course.try(:summary)) %></td></tr>
-  <tr><th>Free</th><td><%= @study_course.try(:is_free) ? 'Yes' : 'No' %></td></tr>
-  <tr><th>Price</th><td><%= @study_course.try(:price) %></td></tr>
+  <tr><th>講師</th><td><%= @study_course.try(:parent).name %></td></tr>
+  <tr><th>講座カテゴリ</th><td><%= @study_course.try(:specialized_field).name %></td></tr>
+  <tr><th>講座名</th><td><%= @study_course.try(:name) %></td></tr>
+  <tr><th>講座概要</th><td><%= h nl2br(@study_course.try(:summary)) %></td></tr>
+  <tr><th>おすすめポイント</th><td><%= h nl2br(@study_course.try(:recommend_for)) %></td></tr>  
+  <tr><th>無料</th><td><%= @study_course.try(:is_free) ? 'Yes' : 'No' %></td></tr>
+  <tr><th>セット料金</th><td><%= number_to_currency @study_course.try(:price) %></td></tr>
 </table>
 <%= link_to 'Edit', edit_admins_study_course_path(@study_course) %> |
 <%= link_to 'Back', admins_study_courses_path %>

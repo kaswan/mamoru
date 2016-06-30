@@ -1,0 +1,8 @@
+    <table>
+      <tbody>
+        <%= render :partial => 'specialists', :object => @specialists if @specialists %>    
+      </tbody>
+    </table>
+    <p class="pagination">      
+      <%= link_to_next_page(@specialists, 'Next Page', params: params, remote: true) if @specialists %>
+    </p>
