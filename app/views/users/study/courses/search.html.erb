@@ -1,0 +1,8 @@
+    <table>
+      <tbody>
+        <%= render :partial => 'courses', :object => @courses if @courses %>    
+      </tbody>
+    </table>
+    <p class="pagination">      
+      <%= link_to_next_page(@courses, 'Next Page', params: params, remote: true) if @courses %>
+    </p>

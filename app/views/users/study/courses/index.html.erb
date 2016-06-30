@@ -5,38 +5,39 @@
   <div class="main_box3">
     <div class="main_box_in">
       <h2>カテゴリから講座を探す</h2>
-      <ul id="box6">
-        <li><a href="course.html">法律</a></li>
-        <li><a href="course.html">介護</a></li>
-        <li><a href="course.html">お金</a></li>
-        <li><a href="course.html">運動</a></li>
-        <li><a href="course.html">学習</a></li>
-        <li><a href="course.html">趣味</a></li>
-        <li><a href="course.html">働く</a></li>
-        <li><a href="course.html">パソコン</a></li>
-      </ul>
-      <h2>キーワードで講座を探す</h2>
-      <input class="kensaku" type="text">
-      <button class="ken_b">検索</button>
+      <%= select_tag :field_select, options_for_select(SpecializedField.where(:deleted => false).order(:sort_no).map{|f|["#{f.name}に関する学習", f.id]}), {:prompt =>"学習カテゴリを選んでください"}%>
+      
       <h2>講座一覧</h2>
 
       <div class="box2">
-        <% @courses.each do |course| %>
-          <div class="two">            
-            <%= link_to(image_tag(course.attachment.image.url(:medium)), study_course_path(course)) if course.attachment %>
-            <div class="course_title">
-              <div class="course_cat"><%=course.name %></div>
-              <h3><%= link_to(course.summary.slice(0,20) + '・・・', study_course_path(course)) if course.summary %></h3>
-            </div>
-            <div class="course_title">
-              <p>講義:<%=course.parent.name %>（<%= course.parent.profile.try(:enterprise)%>）</p>
-              <p>講義数:<%= course.tutorials.size %>回</p>
-              <p>全講義セット料金:<%= number_to_currency course.price %></p>
-              <div class="course_pr"><%= h nl2br(course.recommend_for) %></div>
-              <div class="course_button"><%= link_to('詳細', study_course_path(course)) if course.summary %></div>
-            </div>
-          </div>
-       <% end %>
+        <div class="infinite-table">
+          <table>
+            <tbody>
+              <%= render :partial => 'courses', :object => @courses if @courses %>    
+            </tbody>
+          </table>
+          <p class="pagination">
+            <%= link_to_next_page(@courses, 'Next Page', :remote => true) if @courses %>
+          </p>
+        </div>
      </div>
    </div>
 </div>
+
+
+<%= javascript_tag do %>
+  $("select#field_select").change(function(){
+     $.ajax({
+       url: "/study/courses/search",
+       type: "GET",
+       data: {specialized_field_id: $(":selected").attr("value")},
+       dataType: "html",
+       success: function(data) {
+         $('.infinite-table').html(data)
+       },
+       error: function(data) {
+         alert("エラーが発生しました");
+       }
+    });
+  });
+<% end %>

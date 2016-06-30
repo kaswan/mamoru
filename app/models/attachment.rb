@@ -27,7 +27,8 @@ class Attachment < ActiveRecord::Base
           :geometry => "640x480",
           :format => 'mp4'
         },
-        :thumb => { :geometry => "160x120", :format => 'jpeg', :time => 10}
+        :thumb => { :geometry => "160x120", :format => 'jpeg', :time => 10},
+        :medium => { :geometry => "276x156", :format => 'jpeg', :time => 15}
     }, :processors => [:transcoder]
       
   has_attached_file :upload

@@ -1,0 +1,12 @@
+
+// Append new data
+$("<%=j render(:partial => 'courses', :object => @courses) %>")
+  .appendTo($(".infinite-table table"));
+
+// Update pagination link
+<% if @courses.last_page? %>
+  $('.pagination').html("");
+<% else %>
+  $('.pagination')
+    .html("<%=j link_to_next_page(@courses, 'Next Page', params: params, remote: true) %>");
+<% end %>

@@ -15,18 +15,18 @@
 </div>
 
 <%= javascript_tag do %>
-$("select#field_select").change(function(){
-        $.ajax({
-            url: "/consults/search",
-            type: "GET",
-            data: {specialized_field_id: $(":selected").attr("value")},
-            dataType: "html",
-            success: function(data) {
-               $('.infinite-table').html(data)
-            },
-            error: function(data) {
-                alert("エラーが発生しました");
-            }
-        });
+  $("select#field_select").change(function(){
+     $.ajax({
+       url: "/consults/search",
+       type: "GET",
+       data: {specialized_field_id: $(":selected").attr("value")},
+       dataType: "html",
+       success: function(data) {
+         $('.infinite-table').html(data)
+       },
+       error: function(data) {
+         alert("エラーが発生しました");
+       }
     });
+  });
 <% end %>

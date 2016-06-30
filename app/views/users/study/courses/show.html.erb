@@ -1,4 +1,41 @@
-<%= show_for @course do |s| %>
-<% end %>
+<div class="main_box3">
+  <div class="main_box_in">
+    <h2><%= @course.name %></h2>
+    <div class="movie_wrap">
+      <%= image_tag(@course.attachment.image.url(:large)) if @course.attachment %>
+    </div>
 
-<%= link_to 'Back', study_courses_path %>
+    <h2>講義内容</h2>
+    <p><%= h nl2br(@course.summary) %></p>
+
+    <h2>講師</h2>
+    <p><%= @course.parent.name %></p>
+
+    <h2>講義資料</h2>
+    <p>レジュメ（PDF2ページ）</p>
+
+    <h2>全講義パック（全<%= @course.tutorials.size %>件）</h2>
+    <p>「<%= @course.name %> （全<%= @course.tutorials.size %>回）」が1か月間見放題になるお得なパックです。※「Mamoru」を退会するとパックは無効となりますのでご注意ください。</p>
+    <p class="price">視聴料金:<%= number_to_currency @course.price %> <span class="pack_button"><a href="payment.html">購入</a></span></p>
+    
+    <h2>講義<span>全<%= @course.tutorials.size %>回</span></h2>
+    <% @course.tutorials.each do |tutorial| %>
+      <div class="three">
+        <div class="youtube">
+          <%= image_tag tutorial.attachment.video.url(:medium)%>          
+        </div>
+        <div class="movie_title">
+          <h3><a href="movie.html"><%= tutorial.title.slice(0,20) + '・・・' %></a></h3>
+        </div>
+        <div class="movie_title">
+          <p>講義時間:30分</p>
+          <p>視聴料金:1,000円（1,000ポイント）</p>
+          <p><%= tutorial.summary.slice(0,80) + '・・・' %></p>
+          <div class="movie_button"><a href="payment.html">購入</a></div>
+        </div>
+      </div>
+    <% end %>  
+  </div>
+</div>
+
+<%= link_to 'Back', '/study' %>
