@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160630081155) do
+ActiveRecord::Schema.define(version: 20160704034049) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 20160630081155) do
     t.integer  "video_file_size",     limit: 4
     t.string   "video_content_type",  limit: 255
     t.string   "video_file_name",     limit: 255
+    t.string   "video_duration",      limit: 255
     t.boolean  "deleted",                         default: false
     t.datetime "created_at",                                      null: false
     t.datetime "updated_at",                                      null: false
