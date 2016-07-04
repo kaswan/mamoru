@@ -27,8 +27,8 @@ class Attachment < ActiveRecord::Base
           :geometry => "640x480",
           :format => 'mp4'
         },
-        :thumb => { :geometry => "160x120", :format => 'jpeg', :time => 10},
-        :medium => { :geometry => "276x156", :format => 'jpeg', :time => 15}
+        :thumb => { :geometry => "276x156", :format => 'jpeg', :time => 10},
+        #:medium => { :geometry => "276x156", :format => 'jpeg', :time => 15}
     }, :processors => [:transcoder]
       
   has_attached_file :upload
@@ -38,7 +38,18 @@ class Attachment < ActiveRecord::Base
   validates_attachment :upload, content_type: { content_type: "application/pdf" }
     
 #  do_not_validate_attachment_file_type :image
-    before_save do
-      self.parent = self.relation.parent unless self.parent
+  before_save do
+    self.parent = self.relation.parent unless self.parent
+  end
+    
+  before_post_process do
+    unless video.queued_for_write[:original].nil?
+      file = video.queued_for_write[:original].path
+      self.video_duration = Paperclip.run("ffprobe", '-i %s -show_entries format=duration -v quiet -of csv="p=0"' % file).to_f
     end
+  end
+  
+  
+  
+  
 end

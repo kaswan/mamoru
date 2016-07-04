@@ -164,6 +164,7 @@ GEM
     paperclip-ffmpeg (1.2.0)
       paperclip (>= 2.5.2)
       rails
+    posix-spawn (0.3.11)
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
     rack (1.6.4)
@@ -270,6 +271,7 @@ DEPENDENCIES
   paperclip (~> 4.2)
   paperclip-av-transcoder
   paperclip-ffmpeg
+  posix-spawn
   quiet_assets
   rails (= 4.2.4)
   sass-rails (~> 5.0)

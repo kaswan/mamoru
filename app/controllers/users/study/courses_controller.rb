@@ -1,5 +1,5 @@
 class Users::Study::CoursesController < Users::ApplicationController
-  before_action :set_course, only: [:show]
+  before_action :set_course, only: [:show, :tutorial]
 
   # GET /users/study/courses
   # GET /users/study/courses.json
@@ -21,6 +21,9 @@ class Users::Study::CoursesController < Users::ApplicationController
     render layout: false if request.xhr?
   end
     
+  def tutorial
+    @tutorial = @course.tutorials.find params[:tutorial_id]
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_course

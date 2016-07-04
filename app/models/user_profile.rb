@@ -14,8 +14,7 @@ class UserProfile < ActiveRecord::Base
   before_validation :replace_address, :if => Proc.new {|profile| !profile.address.blank?}
   before_validation :strict_furigana
   
-  # after_validation
-  after_validation :postal_format, :if => Proc.new {|profile| !profile.postalcode.blank?}
+  before_validation :postal_format, :if => Proc.new {|profile| !profile.postalcode.blank?}
     
     
   # before_validation

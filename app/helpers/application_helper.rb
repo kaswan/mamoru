@@ -12,4 +12,16 @@ module ApplicationHelper
       end
       hour
   end
+  
+  def formatted_video_duration total_seconds
+    mm, ss = total_seconds.to_i.divmod(60)  
+    hh, mm = mm.divmod(60)
+    if hh > 0
+      return "%d時間:%d分:%d秒" % [hh, mm, ss]
+    elsif mm > 0
+      return "%d分:%d秒" % [mm, ss]
+    else
+      return "%d秒" % [ss]
+    end
+  end
 end

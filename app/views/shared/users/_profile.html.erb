@@ -1,7 +1,7 @@
 <%= show_for @user do |user| %>
   <%= user.attribute :name %>
   <%= user.attribute :email %>
-  <%= user.attribute :gender, :value => :camelize %>
+  <%= @user.try(:gender).camelize if @user.try(:gender)%>
 
   <%= user.attribute :image do %>
     <%= image_tag((@user.image.exists? ? @user.image.url(:square) : @user.image_url), class: 'media-object') if @user.image.url %>

@@ -58,6 +58,7 @@ gem 'omniauth-yahoojp'
 gem "omniauth-google-oauth2"
 gem 'omniauth-facebook'
 
+gem 'posix-spawn'
 gem 'aws-sdk', '< 2.0'
 gem "paperclip", "~> 4.2"
 gem 'paperclip-av-transcoder'

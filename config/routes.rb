@@ -39,12 +39,10 @@ Rails.application.routes.draw do
     root :to => 'welcome#index'
     resources :profiles, only: [:index, :edit, :update]
     resources :posts
-    resources :consults do
-      member do
-        get :appointment
-      end
+    resources :consults do      
       collection do
         get :search
+        get ':id/appointment/:schedule_id/:schedule_entity_id', :action => :appointment, :as => 'appointment'
       end
     end
     
@@ -53,6 +51,7 @@ Rails.application.routes.draw do
       resources :courses, only: [:index, :show] do
         collection do
           get :search
+          get ':id/tutorial/:tutorial_id', :action => :tutorial, :as => 'tutorial'
         end
       end
     end

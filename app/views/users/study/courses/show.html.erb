@@ -22,16 +22,14 @@
     <% @course.tutorials.each do |tutorial| %>
       <div class="three">
         <div class="youtube">
-          <%= image_tag tutorial.attachment.video.url(:medium)%>          
+          <%= image_tag tutorial.attachment.video.url(:thumb)%>          
         </div>
         <div class="movie_title">
-          <h3><a href="movie.html"><%= tutorial.title.slice(0,20) + '・・・' %></a></h3>
+          <h3><a href="movie.html"><%= link_to tutorial.title.slice(0,20) + '・・・', tutorial_study_courses_path(:id => @course.id, :tutorial_id => tutorial.id) %></a></h3>
         </div>
         <div class="movie_title">
-          <p>講義時間:30分</p>
-          <p>視聴料金:1,000円（1,000ポイント）</p>
+          <p>講義時間: <%= formatted_video_duration(tutorial.attachment.video_duration) %></p>
           <p><%= tutorial.summary.slice(0,80) + '・・・' %></p>
-          <div class="movie_button"><a href="payment.html">購入</a></div>
         </div>
       </div>
     <% end %>  
