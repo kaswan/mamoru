@@ -42,7 +42,9 @@ Rails.application.routes.draw do
     resources :consults do      
       collection do
         get :search
-        get ':id/appointment/:schedule_id/:schedule_entity_id', :action => :appointment, :as => 'appointment'
+        get ':id/:specialized_field_id', :action => :show, :as => 'detail'
+        get ':id/appointment/:specialized_field_id/:schedule_entity_id', :action => :appointment, :as => 'appointment'
+        post ':id/appointment/:specialized_field_id/:schedule_entity_id', :action => :appointment_create, :as => 'appointment_create'
       end
     end
     

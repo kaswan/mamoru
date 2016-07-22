@@ -37,7 +37,7 @@
              <% (Date.today..Date.today+7).each do |day| %>
                <% date_time = Time.parse("#{day} #{time}") %>
                <% day = l(day, format: :short) %>
-               <td><%= raw((date_time < Time.now()) ? '&#x00D7;' : schedule_date_time[day].blank? ? '&#x00D7;' : schedule_date_time[day][time].blank? ? '&#x00D7;' : (link_to '&#9678;'.html_safe, appointment_consults_path(id: @specialist.id, schedule_id: schedule_date_time[day][time].first.schedule_id, schedule_entity_id: schedule_date_time[day][time].first.id), class: 'yes')) %></td>
+               <td><%= raw((date_time < Time.now()) ? '&#x00D7;' : schedule_date_time[day].blank? ? '&#x00D7;' : schedule_date_time[day][time].blank? ? '&#x00D7;' : (link_to '&#9678;'.html_safe, appointment_consults_path(id: @specialist.id, specialized_field_id: @specialized_field.try(:id) || 0, schedule_entity_id: schedule_date_time[day][time].first.id), class: 'yes')) %></td>
              <% end %>
            </tr>
          <% end %>

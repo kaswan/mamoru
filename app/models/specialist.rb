@@ -35,6 +35,9 @@ class Specialist < ActiveRecord::Base
   has_many :reservations, class_name: 'ScheduleEntity', as: :client
   has_many :specialized_field_relations, dependent: :destroy
   
+  has_many :send_requests, class_name: 'Conversation', as: :sender
+  has_many :get_requests, class_name: 'Conversation', as: :recipient
+    
   accepts_nested_attributes_for :specialist_profile
   accepts_nested_attributes_for :attachments, allow_destroy: true
   accepts_nested_attributes_for :specialized_field_relations, allow_destroy: true

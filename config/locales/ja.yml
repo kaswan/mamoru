@@ -218,6 +218,7 @@ ja:
       schedule: "スケジュール"
       study_course: "講座情報"
       tutorial: "講義情報"
+      conversation: "テレビチャット"
     attributes:
       user:
         name: "名前"
@@ -350,4 +351,5 @@ ja:
         attachment:
           upload: "講義資料"
           video: "動画アップロード"
-          
+      conversation:
+        remarks: "相談内容"    

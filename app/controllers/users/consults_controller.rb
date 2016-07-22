@@ -1,10 +1,10 @@
 class Users::ConsultsController < Users::ApplicationController
-  before_action :set_specialist, only: [:show, :edit, :update, :destroy]
+  before_action :set_specialist, only: [:show, :edit, :update, :destroy, :appointment]
 
   # GET /users/consults
   # GET /users/consults.json
   def index
-    @specialists = Specialist.joins(:specialist_profile).all.page(params[:page] || 1).per(2)
+    #@specialists = Specialist.joins(:specialist_profile).all.page(params[:page] || 1).per(2)
   end
 
   # GET /users/consults/1
@@ -65,24 +65,51 @@ class Users::ConsultsController < Users::ApplicationController
     if params[:specialized_field_id] && !params[:specialized_field_id].blank?
       @specialists = Specialist.joins(:specialist_profile, :specialized_field_relations).where(specialized_field_relations: {specialized_field_id: params[:specialized_field_id]}).all.page(params[:page] || 1).per(2)
     else
-      @specialists = Specialist.joins(:specialist_profile).all.page(params[:page] || 1).per(2)
+      #@specialists = Specialist.joins(:specialist_profile).all.page(params[:page] || 1).per(2)
     end
     render layout: false if request.xhr?
   end
   
   # 予約する
-  def appointment   
+  def appointment
+    @schedule_entity = ScheduleEntity.find params[:schedule_entity_id]   
+    @conversation = Conversation.new
+  end
+  
+  def appointment_create
+    @schedule_entity = ScheduleEntity.find params[:schedule_entity_id]   
+    @conversation = Conversation.new(appointment_params)
     
+    respond_to do |format|
+      if @conversation.save
+        @schedule_entity.client = current_user
+        @schedule_entity.conversation_id = @conversation.id
+        @schedule_entity.editable = false
+        @schedule_entity.save
+        format.html { redirect_to consults_path, notice: 'Consult was successfully created.' }
+        format.json { render :show, status: :created, location: @conversation }
+      else
+        format.html { render :appointment }
+        format.json { render json: @conversation.errors, status: :unprocessable_entity }
+      end
+    end
   end
   
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_specialist
       @specialist = Specialist.find(params[:id])
+      @specialized_field = SpecializedField.find(params[:specialized_field_id]) if params[:specialized_field_id]  
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def specialist_params
       params.fetch(:specialist, {})
+    end
+    
+    def appointment_params
+      params.require(:conversation).permit(:token, :sender_type, :sender_id, :recipient_type, :recipient_id, :specialized_field_id, :remarks, 
+                    schedule_entity_attributes: [:client_type, :client_id, :conversation_id, :editable] 
+                    )
     end
 end

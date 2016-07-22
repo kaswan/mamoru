@@ -82,3 +82,5 @@ gem "simple_calendar", "~> 2.0"
 
 gem 'fancybox2-rails'
 gem 'holiday_jp'
+
+gem "squeel"

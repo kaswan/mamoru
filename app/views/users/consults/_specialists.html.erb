@@ -1,6 +1,6 @@
 <% @specialists.includes(:specialist_profile, :schedules => :schedule_entities).each do |specialist| %>
   <% schedule_date_time = {} %>
-  <% specialist.schedules.joins(:schedule_entities).where(:schedule_type => 'Reservation', :schedule_entities => {:editable => true}).order(:start_date).map(&:schedule_entities).each{|entity| entity.order(:start_time).each {|e| ((schedule_date_time[l(e.schedule_date,format: :long)] ||={})[e.start_time.strftime("%H:%M")] ||=[]) << e.id }} %>
+  <% specialist.schedules.joins(:schedule_entities).where{(start_date >= Date.today) & (TIMESTAMP(schedule_entities.schedule_date, schedule_entities.start_time) > Time.now())}.where(:schedule_type => 'Reservation', :schedule_entities => {:editable => true}).order(:start_date).map(&:schedule_entities).each{|entity| entity.where{TIMESTAMP(schedule_date, start_time) > Time.now()}.order(:start_time).each {|e| ((schedule_date_time[l(e.schedule_date,format: :long)] ||={})[e.start_time.strftime("%H:%M")] ||=[]) << e.id }} %>
     
   <div class="two2">
     <div class="stwo">
@@ -16,7 +16,7 @@
         	<% end unless schedule_date_time.first.nil? %>
         </div>
       </div>
-      <div class="course_button1"><%= link_to '詳細をみて予約', {controller: :consults, action:  :show, id: specialist} %></div>
+      <div class="course_button1"><%= link_to '詳細をみて予約', detail_consults_path(id: specialist, specialized_field_id: params[:specialized_field_id] || 0 ) %></div>
     </div>
     <div class="course_title">
       <p><%=specialist.name + "（#{specialist.specialist_profile.furigana}）"%></p>

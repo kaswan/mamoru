@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160704034049) do
+ActiveRecord::Schema.define(version: 20160722052349) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -82,6 +82,21 @@ ActiveRecord::Schema.define(version: 20160704034049) do
 
   add_index "contact_histories", ["admin_user_id"], name: "index_contact_histories_on_admin_user_id", using: :btree
   add_index "contact_histories", ["user_id"], name: "index_contact_histories_on_user_id", using: :btree
+
+  create_table "conversations", force: :cascade do |t|
+    t.string   "token",                limit: 255
+    t.string   "sender_type",          limit: 255
+    t.integer  "sender_id",            limit: 4
+    t.string   "recipient_type",       limit: 255
+    t.integer  "recipient_id",         limit: 4
+    t.integer  "specialized_field_id", limit: 4
+    t.text     "remarks",              limit: 65535
+    t.datetime "start_at"
+    t.datetime "end_at"
+    t.boolean  "closed",                             default: false
+    t.datetime "created_at",                                         null: false
+    t.datetime "updated_at",                                         null: false
+  end
 
   create_table "enquiries", force: :cascade do |t|
     t.string   "parent_type", limit: 255,                   null: false
@@ -222,18 +237,19 @@ ActiveRecord::Schema.define(version: 20160704034049) do
   end
 
   create_table "schedule_entities", force: :cascade do |t|
-    t.integer  "schedule_id",   limit: 4,                     null: false
-    t.string   "client_type",   limit: 255
-    t.integer  "client_id",     limit: 4
-    t.string   "title",         limit: 255
-    t.text     "remark",        limit: 65535
+    t.integer  "schedule_id",     limit: 4,                     null: false
+    t.string   "client_type",     limit: 255
+    t.integer  "client_id",       limit: 4
+    t.integer  "conversation_id", limit: 4
+    t.string   "title",           limit: 255
+    t.text     "remark",          limit: 65535
     t.date     "schedule_date"
     t.time     "start_time"
     t.time     "end_time"
-    t.boolean  "editable",                    default: true
-    t.boolean  "deleted",                     default: false
-    t.datetime "created_at",                                  null: false
-    t.datetime "updated_at",                                  null: false
+    t.boolean  "editable",                      default: true
+    t.boolean  "deleted",                       default: false
+    t.datetime "created_at",                                    null: false
+    t.datetime "updated_at",                                    null: false
   end
 
   create_table "schedules", force: :cascade do |t|

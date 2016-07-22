@@ -34,6 +34,9 @@ class AdminUser < ActiveRecord::Base
   has_many :schedule_entities, through: :schedules
   has_many :reservations, class_name: 'ScheduleEntity', as: :client
     
+  has_many :send_requests, class_name: 'Conversation', as: :sender
+  has_many :get_requests, class_name: 'Conversation', as: :recipient
+    
   accepts_nested_attributes_for :supervised_users, allow_destroy: true  
   accepts_nested_attributes_for :attachments, allow_destroy: true
           

@@ -38,6 +38,9 @@ class User < ActiveRecord::Base
   has_many :schedule_entities, through: :schedules
   has_many :reservations, class_name: 'ScheduleEntity', as: :client
   
+  has_many :send_requests, class_name: 'Conversation', as: :sender
+  has_many :get_requests, class_name: 'Conversation', as: :recipient
+  
   accepts_nested_attributes_for :user_profile
   accepts_nested_attributes_for :inheritor_informations, allow_destroy: true
   accepts_nested_attributes_for :property_informations, allow_destroy: true

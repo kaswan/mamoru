@@ -1,0 +1,41 @@
+<div class="main_box2">
+  <div class="main_box_in">
+    <h1>専門家相談予約</h1>
+    <h2>相談内容の記入</h2>
+    <%= simple_form_for(@conversation, url: appointment_create_consults_path(id: @specialist.id, specialized_field_id: @specialized_field.try(:id) || 0, schedule_entity_id: @schedule_entity.id)) do |f| %>
+      <%= f.error_notification %>
+      <table class="user">
+        <tr>
+          <th>相談カテゴリ</th>
+          <td><%= @specialized_field.try(:name)%>に関する相談</td>
+        </tr>
+        <tr>
+          <th>専門家</th>
+          <td><%= @specialist.name %></td>
+        </tr>
+        <tr>
+          <th>相談日時</th>
+          <td><%= l @schedule_entity.schedule_date, format: :long %> <%= l @schedule_entity.start_time, format: :hour_minute %> </td>
+        </tr>
+      </table>
+
+      <table class="user">
+        <tr>
+          <th class="active">相談内容</th>
+          <td>
+             <%= f.input :remarks, label: false, placeholder: '相談内容を入力してください' %>
+          </td>
+        </tr>
+      </table>
+
+      <div class="top_second">
+        <%= f.hidden_field :sender_type, value: current_user.class %>
+        <%= f.hidden_field :sender_id, value: current_user.id %>
+        <%= f.hidden_field :recipient_type, value: @specialist.class %>
+        <%= f.hidden_field :recipient_id, value: @specialist.id %>
+        <%= f.hidden_field :specialized_field_id, value: @specialized_field.id %>
+        <%= f.button :submit, '予約内容を確認' %>
+      </div>
+    <% end %>
+  </div>
+</div>
