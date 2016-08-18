@@ -1,0 +1,169 @@
+@charset "utf-8";
+
+@media screen and (min-width:800px){
+/*main*/
+main { width:100%; }
+main h1 {font-size:2.0em; margin:5% auto 10px;  text-align:center;}
+main h1 span.fname { display:block; color:#CCC; font-size:0.6em; letter-spacing:0.1em;}
+main h2{font-size:2.0em; margin:40px auto;  text-align:center;}
+main h3{font-size:1.1em; margin:20px auto;  text-align:center;}
+main .contents { width:98%;max-width:1200px;margin:auto;overflow:hidden; position:relative; }
+main .center { width:100%; max-width:600px; text-align:center; margin:auto; }
+
+main .contents div.button { width:80%; max-width:400px; height:50px; margin:30px auto 0; background:#333; border-radius:5px;}
+main .contents div.button:hover { background:#666;}
+main .contents div.button a { display:block; width:100%; height:auto;  font-size:1.2em; color:#fff; text-align:center; line-height:50px;}
+main .contents .w960 { width:100%; max-width:960px; padding:0; margin:60px auto; position:relative;}
+main .contents .w960 img { width:100%; height:auto;}
+
+/*timeline*/
+
+/*/timeline*/
+
+/*concierge*/
+main .theme { width:100%; height:auto; margin:auto; padding-bottom:0; border-bottom:1px solid #ccc; overflow:hidden;}
+main .theme .sub { float:left; margin:0; margin-left:1%; width:55%; min-width:500px; text-align:left;}
+main .theme .sub h1 {text-align:left; margin:0 0 10px;}
+main .concierge { width:39%; max-width:400px; padding:1%; margin:10px 0; margin-right:1%; border:1px solid #ccc; float:right;}
+main .concierge h2 { margin:0 auto 10px; font-size:1.1em;}
+main .concierge .pic { width:15%; padding:0; display:inline-block; position:relative; vertical-align: middle;*zoom: 1; /* for IE6-7 */*display: inline; /* for IE6-7 */ }
+main .concierge .pic img { width:100%; height:auto; }
+main .concierge .ctxt { width:82%; margin-left:1%; display:inline-block; position:relative; text-align:center; vertical-align: middle;*zoom: 1; /* for IE6-7 */*display: inline; /* for IE6-7 */ font-size:0.9em; line-height:1em; }
+main .concierge .ctxt a {  margin:auto; padding:0 5px; font-size:0.9em; margin-left:10px; background:#333; border-radius:5px; color:#fff; text-align:center;}
+main .concierge .box { text-align: justify;text-justify: distribute-all-lines; width:100%; margin-top:5px;}
+main .concierge .box > div.two{display:inline-block; width:49%;height:auto; font-size:0.9em; line-height:1em; background:#fff; border-radius:5px; padding:0; text-align:center;vertical-align: middle; position:relative;}
+main .concierge .box > div.two span { display:inline-block;vertical-align: middle; margin-right:5px;*zoom: 1; /* for IE6-7 */*display: inline; /* for IE6-7 */}
+/*/concierge*/
+
+/*checklist*/
+main div.navi{ text-align: justify;text-justify: distribute-all-lines; width:100%; margin:40px auto;}
+main div.navi:after {content:"";	display: inline-block;	width: 100%;line-height:0;height: 0;}
+main div.navi > div {display:inline-block; width:13%; height:auto; vertical-align: middle;*zoom: 1; /* for IE6-7 */*display: inline; /* for IE6-7 */ }
+main div.navi > div a {display:block; width:100%; height:auto; background:#333; padding:40% 0; color:#fff; font-size:1.0em;text-align:center; border-radius:50%; vertical-align: middle;}
+main div.navi > div a:hover {background:#666;}
+main .contents .w960 h2.title { text-align:left; padding:1%; font-size:1.4em; border-bottom:1px dotted #ccc; padding-bottom:5px;}
+main .contents .w960 .check_item_list { width:100%; overflow:hidden; margin:30px auto;}
+main .contents .w960 .check_item_list .check_item { float:left;}
+main .contents .w960 .check_item_list .check_item > span {font-size:2em; color:#FF0000; margin-right:10px; font-weight:bold;vertical-align: middle;*zoom: 1; /* for IE6-7 */*display: inline; /* for IE6-7 */ }
+main .contents .w960 .check_item_list .status { float:right;}
+main .contents .w960 .check_item_list .status2 { clear:both; display:block; padding-top:20px;}
+main .contents .w960 .check_item_list .status2 label {display:inline-block;vertical-align: middle;*zoom: 1; margin:5px auto; margin-left:10px; /* for IE6-7 */*display: inline; /* for IE6-7 */white-space: nowrap;}
+main .contents .w960 .check_item_list .modal { display:block; width:94%; margin:20px auto 0; padding:2%; border:1px solid #ccc; background:#f5f5f5; border-radius:5px;}
+
+/*/checklist*/
+
+/*profile*/
+main table {width:100%; clear:both;}
+main table th {width:18%; padding:20px 1%;}
+main table td {width:78%; padding:20px 1%;}
+main table td span.inp {width:80%;display:inline-block; padding:0 1%;vertical-align: middle;*zoom: 1; /* for IE6-7 */*display: inline; /* for IE6-7 */}
+main table td span.henko {width:18%;display:inline-block; margin:0; padding:0;vertical-align: middle;*zoom: 1; /* for IE6-7 */*display: inline; /* for IE6-7 */}
+main table td span.henko a {display:block;width:90%; padding:5px 0; margin:0; background:#333; border-radius:5px; color:#fff; text-align:center;}
+main table td span.inp2 {width:98%;display:block; padding:0 1%;}
+main table td span.henko2 {width:98%;display:block; padding:0 1%;padding-top:2%; }
+main table td span.henko2 a {display:block;width:60%; max-width:400px; padding:5px 0; margin:auto; background:#333; border-radius:5px; color:#fff; text-align:center;}
+main table td input[type="text"] {width:98%; padding:1%;}
+main table td select {width:60%; padding:1%;}
+main table td label {display:inline-block;vertical-align: middle;*zoom: 1; margin:5px auto; margin-left:10px; /* for IE6-7 */*display: inline; /* for IE6-7 */white-space: nowrap;}
+main table td label.blo {display:block;margin:20px auto;}
+
+main table td textarea {width:98%; height:300px; padding:1%;}
+main .contents .w960 .check_item_list .status2 label {display:inline-block;vertical-align: middle;*zoom: 1; margin:5px auto; margin-left:10px; /* for IE6-7 */*display: inline; /* for IE6-7 */white-space: nowrap;}
+main .contents .box { text-align: justify;text-justify: distribute-all-lines;}
+main .contents .box:after {content:"";	display: inline-block;	width: 100%;line-height:0;height: 0;}
+main .contents .box > div.two{display:inline-block; width:49%;height:auto; background:#fff; padding:1% 0; text-align:left;vertical-align: top; position:relative;}
+/*/profile*/
+
+/*note*/
+main table.bon {width:100%; margin-bottom:50px; border-collapse:collapse;}
+main table.bon th {width:18%; padding:20px 1%; border:1px solid #CCC; background:#f5f5f5;}
+main table.bon td {width:78%; padding:20px 1%; border:1px solid #CCC;}
+main table.bon3 {width:100%; margin-bottom:50px; border-collapse:collapse;}
+main table.bon3 th {display:block;width:98%; padding:20px 1%; border:1px solid #CCC; border-bottom:none; background:#f5f5f5;}
+main table.bon3 td {display:block;width:98%;  padding:20px 1%; border:1px solid #CCC;}
+main .contents .w960 .add_b {text-align:left; margin:0 auto 30px; }
+main .contents .w960 .add_b a { background:#333; border-radius:5px; color:#fff; text-align:center; padding:5px 20px;}
+main .contents .w960 .info { font-size:1.4em; font-weight:bold; display:inline-block;vertical-align: middle;*zoom: 1; margin:5px auto; margin-left:10px; /* for IE6-7 */*display: inline; /* for IE6-7 */ margin-bottom:10px;}
+main .contents .w960 .add_b2 { display:inline-block;vertical-align: middle;*zoom: 1; /* for IE6-7 */*display: inline; /* for IE6-7 */ margin-bottom:20px;}
+main .contents .w960 .add_b2 a { background:#333; border-radius:5px; color:#fff; text-align:center; padding:3px 20px;}
+main .contents .w960 .henko_b { display:inline-block;vertical-align: middle;*zoom: 1; /* for IE6-7 */*display: inline; /* for IE6-7 */ margin-bottom:10px; margin-left:20px;}
+main .contents .w960 .henko_b a { background:#333; border-radius:5px; color:#fff; text-align:center; padding:3px 20px;}
+
+main table.bon2 {width:100%; margin-bottom:50px; border-collapse:collapse;}
+main table.bon2 thead td {width:14%; padding:20px 1%; text-align:center; border:1px solid #CCC;}
+main table.bon2 tbody td {width:14%; padding:20px 1%; text-align:center; border:1px solid #CCC;}
+main table.bon2 tbody td a{ display:inline-block;vertical-align: middle;*zoom: 1; /* for IE6-7 */*display: inline; /* for IE6-7 */ margin:10px;}
+/*/note*/
+
+/*/main*/
+}
+@media screen and (max-width:799px){
+/*main*/
+main { width:100%; }
+main h1 {font-size:1.0em; margin:5% auto 10px;  text-align:center;}
+main h1 span.fname { display:block; color:#CCC; font-size:0.6em; letter-spacing:0.1em;}
+main h2{font-size:1.0em; margin:40px auto;  text-align:center;}
+main h3{font-size:1.0em; margin:20px auto;  text-align:center;}
+main .contents { width:98%;margin:auto;overflow:hidden; position:relative; }
+main .center { width:98%; text-align:center; font-size:0.9em; margin:auto; }
+
+main .contents div.button { width:80%; max-width:400px; height:50px; margin:30px auto 0; background:#333; border-radius:5px;}
+main .contents div.button:hover { background:#666;}
+main .contents div.button a { display:block; width:100%; height:auto;  font-size:1.0em; color:#fff; text-align:center; line-height:50px;}
+main .contents .w960 { width:100%;padding:0; margin:60px auto;}
+main .contents .w960 img { width:100%; height:auto;}
+
+/*timeline*/
+
+/*/timeline*/
+
+/*concierge*/
+main .theme { width:100%; height:auto; margin:auto; padding-bottom:0; border-bottom:1px solid #ccc; overflow:hidden;}
+main .theme .sub { margin:auto; width:100%; text-align:center; font-size:0.9em;}
+main .theme .sub h1 {text-align:center; margin:0 0 10px;}
+main .concierge { width:96%;  padding:1%; margin:10px auto; border:1px solid #ccc;}
+main .concierge h2 { margin:0 auto 10px; font-size:1.0em;}
+main .concierge .pic { width:15%; padding:0; display:inline-block; position:relative; vertical-align: middle;*zoom: 1; /* for IE6-7 */*display: inline; /* for IE6-7 */ }
+main .concierge .pic img { width:100%; height:auto; }
+main .concierge .ctxt { width:82%; margin-left:1%; display:inline-block; position:relative; text-align:center; vertical-align: middle;*zoom: 1; /* for IE6-7 */*display: inline; /* for IE6-7 */ font-size:0.9em; line-height:1em; }
+main .concierge .ctxt a {  margin:auto; padding:0 5px; font-size:0.9em; margin-left:10px; background:#333; border-radius:5px; color:#fff; text-align:center;}
+main .concierge .box { text-align: justify;text-justify: distribute-all-lines; width:100%; margin-top:5px;}
+main .concierge .box > div.two{display:inline-block; width:49%;height:auto; font-size:0.9em; line-height:1em; background:#fff; border-radius:5px; padding:0; text-align:center;vertical-align: middle; position:relative;}
+main .concierge .box > div.two span { display:block;}
+/*/concierge*/
+
+/*checklist*/
+main div.navi{margin:40px auto;}
+main div.navi > div {display:inline-block; width:30%; height:auto; vertical-align: middle;*zoom: 1; /* for IE6-7 */*display: inline; /* for IE6-7 */ }
+main div.navi > div a {display:block; width:100%; height:auto; background:#333; padding:40% 0; color:#fff; font-size:1.0em;text-align:center; border-radius:50%; vertical-align: middle;}
+main div.navi > div a:hover {background:#666;}
+main .contents .w960 h2.title { text-align:left; padding:1%; font-size:1.0em; border-bottom:1px dotted #ccc; padding-bottom:5px;}
+main .contents .w960 .check_item_list { width:100%; overflow:hidden; margin:30px auto;}
+main .contents .w960 .check_item_list .check_item { float:left;}
+main .contents .w960 .check_item_list .txtdec { text-decoration: line-through;}
+main .contents .w960 .check_item_list .check_item > span {font-size:1em; color:#FF0000; margin-right:10px; font-weight:bold;vertical-align: middle;*zoom: 1; /* for IE6-7 */*display: inline; /* for IE6-7 */ }
+main .contents .w960 .check_item_list .status { clear:both;display:block; margin:auto; text-align:center; padding-top:20px;}
+main .contents .w960 .check_item_list .status2 { clear:both; display:block; padding-top:20px;}
+main .contents .w960 .check_item_list .status2 label {display:block;}
+main .contents .w960 .check_item_list .modal { display:block; width:94%; margin:20px auto 0; padding:2%; border:1px solid #ccc; background:#f5f5f5; border-radius:5px;}
+
+
+/*/checklist*/
+
+/*profile*/
+main table {width:98%; margin:auto;}
+main table th {display:block; width:98%; padding:20px 1% 10px;}
+main table td {display:block; width:98%; padding:10px 1% 20px;}
+main table td span.inp {width:100%;display:block; text-align:center;}
+main table td span.henko {width:100%; max-width:400px; display:block; margin:10px auto;}
+main table td span.henko a {display:block; margin:auto; width:60%; padding:5px 0; background:#333; border-radius:5px; color:#fff; text-align:center;}
+main table td input[type="text"] {width:98%; padding:1%;}
+main table td select {width:60%; padding:1%;}
+main table td label {display:inline-block;vertical-align: middle;*zoom: 1; margin:5px auto; margin-left:10px; /* for IE6-7 */*display: inline; /* for IE6-7 */white-space: nowrap;}
+main table td textarea {width:98%; height:300px; padding:1%;}
+main .contents .w960 .check_item_list .status2 label {display:inline-block;vertical-align: middle;*zoom: 1; margin:5px auto; margin-left:10px; /* for IE6-7 */*display: inline; /* for IE6-7 */white-space: nowrap;}
+main .contents .box > div.two{display:block; width:80%;height:auto; margin:auto; background:#fff; padding:1% 0; text-align:left; position:relative;}
+/*/profile*/
+
+/*/main*/
+}

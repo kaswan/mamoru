@@ -1,3 +1,5 @@
+<div id="head">
 <%= simple_form_for(@post, html: { multipart: true, class: "post_edit dropzone"}) do |f|  %>
-<%= render "/shared/posts/form", :f => f %>
+  <%= render "/shared/posts/form", :f => f %>
 <% end %>
+</div>

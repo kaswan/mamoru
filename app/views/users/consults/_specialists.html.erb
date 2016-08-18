@@ -1,3 +1,4 @@
+<div class="box2">
 <% @specialists.includes(:specialist_profile, :schedules => :schedule_entities).each do |specialist| %>
   <% schedule_date_time = {} %>
   <% specialist.schedules.joins(:schedule_entities).where{(start_date >= Date.today) & (TIMESTAMP(schedule_entities.schedule_date, schedule_entities.start_time) > Time.now())}.where(:schedule_type => 'Reservation', :schedule_entities => {:editable => true}).order(:start_date).map(&:schedule_entities).each{|entity| entity.where{TIMESTAMP(schedule_date, start_time) > Time.now()}.order(:start_time).each {|e| ((schedule_date_time[l(e.schedule_date,format: :long)] ||={})[e.start_time.strftime("%H:%M")] ||=[]) << e.id }} %>
@@ -12,7 +13,9 @@
       	<div id="nearest-date-<%= specialist.id %>" style="min-width:300px">
       	  <h2><%= schedule_date_time.first.first unless schedule_date_time.first.nil? %></h2>
       	  <% schedule_date_time.first.last.each do |time| %>
-            <span class="btn btn-success btn-sm"><%= link_to time.first, {action: :show, id: time.last.first} %></span>
+            <span class="btn btn-success btn-sm">
+              <%= link_to time.first, appointment_consults_path(id: specialist.id, specialized_field_id: params[:specialized_field_id] || 0, schedule_entity_id: time.last.first) %>
+            </span>
         	<% end unless schedule_date_time.first.nil? %>
         </div>
       </div>
@@ -26,3 +29,4 @@
     </div>
   </div>  
 <% end %>
+</div>

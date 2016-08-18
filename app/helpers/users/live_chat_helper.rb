@@ -1,0 +1,2 @@
+module Users::LiveChatHelper
+end

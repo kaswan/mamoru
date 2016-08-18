@@ -45,9 +45,16 @@ Rails.application.routes.draw do
         get ':id/:specialized_field_id', :action => :show, :as => 'detail'
         get ':id/appointment/:specialized_field_id/:schedule_entity_id', :action => :appointment, :as => 'appointment'
         post ':id/appointment/:specialized_field_id/:schedule_entity_id', :action => :appointment_create, :as => 'appointment_create'
+        get :reservations
       end
     end
     
+    resources :live_chat, only: [:index, :show, :update] do      
+      collection do
+        get :connect
+      end
+    end
+      
     namespace :study do
       root :to => 'courses#index'
       resources :courses, only: [:index, :show] do

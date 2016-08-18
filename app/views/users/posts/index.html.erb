@@ -1,11 +1,46 @@
+<style>
+label > input{ /* HIDE RADIO */
+  /*visibility: hidden; /* Makes input not-clickable */
+   z-index:999;
+  position: absolute; /* Remove input from document flow */
+}
+label > input + img{ /* IMAGE STYLES */
+  cursor:pointer;
+  border:2px solid transparent;
+}
+label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
+  border:2px solid #f00;
+}
+.dz-default {
+  display:none;
+}
+
+.index{
+  width:100%;
+  margin: 5px;
+  margin-bottom:10px;
+  height:auto;
+  
+}
+.index div {
+  float:left;
+  width:100px;
+  height: auto;
+  margin: 5px;
+  margin-bottom: inherit;
+  background-color: white;
+  border: 1px solid #bdbdbd;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -moz-box-shadow: 0 0 10px #bdbdbd;
+  -webkit-box-shadow: 0 0 10px #bdbdbd;
+  box-shadow: 0 0 10px #bdbdbd;
+}
+</style>
 <%= render "form" %>
 
-<div class="index">
-  <%= render "/shared/posts/attachment" %>
-</div>
-
-<hr>
 <div class="infinite-table">
+  <div class="ws2">
   <table>
     <thead>
       <tr><th colspan="6"></th></tr>
@@ -17,4 +52,5 @@
   <p class="pagination">
     <%= link_to_next_page(@posts, 'Next Page', :remote => true) if @posts %>
   </p>
+  </div>  
 </div>

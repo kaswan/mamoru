@@ -63,7 +63,7 @@ class Users::ConsultsController < Users::ApplicationController
 
   def search
     if params[:specialized_field_id] && !params[:specialized_field_id].blank?
-      @specialists = Specialist.joins(:specialist_profile, :specialized_field_relations).where(specialized_field_relations: {specialized_field_id: params[:specialized_field_id]}).all.page(params[:page] || 1).per(2)
+      @specialists = Specialist.joins(:specialist_profile, :specialized_field_relations).where(specialized_field_relations: {specialized_field_id: params[:specialized_field_id]}).all.page(params[:page] || 1).per(6)
     else
       #@specialists = Specialist.joins(:specialist_profile).all.page(params[:page] || 1).per(2)
     end
@@ -93,6 +93,11 @@ class Users::ConsultsController < Users::ApplicationController
         format.json { render json: @conversation.errors, status: :unprocessable_entity }
       end
     end
+  end
+  
+  # 予約
+  def reservations
+    @reservations = current_user.reservations   
   end
   
   private

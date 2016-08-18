@@ -1,20 +1,29 @@
-
+<div class="rarea">
   <div class="post_id" id=<%=@post.id%>></div>
   <div class="fallback">
     <%= file_field_tag :avatar %><br>    
-  </div>
-  
-  <div class="form-inputs">  
-  	  <%=f.association :post_type, as: :radio_buttons %>
-  	  <%=f.input :message %>
-    </div>
-    <%= f.hidden_field  :pending_status %>
-    <div class="form-actions">
-      <%= f.button :submit, :id => 'submit_btn' %>
-    </div>
+  </div>       
+  <% PostType.all.each do |type|%>
+    <label><%= f.radio_button :post_type_id, type.id %><span><%= icon_post_type type.id %></span></label>
+  <% end %>
+  <%=f.input :message, placeholder: "ここにメッセージを入力", label: false %>
+  <%= f.hidden_field  :pending_status %>
+</div>
+<div class="barea">    
+  <span id="post-attachment"><img src="/assets/mypage/photo.png"></span>
+  <span><%= f.button :submit, :id => 'submit_btn', :type => :image, :src => "/assets/mypage/send.png" %></span>
+  <span id="close"><a><img src="/assets/common/menu6.png" class="over"></a></span>
+</div>
 
 <script>
+  $('#post-attachment').click(function(e) {
+    $(".dz-default").click();
+  });
   $('#submit_btn').on('click', function(){
     $("#post_pending_status").val(false);
-  })
+  });
 </script>
+    
+<div class="index">
+  <%= render "/shared/posts/attachment" %>
+</div>

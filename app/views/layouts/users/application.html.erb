@@ -7,48 +7,34 @@
   
   <%= csrf_meta_tags %>
 </head>
-
-
+<% unless user_signed_in? %>
+    <ul class="nav navbar-nav">
+      <li><%#= link_to 'YahooJP!', user_yahoojp_omniauth_authorize_path %></li>
+      <li><%#= link_to 'Google+', user_google_omniauth_authorize_path %></li>
+      <li><%= link_to 'YahooJP!', '/users/auth/yahoojp' %></li>
+      <li><%= link_to 'Google+', '/users/auth/google' %></li>
+      <li><%= link_to 'Facebook', '/users/auth/facebook' %><%#= link_to 'Facebook', user_facebook_omniauth_authorize_path %></li>
+      <li><%= link_to "SignUp", new_user_registration_path %></li>
+      <li><%= link_to "LogIn", new_user_session_path %></li>          
+    </ul>
+  <% end %>
 <body>
 
-<nav class="navbar navbar-inverse">
-  <div class="container">
-    <div class="navbar-header">
-      <%= link_to 'Me-Mamoru', root_path, class: 'navbar-brand' %>
-    </div>
-    <div id="navbar">
-      <% if user_signed_in? %>
-        <ul class="nav navbar-nav pull-right">
-          <li><%= image_tag (current_user.image.exists? ? current_user.image.url(:icon) : current_user.image_url), alt: current_user.name %></li>
-          <li><%= link_to 'Profile', profiles_path %></li>
-          <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
-        </ul>
-      <% else %>
-        <ul class="nav navbar-nav">
-          <li><%#= link_to 'YahooJP!', user_yahoojp_omniauth_authorize_path %></li>
-          <li><%#= link_to 'Google+', user_google_omniauth_authorize_path %></li>
-          <li><%= link_to 'YahooJP!', '/users/auth/yahoojp' %></li>
-          <li><%= link_to 'Google+', '/users/auth/google' %></li>
-          <li><%= link_to 'Facebook', '/users/auth/facebook' %><%#= link_to 'Facebook', user_facebook_omniauth_authorize_path %></li>
-          <li><%= link_to "SignUp", new_user_registration_path %></li>
-      		<li><%= link_to "LogIn", new_user_session_path %></li>          
-        </ul>
-      <% end %>
-      
-    </div>
-  </div>
-</nav>
-
-<div class="container">
+<%= render "/shared/header" %>
+<div id="main">
+  <% if controller.controller_name != 'welcome' %>
+    <a href="#wss" class="right">設定</a>
+    <% if controller.controller_name == 'posts' %>
+      <a href="#head" class="left">投稿</a>
+    <% end %>
+  <% end %>
   <% flash.each do |key, value| %>
     <div class="alert alert-<%= key %>">
       <%= value %>
     </div>
   <% end %>
-
   <%= yield %>
 </div>
-
 </body>
 
 

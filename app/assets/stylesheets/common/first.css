@@ -1,0 +1,22 @@
+@charset "utf-8";
+
+/*main*/
+main .box01 h1 {font-size:2.5em;margin:40px auto 20px; text-align:center;}
+main .box01 h2 {font-size:23px;margin-bottom:12px; text-align:center;}
+main .box01 p { line-height:27px;font-size:15px !important;}
+main .box01 figure {line-height:0;margin-bottom:22px; text-align:center;}
+main .box01 figure img {width:330px; height:auto;}
+main .box01 p.summary {font-size:20px !important; line-height:1.6; padding-top:19px;}
+main .box01 p.summary:before {content:""; display:block; clear:both;}
+main .box01 {width:764px; margin:0 auto 20px;}
+
+main .box01 .itemContainer {float:right; width:440px;}	
+main .box01 .num01 {height:450px; padding-top:13px;}
+main .box01 .num02 {height:562px;}
+
+main .box01 div.flowList {float:left;padding-right:37px; background:url(/assets/flow/bg.png) bottom right no-repeat;}
+main .box01 div.flowList ul{position:relative;height:1080px; width:170px;}
+main .box01 div.flowList li {text-align:right; background:url(/assets/flow/greenP.png) center right no-repeat; padding-right:20px;  position:absolute; width:100%;}
+main .box01 div.flowList li:nth-child(1) {top:263px;}
+main .box01 div.flowList li:nth-child(2) {top:803px;}
+/*/main*/

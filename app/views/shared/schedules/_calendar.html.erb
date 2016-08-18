@@ -2,11 +2,23 @@
   <%= l date, format: :short %> <%= HolidayJp.holiday?(date).try :name %>
   <%#= link_to '<i class="glyphicon glyphicon-pencil"></i>'.html_safe, "##{date}", class: "fancybox fancybox.iframe btn btn-default btn-sm", style: 'float:right;', 'data-width' => "640", 'data-height' => "360" %>
   <%= link_to '<i class="glyphicon glyphicon-pencil"></i>'.html_safe, "##{date}", class: "fancybox btn btn-default btn-sm", style: 'float:right;', 'data-width' => "640", 'data-height' => "360" %>
-  <br>
+  <br><br>
   
   <% schedules.map(&:schedule_entities).each do |entity| %>
     <% entity.each do |e| %>
-    <%= l e.start_time, format: :hour_minute %><%= "(#{e.client.name}様)" if e.client %><br>
+    <%= l e.start_time, format: :hour_minute %>
+      <% if e.client %>
+        <%= link_to "(#{e.client.name}様)", "##{e.conversation_id}", class: "fancybox ", style: 'float:right;', 'data-width' => "640", 'data-height' => "360" %>
+        <div style="display:none;">
+          <div id="<%= e.conversation_id %>" style="min-width:400px">
+            <h3>相談日時: <%= l date, format: :long %> <%= l e.start_time, format: :hour_minute %></h3>
+            名前：<%= e.conversation.sender.name %><br>
+      相談カテゴリ：<%= e.conversation.specialized_field.name %>に関する相談<br>
+      相談内容：<%= nl2br e.conversation.remarks %><br>
+          </div>
+        </div>  
+      <% end %>
+    <br>
     <% end %>
   <% end %>
  

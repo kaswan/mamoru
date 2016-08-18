@@ -1,0 +1,119 @@
+﻿@charset "utf-8";
+
+/*Common*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,table,th,td{margin: 0px;padding: 0px;}
+table {border-collapse: collapse;border-spacing: 0;}
+fieldset,img {border: 0; }
+address,caption,cite,code,dfn,em,strong,th,var {font-style: normal;font-weight: normal;}
+li {list-style: none;}
+caption,th {text-align: left;}
+h1,h2,h3,h4,h5,h6 {font-size: 100%;font-weight: normal;}
+input,textarea,select {font-family: inherit;font-size: inherit;font-weight: inherit;}
+input,textarea,select {font-size: 100%;}
+body {color: #333;font-family: "メイリオ","Meiryo","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","MS Pゴシック", "MS P Gothic",sans-serif;text-align: left;}
+a:link {color: #0033cc;text-decoration: none;}
+a:hover {text-decoration: none;color: #FF0000;}
+a:visited {color: #0082d1;}
+.bold {font-weight: bold;}
+.red {color: #FF0000;}
+.blue {color: #80cee0;}
+.ore {color: #fead00;}
+.mb_t{margin-bottom:100px;}
+.clear-both {clear: both;font-size: 1px;line-height: 0em;}
+img {border: 0;}
+hr {display: none;}
+/*Common END*/
+
+@media screen and (min-width:960px){
+/*Header*/
+header { width:100%;height:auto; padding:10px 0;position: relative; }
+a.first{ display:none;}
+#logo { width:200px; height:auto; margin-left:5px; float:left; }
+#logo img { width:100%; height:auto; }
+nav { float:right; margin-top:20px;margin-right:5px; margin-bottom:20px; }
+#gmenu { font-size:0.9em; position:relative; }
+#gmenu > li { display:inline-block;}
+#gmenu > li#mclose { display:none;}
+#gmenu > li.button { padding:0 5px;}
+#gmenu > li a { display: block; color:#333;padding:0 10px; }
+#gmenu > li a:hover {color: #999;}
+#gmenu > li:hover { -webkit-transition: all .5s;transition: all .5s;}
+#gmenu > li.button span.log a { display:block;padding:5px 10px; font-weight:bold; color:#f39800; border-radius:5px; border:2px solid #f39800;}
+#gmenu > li.button span.log a:hover{color:#fff; background: #f39800;}
+#gmenu > li.button span.reg a { display:block;padding:5px 10px; font-weight:bold; color:#7f4f07; border-radius:5px; border:2px solid #7f4f07;}
+#gmenu > li.button span.reg a:hover{color:#fff; background: #7f4f07;}
+#gmenu > li.button span.mymenu01 a { display:block;padding:5px 10px; font-weight:bold; color:#f39800; border-radius:5px; border:2px solid #f39800;}
+#gmenu > li.button span.mymenu01 a:hover{color:#fff; background: #f39800;}
+#gmenu > li.button span.mymenu02 a { display:block;padding:5px 10px; font-weight:bold; color:#7f4f07; border-radius:5px; border:2px solid #7f4f07;}
+#gmenu > li.button span.mymenu02 a:hover{color:#fff; background: #7f4f07;}
+ul.menu__second-level {visibility: hidden;opacity: 0;z-index: 1;}
+#gmenu > li.menu__single { position: relative;}
+li.menu__single ul.menu__second-level {position: absolute;width: 100%;-webkit-transition: all .2s ease;transition: all .2s ease;}
+li.menu__single:hover ul.menu__second-level { visibility: visible;opacity: 1;}
+li.menu__single:hover ul.menu__second-level > li {padding:10px 0; font-size:0.9em; background:rgba(255,255,255,0.8); border-top:1px solid #eee;}
+.init-bottom { margin-bottom:5px;}
+.init-bottom:after { content: '▼';display: inline-block;margin: 0 0 0 5px;}
+/*Header END*/
+.fixed{top:0px;left: 0px;background-color:rgba(255,255,255,0.8); z-index:100;}
+/*Footer*/
+#footer { height:auto; position:relative; overflow:hidden; background:#333; padding:50px 10px 0; margin-top:50px;}
+.fmenu {text-align:center; margin:auto;margin-bottom:10px;}
+.fmenu li { display:inline-block;text-align:center; margin:5px auto; padding:2px 10px; border-left:1px solid #CCC;border-right:1px solid #CCC;}
+.fmenu li+li {border-left:none;}
+.fmenu li a { font-size:0.8em; color:#fff;}
+.footer_txt {text-align:center; color:#fff; font-size:0.8em;}
+#page-top {position: fixed;list-style:none;bottom: 20px;right: 20px;font-size: 77%;z-index:100;}
+#page-top a {width: 120px;display: block;}
+#page-top img {width:100%;height:auto;}
+.screen-reader-text {display: none;}
+/*Footer END*/
+}
+@media screen and (max-width:959px){
+/*Header*/
+header { width:100%;height:auto; padding:10px 0;position: relative; }
+#logo { width:50%; max-width:200px; height:auto; margin:5px auto; text-align:center; }
+a.first {  margin-top:5px; position:fixed; top:10px; right:10px; z-index:9999; }
+#logo img { width:100%; height:auto; }
+nav {margin:0;padding:0;}
+#gmenu {display:none; }
+#gmenu > li { display:block;}
+#gmenu > li#mclose { font-size:2.0em; text-align:right; cursor:pointer; margin:0; margin-right:5px; padding:0;}
+#gmenu > li a { display: block; color:#fff;padding:10px; margin-top:5px;  }
+#gmenu > li a:hover { background:#666;}
+ul.menu__second-level {margin:0; padding:0; }
+#gmenu > li.menu__single { position: relative;}
+#gmenu > li.menu__single ul.menu__second-level > li {display:inline-block; width:32%;  height:auto;padding:0px; margin:0px;  text-align:center;vertical-align: top; position:relative;}
+#gmenu > li.menu__single ul.menu__second-level > li.lblo {display:block; width:32%;  height:auto; text-align:left; margin-left:7%;}
+#gmenu > li.menu__single ul.menu__second-level > li a {font-size:0.9em; padding:5px 0; margin:0px; }
+#gmenu > li.menu__single ul.menu__second-level > li a:hover {background:none; }
+.init-bottom { margin-bottom:0;}
+.init-bottom:before { content: '▼';display: inline-block;margin: 0 5px;}
+#pageslide {
+    /* These styles MUST be included. Do not change. */
+    display: none;
+    position: fixed;
+    top: 0;
+    height: 100%;
+    z-index: 999999;
+    
+    /* Specify the width of your pageslide here */
+    width: 100%;
+	max-width:400px;
+    padding: 5px auto;
+    
+    /* These styles are optional, and describe how the pageslide will look */
+    background-color: #333;
+    color: #FFF;
+    -webkit-box-shadow: inset 0 0 5px 5px #222;
+    -moz-shadow: inset 0 0 5px 5px #222;
+    box-shadow: inset 0 0 5px 5px #222;
+}
+/*Header END*/
+/*Footer*/
+#footer { height:auto; position:relative; overflow:hidden; background:#333; padding:20px 0 0; margin-top:50px;}
+.fmenu {text-align:center; margin:auto;margin-bottom:20px;}
+.fmenu li { display:block;text-align:center; margin:5px auto; padding:10px;}
+.fmenu li a { font-size:0.9em; color:#fff;}
+.footer_txt {text-align:center; color:#fff; font-size:0.6em;}
+/*Footer END*/
+}

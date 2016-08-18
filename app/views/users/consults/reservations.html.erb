@@ -1,0 +1,21 @@
+<div class="main_box1">
+<% @reservations.where(:deleted => false, :editable => false).includes(:conversation).each do |r| %>
+
+  <div class="main_box_in">
+    <div class="intro">
+      <div class="pic2">
+         <%= image_tag r.conversation.recipient.image.url(:thumb)%>
+      </div>
+      <div class="ctxt2">
+        <h2><%=r.conversation.recipient.profile.name %>(<%=r.conversation.recipient.profile.furigana %>)</h2>
+        <div class="intro_txt"><h3>相談日時: <%= l r.schedule_date, format: :long %> <%= l r.start_time, format: :hour_minute %></h3>
+        相談カテゴリ：<%= r.conversation.specialized_field.name %>に関する相談<br>
+        相談内容：<%= nl2br r.conversation.remarks %><br>
+        <%= link_to "chat", live_chat_path(r.conversation.token)%>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<% end %>
+</div>

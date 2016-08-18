@@ -48,5 +48,7 @@ class Specialist < ActiveRecord::Base
     self.email = email.downcase
   end
   
-  
+  def furigana
+    self.id
+  end
 end

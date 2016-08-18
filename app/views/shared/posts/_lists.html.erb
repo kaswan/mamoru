@@ -1,15 +1,15 @@
 <% @posts.each do |post| %>
-  <tr>
-    <td><%= image_tag post.parent.image.exists? ? post.parent.image.url.try(:icon) : post.parent.try(:image_url) %><%= post.parent.try(:name) %></td>
-    <td><%= link_to 'Edit', {:controller => 'posts', :action => :edit, :id => post} %></td>
-    <td><%= link_to 'Destroy', {:controller => 'posts', :action => :destroy, :id => post}, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-  <tr>
-    <td colspan="4"><%= h nl2br(post.try(:message)) %></td>
-  </tr>
-  <tr>
-    <td colspan="4">
-      <%= render_gallery_for post.attachments.all %>          
-    </td>
-  </tr>
+   
+  <div class="log">
+    <div class="editor">
+      <div class="editor_img"><%= icon_post_type post.post_type_id %></div>
+      <div class="editor_txt"><span><%= l post.created_at, format: :long %></span> 
+      <%= link_to 'Edit', {:controller => 'posts', :action => :edit, :id => post} %>
+        <%= link_to 'Destroy', {:controller => 'posts', :action => :destroy, :id => post}, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+    </div>
+    <div class="logarea">
+      <%= h nl2br(post.try(:message)) %><br>
+      <%= render_gallery_for post.attachments.all %>
+    </div>
+  </div>
 <% end %>

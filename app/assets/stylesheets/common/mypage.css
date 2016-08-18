@@ -1,0 +1,269 @@
+@charset "utf-8";
+
+@media screen and (min-width:800px){
+/*main*/
+main { width:100%; }
+main h1 {font-size:2.0em; margin:5% auto 10px;  text-align:center;}
+main h1 span.fname { display:block; color:#CCC; font-size:0.6em; letter-spacing:0.1em;}
+main h2{font-size:2.0em; margin:40px auto;  text-align:center;}
+main h3{font-size:1.1em; margin:20px auto;  text-align:center;}
+main .contents { width:98%;max-width:1200px;margin:auto;overflow:hidden; position:relative; }
+main .center { width:100%; max-width:600px; text-align:center; margin:auto; }
+
+main .contents div.button { width:80%; max-width:400px; height:50px; margin:30px auto 0; background:#333; border-radius:5px;}
+main .contents div.button:hover { background:#666;}
+main .contents div.button a { display:block; width:100%; height:auto;  font-size:1.2em; color:#fff; text-align:center; line-height:50px;}
+main .contents .w960 { width:100%; max-width:960px; padding:0; margin:60px auto; position:relative;}
+main .contents .w960 img { width:100%; height:auto;}
+
+/*timeline*/
+main .tmenu { border-bottom:1px solid #ccc; overflow:hidden; margin-bottom:20px;}
+main .tmenu li {float:left; padding:10px 20px; border-top:3px solid #fff;}
+main .tmenu li:hover { background:#f9f9f9;border-top:3px solid #0677e7;}
+main .log {width:98%; height:auto; padding:1%; border:1px solid #ccc; border-top:3px solid #0677e7; margin-top:10px; overflow:hidden;}
+main .log .editor {margin-bottom:20px;}
+main .log .editor .editor_img {width:70px; height:70px;display:inline-block; margin-right:5px; vertical-align: middle;*zoom: 1; /* for IE6-7 */*display: inline; /* for IE6-7 */}
+main .log .editor .editor_img span { display:block; width:70px; height:70px; background:#0677e7; color:#fff; border-radius:5px; font-size:0.8em; line-height:70px; text-align:center;}
+main .log .editor .editor_img img {width:100%; height:auto;border-radius:5px;}
+main .log .editor .editor_txt {display:inline-block; vertical-align: middle;*zoom: 1; /* for IE6-7 */*display: inline; /* for IE6-7 */}
+main .log .editor .editor_txt span { display:block; font-size:1.0em; }
+main .log .logarea {width:100%; line-height:2.0em;}
+main .log .logarea img {max-width:100%; width:auto; height:auto;display:block; margin:10px 0;}
+main .log .logarea .comment {width:60px; height:auto; margin-top:40px; margin-left:10px; display:block;}
+main .log .logarea .comment img {width:100%; height:auto;}
+main .event_reg { width:80%; max-width:160px; height:40px; margin:auto; margin-left:30px;margin-right:30px; background:#333; border-radius:5px;display:inline-block; vertical-align: middle;*zoom: 1; /* for IE6-7 */*display: inline; /* for IE6-7 */}
+main .event_reg:hover { background:#666;}
+main .event_reg a { display:block; width:100%; height:auto;  font-size:1.0em; color:#fff; text-align:center; line-height:40px;}
+main .event_deli { display:block; margin:20px 0; margin-left:30px; font-weight:bold; font-size:1.2em; line-height:2em;}
+main .event_deli span { display:block; font-weight:normal; margin:0; padding:0; font-size:0.8em;}
+main .bon3 .delivery { width:100%; margin-top:50px; border-collapse:collapse; }
+main .bon3 .delivery thead td {display:block; width:97%; max-width:600px; padding:2% 1%; margin:auto;  background:#eee; border:1px solid #ccc; text-align:center;}
+main .bon3 .delivery tbody td { display:block; width:97%; max-width:600px;  border:1px solid #ccc; padding:2% 1%; margin:auto; clear:both; }
+main .bon3 .delivery tbody span { display:block; width:80px;  margin:0; padding:0; background:#333; text-align:center; color:#fff; border-radius:5px; float:right; }
+main .bon3 .delivery tbody span a { display:block; width:100%; height:auto; padding:10px auto; color:#fff;}
+/*/timeline*/
+
+/*concierge*/
+main .theme { width:100%; height:auto; margin:auto; padding-bottom:0; border-bottom:1px solid #ccc; overflow:hidden;}
+main .theme .sub { float:left; margin:0; margin-left:1%; width:55%; min-width:500px; text-align:left;}
+main .theme .sub h1 {text-align:left; margin:0 0 10px;}
+main .concierge { width:39%; max-width:400px; padding:1%; margin:10px 0; margin-right:1%; border:1px solid #ccc; float:right;}
+main .concierge h2 { margin:0 auto 10px; font-size:1.1em;}
+main .concierge .pic { width:15%; padding:0; display:inline-block; position:relative; vertical-align: middle;*zoom: 1; /* for IE6-7 */*display: inline; /* for IE6-7 */ }
+main .concierge .pic img { width:100%; height:auto; }
+main .concierge .ctxt { width:82%; margin-left:1%; display:inline-block; position:relative; text-align:center; vertical-align: middle;*zoom: 1; /* for IE6-7 */*display: inline; /* for IE6-7 */ font-size:0.9em; line-height:1em; }
+main .concierge .ctxt a {  margin:auto; padding:0 5px; font-size:0.9em; margin-left:10px; background:#333; border-radius:5px; color:#fff; text-align:center;}
+main .concierge .box { text-align: justify;text-justify: distribute-all-lines; width:100%; margin-top:5px;}
+main .concierge .box > div.two{display:inline-block; width:49%;height:auto; font-size:0.9em; line-height:1em; background:#fff; border-radius:5px; padding:0; text-align:center;vertical-align: middle; position:relative;}
+main .concierge .box > div.two span { display:inline-block;vertical-align: middle; margin-right:5px;*zoom: 1; /* for IE6-7 */*display: inline; /* for IE6-7 */}
+main .intro { width:98%;padding:0; margin:10px auto;border:1px solid #ccc;}
+main .intro ul { width:100%; padding:0; margin:0; font-size:1em;}
+main .intro ul li {display:block; padding:3% 1%;}
+main .intro ul li+li { border-top:1px solid #ccc;}
+main .intro ul li .pic { width:15%; padding:0; display:inline-block; position:relative; vertical-align: middle;*zoom: 1; /* for IE6-7 */*display: inline; /* for IE6-7 */ }
+main .intro ul li .pic img { width:100%; height:auto; }
+main .intro ul li .ctxt { width:82%; margin-left:1%; display:inline-block; position:relative; text-align:center; vertical-align: middle;*zoom: 1; /* for IE6-7 */*display: inline; /* for IE6-7 */ font-size:1.0em; line-height:1em; }
+main .intro ul li .ctxt h2 { margin:0 0 10px 10px; font-size:1.2em;line-height:1.2em; text-align:left; float:left;}
+main .intro ul li .ctxt .change {margin:0 10px 10px 0; float:right;}
+main .intro ul li .ctxt .change span { display:inline-block;vertical-align: middle; margin-right:5px;*zoom: 1;line-height:1.2em; /* for IE6-7 */*display: inline; /* for IE6-7 */}
+main .intro ul li .ctxt .change span:hover { background:#666;}
+main .intro ul li .ctxt .change a { display:block; width:100%; height:auto;  font-size:1.2em;  text-align:center;}
+main .intro ul li .ctxt .intro_txt { display:block; clear:both; width:96%; margin:20px auto 0; padding:2%; border:1px solid #ccc; text-align:left; font-size:0.9em; line-height:1.5em; background:#f5f5f5; border-radius:5px;}
+/*/concierge*/
+
+/*checklist*/
+main div.navi{ text-align: justify;text-justify: distribute-all-lines; width:100%; margin:40px auto;}
+main div.navi:after {content:"";	display: inline-block;	width: 100%;line-height:0;height: 0;}
+main div.navi > div {display:inline-block; width:13%; height:auto; vertical-align: middle;*zoom: 1; /* for IE6-7 */*display: inline; /* for IE6-7 */ }
+main div.navi > div a {display:block; width:100%; height:auto; background:#333; padding:40% 0; color:#fff; font-size:1.0em;text-align:center; border-radius:50%; vertical-align: middle;}
+main div.navi > div a:hover {background:#666;}
+main .contents .w960 h2.title { text-align:left; padding:1%; font-size:1.4em; border-bottom:1px dotted #ccc; padding-bottom:5px;}
+main .contents .w960 .check_item_list { width:100%; overflow:hidden; margin:30px auto;}
+main .contents .w960 .check_item_list .check_item { float:left;}
+main .contents .w960 .check_item_list .check_item > span {font-size:2em; color:#FF0000; margin-right:10px; font-weight:bold;vertical-align: middle;*zoom: 1; /* for IE6-7 */*display: inline; /* for IE6-7 */ }
+main .contents .w960 .check_item_list .status { float:right;}
+main .contents .w960 .check_item_list .status2 { clear:both; display:block; padding-top:20px;}
+main .contents .w960 .check_item_list .status2 label {display:inline-block;vertical-align: middle;*zoom: 1; margin:5px auto; margin-left:10px; /* for IE6-7 */*display: inline; /* for IE6-7 */white-space: nowrap;}
+main .contents .w960 .check_item_list .modal { display:block; width:94%; margin:20px auto 0; padding:2%; border:1px solid #ccc; background:#f5f5f5; border-radius:5px;}
+
+/*/checklist*/
+
+/*profile*/
+main table {width:100%; clear:both;}
+main table th {width:18%; padding:20px 1%;}
+main table td {width:78%; padding:20px 1%;}
+main table td span {display:inline-block;vertical-align: middle;*zoom: 1; margin:10px 15px;  /* for IE6-7 */*display: inline; /* for IE6-7 */white-space: nowrap;}
+main table td span label {display:inline-block;vertical-align: middle;*zoom: 1; margin:0; /* for IE6-7 */*display: inline; /* for IE6-7 */white-space: nowrap;}
+main table td input[type="text"] {width:98%; padding:1%; }
+main table td select {width:60%; padding:1%;}
+main table td label {display:inline-block;vertical-align: middle;*zoom: 1; margin:5px auto; margin-left:10px; /* for IE6-7 */*display: inline; /* for IE6-7 */white-space: nowrap;}
+main table td label.blo {display:block;margin:20px auto;}
+
+main table td textarea {width:98%; height:300px; padding:1%;}
+main .contents .w960 .check_item_list .status2 label {display:inline-block;vertical-align: middle;*zoom: 1; margin:5px auto; margin-left:10px; /* for IE6-7 */*display: inline; /* for IE6-7 */white-space: nowrap;}
+main .contents .box { text-align: justify;text-justify: distribute-all-lines;}
+main .contents .box:after {content:"";	display: inline-block;	width: 100%;line-height:0;height: 0;}
+main .contents .box > div.two{display:inline-block; width:49%;height:auto; background:#fff; padding:1% 0; text-align:left;vertical-align: top; position:relative;}
+/*/profile*/
+
+/*note*/
+main table.bon {width:100%; margin-bottom:50px; border-collapse:collapse;}
+main table.bon th {width:18%; padding:20px 1%; border:1px solid #CCC; background:#f5f5f5;}
+main table.bon td {width:78%; padding:20px 1%; border:1px solid #CCC;}
+main table.bon td table th {padding:0;border:none;}
+main table.bon td table td {padding:0;border:none;}
+main table.bon3 {width:100%; margin-bottom:50px; border-collapse:collapse;}
+main table.bon3 th {display:block;width:98%; padding:20px 1%; border:1px solid #CCC; border-bottom:none; background:#f5f5f5;}
+main table.bon3 td {display:block;width:98%;  padding:20px 1%; border:1px solid #CCC;}
+main table.bon3 td table th {padding:5px 0;border:none; background:none;}
+main table.bon3 td table td {padding:0;border:none;}
+main .contents .w960 .add_b {text-align:left; margin:0 auto 30px; }
+main .contents .w960 .add_b a { background:#333; border-radius:5px; color:#fff; text-align:center; padding:5px 20px;}
+main .contents .w960 .info { font-size:1.4em; font-weight:bold; display:inline-block;vertical-align: middle;*zoom: 1; margin:5px auto; margin-left:10px; /* for IE6-7 */*display: inline; /* for IE6-7 */ margin-bottom:10px;}
+main .contents .w960 .add_b2 { display:inline-block;vertical-align: middle;*zoom: 1; /* for IE6-7 */*display: inline; /* for IE6-7 */ margin-bottom:20px;}
+main .contents .w960 .add_b2 a { background:#333; border-radius:5px; color:#fff; text-align:center; padding:3px 20px;}
+main .contents .w960 .henko_b { display:inline-block;vertical-align: middle;*zoom: 1; /* for IE6-7 */*display: inline; /* for IE6-7 */ margin-bottom:10px; margin-left:20px;}
+main .contents .w960 .henko_b a { background:#333; border-radius:5px; color:#fff; text-align:center; padding:3px 20px;}
+
+main table.bon2 {width:100%; margin-bottom:50px; border-collapse:collapse;}
+main table.bon2 thead td {width:14%; padding:20px 1%; text-align:center; border:1px solid #CCC;}
+main table.bon2 tbody td {width:14%; padding:20px 1%; text-align:center; border:1px solid #CCC;}
+main table.bon2 tbody td a{ display:inline-block;vertical-align: middle;*zoom: 1; /* for IE6-7 */*display: inline; /* for IE6-7 */ margin:10px;}
+/*/note*/
+
+/*/main*/
+}
+@media screen and (max-width:799px){
+/*main*/
+main { width:100%; }
+main p { font-size:1em; -webkit-text-size-adjust: 100%; }
+main h1 {font-size:1.0em; margin:5% auto 10px;  text-align:center;}
+main h1 span.fname { display:block; color:#CCC; font-size:0.6em; letter-spacing:0.1em;}
+main h2{font-size:1.0em; margin:40px auto;  text-align:center;}
+main h3{font-size:1.0em; margin:20px auto;  text-align:center;}
+main .contents { width:98%;margin:auto;overflow:hidden; position:relative; }
+main .center { width:98%; text-align:center; font-size:0.9em; margin:auto; }
+
+main .contents div.button { width:80%; max-width:400px; height:50px; margin:30px auto 0; background:#333; border-radius:5px;}
+main .contents div.button:hover { background:#666;}
+main .contents div.button a { display:block; width:100%; height:auto;  font-size:1.0em; color:#fff; text-align:center; line-height:50px;}
+main .contents .w960 { width:100%;padding:0; margin:60px auto;}
+main .contents .w960 img { width:100%; height:auto;}
+
+/*timeline*/
+main .tmenu { border-bottom:1px solid #ccc; overflow:hidden; margin-bottom:20px;}
+main .tmenu li {display:block; padding:0; background:#333;margin-top:1px;}
+main .tmenu li a {display:block; width:100%; line-height:3em; auto; color:#fff; text-align:center;}
+main .log {width:97%; height:auto; padding:1%; margin:auto; border:1px solid #ccc; border-top:3px solid #0677e7; margin-top:10px; overflow:hidden;}
+main .log .editor {margin-bottom:20px;}
+main .log .editor .editor_img {width:70px; height:70px;display:inline-block; margin-right:5px; vertical-align: middle;*zoom: 1; /* for IE6-7 */*display: inline; /* for IE6-7 */}
+main .log .editor .editor_img span { display:block; width:70px; height:70px; background:#0677e7; color:#fff; border-radius:5px; font-size:0.8em; line-height:70px; text-align:center;}
+main .log .editor .editor_img img {width:100%; height:auto;border-radius:5px;}
+main .log .editor .editor_txt {display:inline-block; vertical-align: middle;*zoom: 1; /* for IE6-7 */*display: inline; /* for IE6-7 */}
+main .log .editor .editor_txt span { display:block; font-size:0.8em; }
+main .log .logarea {width:100%; line-height:2.0em;}
+main .log .logarea img {max-width:100%; width:auto; height:auto;display:block; margin:10px 0;}
+main .log .logarea .comment {width:60px; height:auto; margin-top:40px; margin-left:10px; display:block;}
+main .log .logarea .comment img {width:100%; height:auto;}
+main .event_reg { width:80%; max-width:160px; height:40px; background:#333; border-radius:5px;display:block; margin:20px auto 0; text-align:center;}
+main .event_reg:hover { background:#666;}
+main .event_reg a { display:block; width:100%; height:auto;  font-size:1.0em; color:#fff; text-align:center; line-height:40px;}
+main .event_deli { display:block; margin:20px auto; font-weight:bold; font-size:1.2em; line-height:2em;}
+main .event_deli span { display:block; font-weight:normal; margin:0; padding:0; font-size:0.8em; line-height:1.2em;}
+main .bon3 .delivery { width:100%; margin-top:50px; border-collapse:collapse; }
+main .bon3 .delivery thead td {display:block; width:97%; max-width:600px; padding:2% 1%; margin:auto;  background:#eee; border:1px solid #ccc; text-align:center;}
+main .bon3 .delivery tbody td { display:block; width:97%; max-width:600px;  border:1px solid #ccc; padding:2% 1%; margin:auto; clear:both; }
+main .bon3 .delivery tbody span { display:block; width:80px;  margin:0; padding:0; background:#333; text-align:center; color:#fff; border-radius:5px; float:right; }
+main .bon3 .delivery tbody span a { display:block; width:100%; height:auto; padding:10px auto; color:#fff;}
+/*/timeline*/
+
+/*concierge*/
+main .theme { width:100%; height:auto; margin:auto; padding-bottom:0; border-bottom:1px solid #ccc; overflow:hidden;}
+main .theme .sub { margin:auto; width:100%; text-align:center; font-size:0.9em;}
+main .theme .sub h1 {text-align:center; margin:0 0 10px;}
+main .concierge { width:96%;  padding:1%; margin:10px auto; border:1px solid #ccc;}
+main .concierge h2 { margin:0 auto 10px; font-size:1.0em;}
+main .concierge .pic { width:15%; padding:0; display:inline-block; position:relative; vertical-align: middle;*zoom: 1; /* for IE6-7 */*display: inline; /* for IE6-7 */ }
+main .concierge .pic img { width:100%; height:auto; }
+main .concierge .ctxt { width:82%; margin-left:1%; display:inline-block; position:relative; text-align:center; vertical-align: middle;*zoom: 1; /* for IE6-7 */*display: inline; /* for IE6-7 */ font-size:0.9em; line-height:1em; }
+main .concierge .ctxt a {  margin:auto; padding:0 5px; font-size:0.9em; margin-left:10px; background:#333; border-radius:5px; color:#fff; text-align:center;}
+main .concierge .box { text-align: justify;text-justify: distribute-all-lines; width:100%; margin-top:5px;}
+main .concierge .box > div.two{display:inline-block; width:49%;height:auto; font-size:0.9em; line-height:1em; background:#fff; border-radius:5px; padding:0; text-align:center;vertical-align: middle; position:relative;}
+main .concierge .box > div.two span { display:block;}
+main .intro { width:98%;padding:0; margin:10px auto;border:1px solid #ccc;}
+main .intro ul { width:100%; padding:0; margin:0; font-size:1em;}
+main .intro ul li {display:block; padding:5% 1%;}
+main .intro ul li+li { border-top:1px solid #ccc;}
+main .intro ul li .pic { width:100%; max-width:200px; padding:0; display:block; margin:10px auto; }
+main .intro ul li .pic img { width:100%; height:auto; }
+main .intro ul li .ctxt { width:100%; display:block; font-size:1.0em; line-height:1em; }
+main .intro ul li .ctxt h2 { margin:20px auto; font-size:1.2em;line-height:1.2em; text-align:center;}
+main .intro ul li .ctxt .change {margin:20px auto;}
+main .intro ul li .ctxt .change span { display:inline-block;vertical-align: middle; margin-right:5px;*zoom: 1;line-height:1.2em; /* for IE6-7 */*display: inline; /* for IE6-7 */}
+main .intro ul li .ctxt .change span:hover { background:#666;}
+main .intro ul li .ctxt .change a { display:block; width:100%; height:auto;  font-size:1.2em;  text-align:center;}
+main .intro ul li .ctxt .intro_txt { display:block; clear:both; width:96%; margin:20px auto 0; padding:2%; border:1px solid #ccc; text-align:left; font-size:0.9em; line-height:1.5em; background:#f5f5f5; border-radius:5px;}
+/*/concierge*/
+
+/*checklist*/
+main div.navi{margin:40px auto;}
+main div.navi > div {display:inline-block; width:30%; height:auto; vertical-align: middle;*zoom: 1; /* for IE6-7 */*display: inline; /* for IE6-7 */ }
+main div.navi > div a {display:block; width:100%; height:auto; background:#333; padding:40% 0; color:#fff; font-size:1.0em;text-align:center; border-radius:50%; vertical-align: middle;}
+main div.navi > div a:hover {background:#666;}
+main .contents .w960 h2.title { text-align:left; padding:1%; font-size:1.0em; border-bottom:1px dotted #ccc; padding-bottom:5px;}
+main .contents .w960 .check_item_list { width:100%; overflow:hidden; margin:30px auto;}
+main .contents .w960 .check_item_list .check_item { float:left;}
+main .contents .w960 .check_item_list .txtdec { text-decoration: line-through;}
+main .contents .w960 .check_item_list .check_item > span {font-size:1em; color:#FF0000; margin-right:10px; font-weight:bold;vertical-align: middle;*zoom: 1; /* for IE6-7 */*display: inline; /* for IE6-7 */ }
+main .contents .w960 .check_item_list .status { clear:both;display:block; margin:auto; text-align:center; padding-top:20px;}
+main .contents .w960 .check_item_list .status2 { clear:both; display:block; padding-top:20px;}
+main .contents .w960 .check_item_list .status2 label {display:block;}
+main .contents .w960 .check_item_list .modal { display:block; width:94%; margin:20px auto 0; padding:2%; border:1px solid #ccc; background:#f5f5f5; border-radius:5px;}
+
+
+/*/checklist*/
+
+/*profile*/
+main table {width:98%; margin:auto;}
+main table th {display:block; width:97%; padding:20px 1% 10px;}
+main table td {display:block; width:97%; padding:10px 1% 20px;word-break:break-all;}
+main table td span.inp {width:100%;display:block; text-align:center;}
+main table td span.henko {width:100%; max-width:400px; display:block; margin:10px auto;}
+main table td span.henko a {display:block; margin:auto; width:60%; padding:5px 0; background:#333; border-radius:5px; color:#fff; text-align:center;}
+main table td input[type="text"] {width:98%; padding:1%;}
+main table td select {width:60%; padding:1%;}
+main table td label {display:inline-block;vertical-align: middle;*zoom: 1; margin:5px auto; margin-left:10px; /* for IE6-7 */*display: inline; /* for IE6-7 */}
+main table td label.blo {display:block;margin:20px auto;white-space:normal;}
+main table td textarea {width:98%; height:300px; padding:1%;}
+main .contents .w960 .check_item_list .status2 label {display:block;margin:10px auto;}
+main .contents .box > div.two{display:block; width:80%;height:auto; margin:auto; background:#fff; padding:1% 0; text-align:left; position:relative;}
+/*/profile*/
+
+/*note*/
+main table.bon {width:100%; margin-bottom:50px; border-collapse:collapse;}
+main table.bon th {display:block;width:97%; padding:20px 1%; border:1px solid #CCC; background:#f5f5f5;}
+main table.bon td {display:block;width:97%; padding:20px 1%; border:1px solid #CCC;word-break:break-all;}
+main table.bon td table th {padding:0;border:none;}
+main table.bon td table td {padding:0;border:none;}
+main table.bon3 {width:100%; margin-bottom:50px; border-collapse:collapse;}
+main table.bon3 th {display:block;width:97%; padding:20px 1%; border:1px solid #CCC; border-bottom:none; background:#f5f5f5;}
+main table.bon3 td {display:block;width:97%;  padding:20px 1%; border:1px solid #CCC;word-break:break-all;}
+main table.bon3 td table th {padding:5px 0;border:none; background:none;}
+main table.bon3 td table td {padding:0;border:none;}
+main .contents .w960 .add_b {text-align:left; margin:0 auto 30px; }
+main .contents .w960 .add_b a { background:#333; border-radius:5px; color:#fff; text-align:center; padding:5px 20px;}
+main .contents .w960 .info { font-size:1.4em; font-weight:bold; display:block; margin-bottom:20px;}
+main .contents .w960 .add_b2 { display:inline-block;vertical-align: middle;*zoom: 1; /* for IE6-7 */*display: inline; /* for IE6-7 */ margin-bottom:20px;}
+main .contents .w960 .add_b2 a { background:#333; border-radius:5px; color:#fff; text-align:center; padding:3px 20px;}
+main .contents .w960 .henko_b { display:inline-block;vertical-align: middle;*zoom: 1; /* for IE6-7 */*display: inline; /* for IE6-7 */ margin-bottom:20px; margin-right:10px;}
+main .contents .w960 .henko_b a { background:#333; border-radius:5px; color:#fff; text-align:center; padding:3px 20px;}
+
+main table.bon2 {width:100%; margin-bottom:50px; border-collapse:collapse;}
+main table.bon2 thead td {width:14%; padding:20px 1%; text-align:center; border:1px solid #CCC;}
+main table.bon2 tbody td {width:14%; padding:20px 1%; text-align:center; border:1px solid #CCC;}
+main table.bon2 tbody td a{ display:inline-block;vertical-align: middle;*zoom: 1; /* for IE6-7 */*display: inline; /* for IE6-7 */ margin:10px;}
+/*/note*/
+
+
+/*/main*/
+}

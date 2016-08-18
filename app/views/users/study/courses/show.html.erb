@@ -1,10 +1,15 @@
+<%= link_to '戻る', '/study', {class: 'second'} %>
+<h1 class="movieh1"><%= @course.name %></h1>
+<!-- Visual　ここから -->
+<div id="visual">
+  <div id="visual_in">
+    <%= image_tag(@course.attachment.image.url(:large)) if @course.attachment %>
+  </div>
+</div>
+<!-- Visual　ここまで -->  
+
 <div class="main_box3">
   <div class="main_box_in">
-    <h2><%= @course.name %></h2>
-    <div class="movie_wrap">
-      <%= image_tag(@course.attachment.image.url(:large)) if @course.attachment %>
-    </div>
-
     <h2>講義内容</h2>
     <p><%= h nl2br(@course.summary) %></p>
 

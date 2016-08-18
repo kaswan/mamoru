@@ -1,0 +1,365 @@
+@charset "utf-8";
+/* チャットレイアウト */
+@media only screen and (orientation : portrait) {
+
+#main {width:100%;}
+#main .img_wrap { position:relative; width:100%; height:auto;}
+#main .main_img { display:block; margin:auto;  position:relative; width:100%; height:auto;}
+#main .wrap_box { text-align:center; position:relative;}
+#main .chat_wrap { display:inline-block; margin:3% 1%; width:20%;}
+#main .chat_wrap2 { display:inline-block; margin:3% 1%; width:20%;}
+#main .chat_wrap3 { display:inline-block; margin:3% 1%; width:20%;}
+#main .first_img { position:relative;}
+#main .second_img { position:relative; }
+#main .third_img { position:relative; }
+#main .fourth_img {  position:relative; }
+#main .first_img img,#main .third_img img{ display:block; width:100%; height:auto;}
+#main .second_img img,#main .fourth_img img { display:block; width:100%; height:auto;}
+
+#main .top_first { width:80%; height:auto; margin:5% auto; padding:3%; font-size:1.2em; font-weight:bold; color:#fff; text-align:center; position:relative;  background:#327fad; border-radius:10px; }
+#main .top_first a { display:block; width:100%; height:auto; color:#fff; text-align:center; }
+#main .top_second { width:80%; height:auto; margin:5% auto; padding:3%; font-size:1.2em; font-weight:bold; color:#fff; text-align:center; position:relative;background:#819d26;border-radius:10px;}
+#main .top_second a { display:block; width:100%; height:auto; color:#fff; text-align:center; }
+
+#main .top_message{ width:80%; height:auto; margin:10% auto 1%; padding:0; font-size:1.2em; font-weight:normal; color:#333; text-align:center; position:relative;}
+#main .top_message_inner{ width:80%; height:auto; margin:0 auto; padding:0; font-size:1.2em; font-weight:bold; color:#333; text-align:center; position:relative;}
+
+#main .right { position:fixed; top:0; left:1%; background:#7a6a50; font-size:1.2em;margin:auto; padding:5%; color:#fff; text-align:center; font-weight:bold; z-index:9999; cursor:pointer; }
+#main .left { position:fixed; top:0; left:25%; background:#238e62; font-size:1.2em;margin:auto; padding:5%; color:#fff; text-align:center; font-weight:bold; z-index:9999; cursor:pointer; }
+#main .second { position:fixed; bottom:0; left:1%; background:#a13b55; font-size:1.2em;margin:auto; padding:5%; color:#fff; text-align:center; font-weight:bold; z-index:9999; cursor:pointer; }
+#main .third { position: fixed; bottom:25%; left:1%; background:#238e62; font-size:1.2em; padding:5%; color:#fff; text-align:center; font-weight:bold; z-index:9999; cursor:pointer;  }
+
+
+#main .chat_button {margin:auto; color:#fff; text-align:center;}
+#main .chat_button a { display:block;width:100%; height:100%; margin:auto; color:#fff; text-align:center;}
+
+#main .main_box { display:block; width:80%; margin:0 auto; padding:0; position:relative;}
+#main .main_box_in { padding:2%; line-height:2.0em; position:relative;}
+
+#main .wb {
+	width:100%;
+	height:auto;
+	padding:0;
+	position:relative;
+}
+
+#main .ws {
+	width:96%;
+	height:auto;
+	padding:2%;
+	background:#333;
+}
+
+#main .ws .chat-inp {
+	position: relative;
+	background:#FFFFFF;
+	width:98%;
+	height:auto;
+	font-size:1.0em;
+	padding:0 1% 5px;
+	margin:20% auto 30px;
+}
+#main .ws .chat-inp p{
+	width:100%;
+	padding:7px 0;
+	margin:0 0 5px;
+	border-top:1px solid #ccc;
+	border-bottom:1px solid #ccc;
+	line-height:1em;
+	overflow:hidden;
+	position:relative;
+}
+#main .ws .chat-inp p span{
+	background:#0a7def;
+	color:#fff;
+	width:20%;
+	height:50px;
+	margin:3px 5px;
+	border-radius:3px;
+	display:block;
+	float:right;
+	font-size:1.2em;
+	text-align:center;
+	line-height:50px;
+	overflow:hidden;
+	cursor:pointer;
+}
+#main .ws .chat-inp p img{
+	width:50px;
+	height:auto;
+	display:inline-block;
+	margin:3px 5px;
+	padding:0;
+	cursor:pointer;
+}
+#main .ws .chat-inp form textarea{
+	width:96%;
+	padding:1%;
+	border:none;
+	margin:auto;
+	display:block;
+	font-size:1.2em;
+}
+
+#main .ws .chat-box {
+    width: 100%;
+    height: auto;
+    overflow: hidden; /*floatの解除*/
+	font-size:1.0em;
+    margin-bottom: 50px;
+}
+#main .ws .chat-face {
+    float: left;
+    margin-right: -70px;
+}
+#main .ws .chat-face img{
+    width:100%;
+	max-width:50px;
+	height:auto;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 4px #ddd;
+}
+#main .ws .chat-area {
+    width: 100%;
+    float: right;
+}
+#main .ws .chat-editor{
+    display:block; 
+    padding: 0;
+	color:#fff;
+    margin-left: 70px;
+}
+#main .ws .chat-editor > div{
+    display:inline-block;
+    margin:5px;
+	font-size:1.0em;
+}
+#main .ws .chat-hukidashi {
+    display: inline-block; 
+	clear:both;
+    padding: 15px 20px;
+    margin-left: 70px;
+    margin-top: 8px;
+    border-radius: 10px;
+    position: relative; 
+    background-color: #fff;
+}
+#main .ws .chat-hukidashi:after {
+    content: "";
+    position: absolute;
+    top: 50%; left: -10px;
+    margin-top: -10px;
+    display: block;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #fff transparent transparent;
+}
+
+#main .rarea{ width:100%;display:block; text-align:center; position:relative;}
+#main .rarea span{width:20%; height:auto; margin:1% auto; display:inline-block;}
+#main .rarea span img{width:100%; height:auto;}
+#main .barea{ width:100%;display:block; text-align:center; position:relative;}
+#main .barea span{width:20%; height:auto; display:inline-block; margin:1% auto;}
+#main .barea span img{width:100%; height:auto;}
+#main form textarea{ display:block; width:100%;height:200px; margin:2% auto;font-size:1.0em;	padding:1%;	border:1px solid #ccc;  -webkit-box-sizing: border-box;  -moz-box-sizing: border-box;  -o-box-sizing: border-box;  -ms-box-sizing: border-box;  box-sizing: border-box;	margin:0;}
+
+#main .log {width:98%; height:auto; padding:1%; border:1px solid #ccc; border-top:3px solid #0677e7; margin:10px auto; overflow:hidden; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -o-box-sizing: border-box; -ms-box-sizing: border-box; box-sizing: border-box; background:#fff;}
+#main .log .editor {margin-bottom:20px;}
+#main .log .editor .editor_img {width:70px; height:70px;display:inline-block; margin-right:5px; vertical-align: middle;*zoom: 1; /* for IE6-7 */*display: inline; /* for IE6-7 */}
+#main .log .editor .editor_img span { display:block; width:70px; height:70px; background:#0677e7; color:#fff; border-radius:5px; font-size:0.8em; line-height:70px; text-align:center;}
+#main .log .editor .editor_img img {width:100%; height:auto;border-radius:5px;}
+#main .log .editor .editor_txt {display:inline-block; vertical-align: middle;*zoom: 1; /* for IE6-7 */*display: inline; /* for IE6-7 */}
+#main .log .editor .editor_txt span { display:block; font-size:1.0em; }
+#main .log .logarea {width:100%; line-height:2.0em;}
+#main .log .logarea img {max-width:100%; width:auto; height:auto;display:block; margin:10px 0;}
+#main .log .logarea .comment {width:60px; height:auto; margin-top:40px; margin-left:10px; display:block;}
+#main .log .logarea .comment img {width:100%; height:auto;}
+/*user*/
+#main .ws .back_iframe {width:90%; height:400px; padding:2% 5%;background:#fff; overflow:auto; }
+#main .ws iframe { position: relative;width: 100%;height: 100%;}
+/*/user*/
+}
+@media only screen and (orientation : landscape) {
+
+#main {width:100%; position:relative;}
+#main .img_wrap { position:relative; width:70%; height:auto; margin:auto;}
+#main .main_img { display:block; margin:auto;  position:relative; width:100%; height:auto;}
+#main .wrap_box {  position:fixed; top:1%; left:1%; width:15%; height:auto;}
+#main .chat_wrap {margin:15px auto;}
+#main .chat_wrap2 {margin:15px auto;}
+#main .chat_wrap3 {margin:15px auto;}
+#main .first_img { position:relative;}
+#main .second_img { position:relative; }
+#main .third_img { position:relative; }
+#main .fourth_img {  position:relative; }
+#main .first_img img,#main .third_img img{ display:block; width:100%; height:auto;}
+#main .second_img img,#main .fourth_img img { display:block; width:100%; height:auto;}
+
+#main .top_first { width:80%; height:auto; margin:3% auto; padding:5%; font-size:1.5em; font-weight:bold; color:#fff; text-align:center; position:relative;  background:#327fad; border-radius:10px; }
+#main .top_first a { display:block; width:100%; height:auto; color:#fff; text-align:center; }
+#main .top_second { width:80%; height:auto; margin:3% auto; padding:5%; font-size:1.5em; font-weight:bold; color:#fff; text-align:center; position:relative;background:#819d26;border-radius:10px;}
+#main .top_second a { display:block; width:100%; height:auto; color:#fff; text-align:center; }
+
+#main .top_message{ width:80%; height:auto; margin:2% auto 1%; padding:0; font-size:1.2em; font-weight:normal; color:#333; text-align:center; position:relative;}
+#main .top_message_inner{ width:80%; height:auto; margin:0 auto; padding:0; font-size:1.2em; font-weight:bold; color:#333; text-align:center; position:relative;}
+
+#main .right { position:fixed; top:0; right:1%; background:#7a6a50; font-size:1.2em;margin:auto; padding:3%; color:#fff; text-align:center; font-weight:bold; z-index:9999; cursor:pointer; }
+#main .left { position:fixed; top:0; right:25%; background:#238e62; font-size:1.2em;margin:auto; padding:3%; color:#fff; text-align:center; font-weight:bold; z-index:9999; cursor:pointer; }
+#main .second { position:fixed; bottom:0; right:1%; background:#a13b55; font-size:1.2em;margin:auto; padding:3%; color:#fff; text-align:center; font-weight:bold; z-index:9999; cursor:pointer; }
+#main .third { position: fixed; bottom:25%; right:1%; background:#238e62; font-size:1.2em; padding:3%; color:#fff; text-align:center; font-weight:bold; z-index:9999; cursor:pointer;  }
+
+#main .chat_button {margin:auto; color:#fff; text-align:center;}
+#main .chat_button a { display:block;width:100%; height:100%; margin:auto; color:#fff; text-align:center;}
+
+#main .main_box { display:block; width:80%; margin:0 auto; padding:0; position:relative;}
+#main .main_box_in { padding:2%; line-height:2.0em; position:relative;}
+
+#main .wb {
+	width:100%;
+	height:auto;
+	padding:0;
+	position:relative;
+}
+
+#main .ws {
+	width:96%;
+	height:auto;
+	padding:2%;
+	background:#333;
+}
+
+#main .ws .chat-inp {
+	position: relative;
+	background:#FFFFFF;
+	width:98%;
+	height:auto;
+	font-size:1.2em;
+	padding:0 1% 5px;
+	margin:0 auto 30px;
+}
+#main .ws .chat-inp p{
+	width:100%;
+	padding:7px 0;
+	margin:0 0 5px;
+	border-top:1px solid #ccc;
+	border-bottom:1px solid #ccc;
+	line-height:1em;
+	overflow:hidden;
+	position:relative;
+}
+#main .ws .chat-inp p span{
+	background:#0a7def;
+	color:#fff;
+	width:20%;
+	height:50px;
+	margin:3px 5px;
+	border-radius:3px;
+	display:block;
+	float:right;
+	font-size:2.0em;
+	text-align:center;
+	line-height:50px;
+	overflow:hidden;
+	cursor:pointer;
+}
+#main .ws .chat-inp p img{
+	width:50px;
+	height:auto;
+	display:inline-block;
+	margin:3px 5px;
+	padding:0;
+	cursor:pointer;
+}
+#main .ws .chat-inp form textarea{
+	width:96%;
+	padding:1%;
+	border:none;
+	margin:auto;
+	display:block;
+	font-size:1.5em;
+}
+
+#main .ws .chat-box {
+    width: 100%;
+    height: auto;
+    overflow: hidden; /*floatの解除*/
+	font-size:1.5em;
+    margin-bottom: 50px;
+}
+#main .ws .chat-face {
+    float: left;
+    margin-right: -70px;
+}
+#main .ws .chat-face img{
+    width:100%;
+	max-width:50px;
+	height:auto;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 4px #ddd;
+}
+#main .ws .chat-area {
+    width: 100%;
+    float: right;
+}
+#main .ws .chat-editor{
+    display:block; 
+    padding: 0;
+	color:#fff;
+    margin-left: 70px;
+}
+#main .ws .chat-editor > div{
+    display:inline-block;
+    margin:5px;
+	font-size:1.0em;
+}
+#main .ws .chat-hukidashi {
+    display: inline-block; 
+	clear:both;
+    padding: 15px 20px;
+    margin-left: 70px;
+    margin-top: 8px;
+    border-radius: 10px;
+    position: relative; 
+    background-color: #fff;
+}
+#main .ws .chat-hukidashi:after {
+    content: "";
+    position: absolute;
+    top: 50%; left: -10px;
+    margin-top: -10px;
+    display: block;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #fff transparent transparent;
+}
+
+#main .rarea{ width:84%;display:inline-block; vertical-align: middle;*zoom: 1; margin:1%; margin-left:2%; /* for IE6-7 */*display: inline; /* for IE6-7 */ position:relative;}
+#main .rarea span{width:10%; height:auto; display:inline-block;}
+#main .rarea span img{width:100%; height:auto;}
+#main .barea{ width:10%;display:inline-block; vertical-align: middle;*zoom: 1; margin-left:1%; /* for IE6-7 */*display: inline; /* for IE6-7 */ position:relative;}
+#main .barea span{width:100%; height:auto; display:block; margin:5% auto;}
+#main .barea span img{width:100%; height:auto;}
+#main form textarea{ display:block; width:100%;height:200px;font-size:1.2em;	padding:1%;	border:1px solid #ccc;  -webkit-box-sizing: border-box;  -moz-box-sizing: border-box;  -o-box-sizing: border-box;  -ms-box-sizing: border-box;  box-sizing: border-box;	margin:0;}
+
+#main .log {width:98%; height:auto; padding:1%; border:1px solid #ccc; border-top:3px solid #0677e7; margin:10px auto; overflow:hidden; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -o-box-sizing: border-box; -ms-box-sizing: border-box; box-sizing: border-box; background:#fff;}
+#main .log .editor {margin-bottom:20px;}
+#main .log .editor .editor_img {width:70px; height:70px;display:inline-block; margin-right:5px; vertical-align: middle;*zoom: 1; /* for IE6-7 */*display: inline; /* for IE6-7 */}
+#main .log .editor .editor_img span { display:block; width:70px; height:70px; background:#0677e7; color:#fff; border-radius:5px; font-size:0.8em; line-height:70px; text-align:center;}
+#main .log .editor .editor_img img {width:100%; height:auto;border-radius:5px;}
+#main .log .editor .editor_txt {display:inline-block; vertical-align: middle;*zoom: 1; /* for IE6-7 */*display: inline; /* for IE6-7 */}
+#main .log .editor .editor_txt span { display:block; font-size:1.0em; }
+#main .log .logarea {width:100%; line-height:2.0em;}
+#main .log .logarea img {max-width:100%; width:auto; height:auto;display:block; margin:10px 0;}
+#main .log .logarea .comment {width:60px; height:auto; margin-top:40px; margin-left:10px; display:block;}
+#main .log .logarea .comment img {width:100%; height:auto;}
+/*user*/
+#main .ws .back_iframe {width:100%; height:100%;background:#fff; overflow:hidden; position:relative; }
+#main .ws iframe { position: relative;width: 100%;height: 100%;}
+/*/user*/
+}

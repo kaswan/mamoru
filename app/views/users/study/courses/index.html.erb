@@ -9,17 +9,17 @@
       
       <h2>講座一覧</h2>
 
-      <div class="box2">
+      
         <div class="infinite-table">
-          <table>
+          <table >
             <tbody>
-              <%= render :partial => 'courses', :object => @courses if @courses %>    
+              <%= render :partial => 'courses', :object => @courses if @courses %>   
             </tbody>
           </table>
           <p class="pagination">
             <%= link_to_next_page(@courses, 'Next Page', :remote => true) if @courses %>
           </p>
-        </div>
+        
      </div>
    </div>
 </div>

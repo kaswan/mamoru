@@ -4,7 +4,7 @@ class Users::PostsController < Users::ApplicationController
   # GET /users/posts
   # GET /users/posts.json
   def index
-    @posts = current_user.posts.active.page(params[:page] || 1).per(2)
+    @posts = current_user.posts.active.page(params[:page] || 1).per(4)
   end
 
   # GET /users/posts/1

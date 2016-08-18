@@ -1,5 +1,7 @@
-<div class="main_box_in">
-  <h1>専門家相談予約</h1>
+<%= link_to '戻る', consults_path, {class: 'second'} %>
+<div class="main_box2">
+  <div class="main_box_in">
+    <h1>専門家相談予約</h1>
     <h2>名前</h2>
       <div class="stwo">
         <%= image_tag @specialist.image.url(:thumb)%>
@@ -37,12 +39,12 @@
              <% (Date.today..Date.today+7).each do |day| %>
                <% date_time = Time.parse("#{day} #{time}") %>
                <% day = l(day, format: :short) %>
-               <td><%= raw((date_time < Time.now()) ? '&#x00D7;' : schedule_date_time[day].blank? ? '&#x00D7;' : schedule_date_time[day][time].blank? ? '&#x00D7;' : (link_to '&#9678;'.html_safe, appointment_consults_path(id: @specialist.id, specialized_field_id: @specialized_field.try(:id) || 0, schedule_entity_id: schedule_date_time[day][time].first.id), class: 'yes')) %></td>
+               <td class="yes"><%= raw((date_time < Time.now()) ? '&#x00D7;' : schedule_date_time[day].blank? ? '&#x00D7;' : schedule_date_time[day][time].blank? ? '&#x00D7;' : (link_to '&#9678;'.html_safe, appointment_consults_path(id: @specialist.id, specialized_field_id: @specialized_field.try(:id) || 0, schedule_entity_id: schedule_date_time[day][time].first.id), class: 'yes')) %></td>
              <% end %>
            </tr>
          <% end %>
       </tobdy>
     </table>
   </div>  
+</div>
 
-<%= link_to 'Back', consults_path %>

@@ -24,4 +24,21 @@ module ApplicationHelper
       return "%d秒" % [ss]
     end
   end
+  
+  def icon_post_type id
+    case id # id is the variable we want to compare
+    when 1    #compare to 1
+      return raw("<img src='/assets/mypage/diary.png' />")
+    when 2    #compare to 2
+      return raw("<img src='/assets/mypage/food.png' />")
+    when 3    #compare to 2
+      return raw("<img src='/assets/mypage/sleep.png' />")
+    when 4    #compare to 2
+      return raw("<img src='/assets/mypage/drug.png' />")
+    when 5    #compare to 2
+      return raw("<img src='/assets/mypage/health.png' />")
+    else
+      return false
+    end 
+  end
 end

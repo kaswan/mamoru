@@ -1,21 +1,22 @@
-<div class="main_box2">
-<div class="main_box_in">
-
-<h2><%= h @tutorial.try(:name) %></h2>
-
-<div class="movie_wrap">
-  <%= video_tag  @tutorial.attachment.video.url(:medium), controls: true, autobuffer: true, size: '560x315', poster: @tutorial.attachment.video.url(:thumb) if @tutorial.attachment && @tutorial.attachment.video.exists? %>
+<%= link_to '戻る', study_course_path(@course), {class: 'second'} %>
+<!-- Visual　ここから -->
+<h1 class="movieh1"><%= h @tutorial.try(:title) %></h1>
+<div id="visual">
+  <div id="visual_in">
+    <div class="video">
+      <%= video_tag  @tutorial.attachment.video.url(:medium), controls: true, autobuffer: true, poster: @tutorial.attachment.video.url(:thumb) if @tutorial.attachment && @tutorial.attachment.video.exists? %>
+    </div>
+  </div>
 </div>
+<!-- Visual　ここまで -->
 
-<h2>講義内容</h2>
-<p><%= h nl2br(@tutorial.try(:summary))%></p>
-
-<h2>講師</h2>
-<p><%= @course.parent.try(:name)%></p>
-
-<h2>講義資料</h2>
-<p><%= (link_to @tutorial.attachment.try(:upload_file_name), @tutorial.attachment.try(:upload).url, target: '_blank') if @tutorial.attachment && @tutorial.attachment.upload.exists? %><br></p>
-
-
-</div>
+<div class="main_box3">
+  <div class="main_box_in">
+    <h2>講義内容</h2>
+    <p><%= h nl2br(@tutorial.try(:summary))%></p>
+    <h2>講師</h2>
+    <p><%= @course.parent.try(:name)%></p>
+    <h2>講義資料</h2>
+    <p><%= (link_to @tutorial.attachment.try(:upload_file_name), @tutorial.attachment.try(:upload).url, target: '_blank') if @tutorial.attachment && @tutorial.attachment.upload.exists? %><br></p>
+  </div>
 </div>

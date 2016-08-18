@@ -1,3 +1,4 @@
+<%= link_to '戻る', detail_consults_path(id: @specialist.id, specialized_field_id: @specialized_field.try(:id) || 0 ), {class: 'second'} %>
 <div class="main_box2">
   <div class="main_box_in">
     <h1>専門家相談予約</h1>
@@ -34,7 +35,7 @@
         <%= f.hidden_field :recipient_type, value: @specialist.class %>
         <%= f.hidden_field :recipient_id, value: @specialist.id %>
         <%= f.hidden_field :specialized_field_id, value: @specialized_field.id %>
-        <%= f.button :submit, '予約内容を確認' %>
+        <%= f.button :submit, '予約内容を確認', :onclick => "return confirm('入力内容で予約します。よろしいでしょうか？')"  %>
       </div>
     <% end %>
   </div>

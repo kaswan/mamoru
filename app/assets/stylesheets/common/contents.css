@@ -1,0 +1,180 @@
+@charset "utf-8";
+
+@media screen and (min-width:800px){
+/*main*/
+main { width:100%; }
+main h1{font-size:2.2em; margin:40px auto 10px;  text-align:center;}
+main h2{font-size:2.0em; margin:40px auto;  text-align:center;}
+main h3{font-size:1.1em; margin:20px auto;  text-align:center;}
+main .contents { width:98%;max-width:1200px;margin:auto;overflow:hidden; position:relative; }
+main .contents .center { text-align:center; }
+main .contents .slide{width:100%;height:auto; margin:100px auto 100px;}
+main .contents .box { text-align: justify;text-justify: distribute-all-lines;}
+main .contents .box h2{font-size:2.0em; margin:80px auto 40px;  text-align:center;}
+main .contents .box:after {content:"";	display: inline-block;	width: 100%;line-height:0;height: 0;}
+main .contents .box > div.two{display:inline-block; width:47%;height:auto; background:#fff; padding:1%; text-align:left;vertical-align: top; position:relative;}
+main .contents .box > div.two h3 {text-align:center;font-size:2.0em; line-height:1.5em; margin-bottom:10px;}
+main .contents .box figure { width:80%; max-width:400px; height:auto; line-height:0;margin:10px auto; text-align:center;}
+main .contents .box figure img {width:100%; height:auto;}
+div.box > div.two{display:inline-block; width:48%;height:auto; text-align:left;vertical-align: middle;}
+div.box > div.two img { display:block;width:100%;height:auto; margin:auto;}
+div.box > div.two p {text-align:left; font-size:1.0em; padding-right:5%;}
+div.box > div.three{display:inline-block; width:30%;height:auto; text-align:center;vertical-align: top;}
+div.box > div.three img { display:block;width:80%;height:auto; margin:10px auto 20px; border:1px solid #CCC;border-radius:50%;}
+div.box > div.three p {text-align:left;}
+.contents-container2 {width:100%; background: #f5f5f5; padding:1% 0; margin-top:100px;overflow:hidden; position:relative;}
+div.box2{ text-align: justify;text-justify: distribute-all-lines; margin-bottom:20px;}
+div.box2:after {content:"";	display: inline-block;	width: 100%;line-height:0;height: 0;}
+div.box2 > div.two2{display:inline-block; width:45%;height:auto; min-height:200px; background:#fff; padding:2%; margin-top:2%; text-align:left;vertical-align: top;}
+.two2 h3 {text-align:left;font-size:1.0em;}
+/*/main*/
+/*function*/
+main .contents table.kino { width:100%; margin:auto; border-collapse:collapse;}
+main .contents table.kino td { padding:2% 1%; padding-right:2%; border:1px solid #CCC; font-size:0.9em; text-align:left;}
+main .contents table.kino td h3 { font-size:1.2em; font-weight:bold; text-align:left; margin-bottom:0px; }
+main .contents table.kino td h3 span { display:inline-block; font-size:1.0em; vertical-align: middle;*zoom: 1; /* for IE6-7 */*display: inline; /* for IE6-7 */ }
+main .contents table.kino td h3 span.w20 { width:23px; height:auto; margin-right:5px;}
+main .contents table.kino td h3 span img { width:100%; height:auto;}
+/*/function*/
+
+/*flow*/
+main section h2 {font-size:23px;margin-bottom:12px; text-align:center;}
+main section p { line-height:27px;font-size:15px !important;}
+main section p.footnote {font-size:12px !important;line-height:1.8; margin-top:18px; color:rgb(127,127,127); }
+main section figure {line-height:0;margin-bottom:22px; text-align:center;}
+main section figure img {width:330px; height:auto;}
+main section p.summary {font-size:20px !important; line-height:1.6; padding-top:19px;}
+main section p.summary:before {content:""; display:block; clear:both;}
+main section {width:804px; margin:0 auto 153px;}
+
+main section .spBr{display:none;}
+main section .tbBr{display:none;}
+main section .crastineSlider{display:none;}
+main {padding-top:73px;}	
+main h1.regular {text-align:left;width:804px; margin:0 auto 38px;}
+main section .itemContainer {float:right; width:454px;}	
+main section .num01 {height:450px; padding-top:13px;}
+main section .num02 {height:562px;}
+main section .num03 {height:636px;}
+main section .num04 {height:617px;}
+main section .num05 {height:550px;}
+main section .num06 {height:545px;}
+main section .num07 {height:442px;}
+main section .num08 {height:520px;}
+main section .num09 {height:550px;}
+main section .num10 {height:578px;}
+main section .num11 {height:508px;}
+main section nav.flowList {float:left;padding-right:47px; background:url(/assets/flow/bg1.png) bottom right no-repeat;}
+main section nav.flowList ul{position:relative;height:6016px; width:216px;}
+main section nav.flowList li {text-align:right; background:url(/assets/flow/greenP.png) center right no-repeat; padding-right:30px; position:absolute; width:100%;}
+main section nav.flowList li:nth-child(1) {top:263px;}
+main section nav.flowList li:nth-child(2) {top:803px;}
+main section nav.flowList li:nth-child(3) {top:1365px;}
+main section nav.flowList li:nth-child(4) {top:2001px;}
+main section nav.flowList li:nth-child(5) {top:2582px;}
+main section nav.flowList li:nth-child(6) {top:3110px;}
+main section nav.flowList li:nth-child(7) {top:3615px;}
+main section nav.flowList li:nth-child(8) {top:4150px;}
+main section nav.flowList li:nth-child(9) {top:4672px;}
+main section nav.flowList li:nth-child(10) {top:5184px;}
+main section nav.flowList li:nth-child(11) {top:5713px;}
+/*/flow*/
+/*faq*/
+main .contents ul.faq {width:100%;max-width:600px;margin:auto;}
+main .contents ul.faq li {margin:10px auto; list-style:disc;}
+.contents-container2 {width:100%; background: #f5f5f5; padding:1% 0; margin-top:100px;overflow:hidden; position:relative;}
+div.box2{ text-align: justify;text-justify: distribute-all-lines; margin-bottom:20px;}
+div.box2:after {content:"";	display: inline-block;	width: 100%;line-height:0;height: 0;}
+div.box2 > div.two2{display:inline-block; width:45%;height:auto; min-height:200px; background:#fff; padding:2%; margin-top:2%; text-align:left;vertical-align: top;}
+.two2 h3 {text-align:left;font-size:1.0em;}
+/*/faq*/
+}
+@media screen and (max-width:799px){
+/*main*/
+main { width:100%; }
+main h1{font-size:2.2em; margin:40px auto 10px;  text-align:center;}
+main h2{font-size:2.0em; margin:40px auto;  text-align:center;}
+main h3{font-size:1.1em; margin:20px auto;  text-align:center;}
+main .contents { width:98%;max-width:1200px;margin:auto;overflow:hidden; position:relative; }
+main .contents .center { text-align:center; }
+main .contents .slide{width:100%;height:auto; margin:100px auto 100px;}
+main .contents .box { text-align: justify;text-justify: distribute-all-lines;}
+main .contents .box h2{font-size:2.0em; margin:80px auto 40px;  text-align:center;}
+main .contents .box:after {content:"";	display: inline-block;	width: 100%;line-height:0;height: 0;}
+main .contents .box > div.two{display:inline-block; width:47%;height:auto; background:#fff; padding:1%; text-align:left;vertical-align: top; position:relative;}
+main .contents .box > div.two h3 {text-align:center;font-size:2.0em; line-height:1.5em; margin-bottom:10px;}
+main .contents .box figure { width:80%; max-width:400px; height:auto; line-height:0;margin:10px auto; text-align:center;}
+main .contents .box figure img {width:100%; height:auto;}
+div.box > div.two{display:inline-block; width:48%;height:auto; text-align:left;vertical-align: middle;}
+div.box > div.two img { display:block;width:100%;height:auto; margin:auto;}
+div.box > div.two p {text-align:left; font-size:1.0em; padding-right:5%;}
+div.box > div.three{display:inline-block; width:30%;height:auto; text-align:center;vertical-align: top;}
+div.box > div.three img { display:block;width:80%;height:auto; margin:10px auto 20px; border:1px solid #CCC;border-radius:50%;}
+div.box > div.three p {text-align:left;}
+.contents-container2 {width:100%; background: #f5f5f5; padding:1% 0; margin-top:100px;overflow:hidden; position:relative;}
+div.box2{ text-align: justify;text-justify: distribute-all-lines; margin-bottom:20px;}
+div.box2:after {content:"";	display: inline-block;	width: 100%;line-height:0;height: 0;}
+div.box2 > div.two2{display:inline-block; width:45%;height:auto; min-height:200px; background:#fff; padding:2%; margin-top:2%; text-align:left;vertical-align: top;}
+.two2 h3 {text-align:left;font-size:1.0em;}
+/*/main*/
+/*function*/
+main .contents table.kino { width:100%; margin:auto; border-collapse:collapse;}
+main .contents table.kino td { padding:2% 1%; padding-right:2%; border:1px solid #CCC; font-size:0.9em; text-align:left;}
+main .contents table.kino td h3 { font-size:1.2em; font-weight:bold; text-align:left; margin-bottom:0px; }
+main .contents table.kino td h3 span { display:inline-block; font-size:1.0em; vertical-align: middle;*zoom: 1; /* for IE6-7 */*display: inline; /* for IE6-7 */ }
+main .contents table.kino td h3 span.w20 { width:23px; height:auto; margin-right:5px;}
+main .contents table.kino td h3 span img { width:100%; height:auto;}
+/*/function*/
+
+/*flow*/
+main section h2 {font-size:23px;margin-bottom:12px; text-align:center;}
+main section p { line-height:27px;font-size:15px !important;}
+main section p.footnote {font-size:12px !important;line-height:1.8; margin-top:18px; color:rgb(127,127,127); }
+main section figure {line-height:0;margin-bottom:22px; text-align:center;}
+main section figure img {width:330px; height:auto;}
+main section p.summary {font-size:20px !important; line-height:1.6; padding-top:19px;}
+main section p.summary:before {content:""; display:block; clear:both;}
+main section {width:804px; margin:0 auto 153px;}
+
+main section .spBr{display:none;}
+main section .tbBr{display:none;}
+main section .crastineSlider{display:none;}
+main {padding-top:73px;}	
+main h1.regular {text-align:left;width:804px; margin:0 auto 38px;}
+main section .itemContainer {float:right; width:454px;}	
+main section .num01 {height:450px; padding-top:13px;}
+main section .num02 {height:562px;}
+main section .num03 {height:636px;}
+main section .num04 {height:617px;}
+main section .num05 {height:550px;}
+main section .num06 {height:545px;}
+main section .num07 {height:442px;}
+main section .num08 {height:520px;}
+main section .num09 {height:550px;}
+main section .num10 {height:578px;}
+main section .num11 {height:508px;}
+main section nav.flowList {float:left;padding-right:47px; background:url(/assets/flow/bg1.png) bottom right no-repeat;}
+main section nav.flowList ul{position:relative;height:6016px; width:216px;}
+main section nav.flowList li {text-align:right; background:url(/assets/flow/greenP.png) center right no-repeat; padding-right:30px; position:absolute; width:100%;}
+main section nav.flowList li:nth-child(1) {top:263px;}
+main section nav.flowList li:nth-child(2) {top:803px;}
+main section nav.flowList li:nth-child(3) {top:1365px;}
+main section nav.flowList li:nth-child(4) {top:2001px;}
+main section nav.flowList li:nth-child(5) {top:2582px;}
+main section nav.flowList li:nth-child(6) {top:3110px;}
+main section nav.flowList li:nth-child(7) {top:3615px;}
+main section nav.flowList li:nth-child(8) {top:4150px;}
+main section nav.flowList li:nth-child(9) {top:4672px;}
+main section nav.flowList li:nth-child(10) {top:5184px;}
+main section nav.flowList li:nth-child(11) {top:5713px;}
+/*/flow*/
+/*faq*/
+main .contents ul.faq {width:100%;max-width:600px;margin:auto;}
+main .contents ul.faq li {margin:10px auto; list-style:disc;}
+.contents-container2 {width:100%; background: #f5f5f5; padding:1% 0; margin-top:100px;overflow:hidden; position:relative;}
+div.box2{ text-align: justify;text-justify: distribute-all-lines; margin-bottom:20px;}
+div.box2:after {content:"";	display: inline-block;	width: 100%;line-height:0;height: 0;}
+div.box2 > div.two2{display:inline-block; width:45%;height:auto; min-height:200px; background:#fff; padding:2%; margin-top:2%; text-align:left;vertical-align: top;}
+.two2 h3 {text-align:left;font-size:1.0em;}
+/*/faq*/
+}

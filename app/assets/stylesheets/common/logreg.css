@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+body {color: #333;font-family: "メイリオ","Meiryo","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","MS Pゴシック", "MS P Gothic",sans-serif;text-align: left;}
+.fb{ width: 100%; height:40px; background:url(/assets/form/fb.png) no-repeat left center #3c599d; border-radius:5px; text-indent:60px;  margin:5px auto; position:relative;}
+.fb a{ display:block; font-size:1.0em; line-height:40px; color:#fff; text-decoration:none;}
+.yahoo{ width: 100%; height:40px; background:url(/assets/form/google.png) no-repeat left center #ff0033; border-radius:5px;text-indent:60px; margin:10px auto; position:relative;}
+.yahoo a{ display:block; font-size:1.0em; line-height:40px; color:#fff; text-decoration:none;}
+.google{ width: 100%; height:40px; background:url(/assets/form/google.png) no-repeat left center #dc4e41; border-radius:5px;text-indent:60px; margin:5px auto; position:relative;}
+.google a{ display:block; font-size:1.0em; line-height:40px; color:#fff; text-decoration:none;}
+.txt {font-size:0.8em; text-align:center; margin:10px auto 5px; }
+form{width:100%;margin:auto; text-align:center; padding-bottom:15px; border-bottom:2px solid #ccc;}
+input[type="text"] {width:100%; font-size:0.9em; text-indent:2%; border-radius:2px; border:1px solid #CCC; margin:5px auto; padding:10px 0;-webkit-appearance:none;}
+input[type="checkbox"] {font-size:0.8em; text-align:left;display:inline-block;vertical-align: middle;*zoom: 1; /* for IE6-7 */*display: inline; /* for IE6-7 */ margin:0; }
+form span {font-size:0.8em; text-align:left;display:inline-block;vertical-align: middle;*zoom: 1; /* for IE6-7 */*display: inline; /* for IE6-7 */}
+input[type="submit"] {display:block; width:100%; font-size:0.9em; text-indent:2%; background:#f9f9f9; border:1px solid #CCC; border-radius:2px; margin:5px auto; padding:10px 0; outline:none; cursor:pointer;}
+input[type="submit"]:hover{ background: #f1f1f1;}
+form p { margin:0; padding:0;}
+form p a {font-size:0.8em; text-decoration:none; margin:0; padding:0;}
+span.left{float:left;font-size:0.8em; margin-top:10px; margin-left:10px;}
+span.right{float:right;font-size:0.8em; margin-top:10px; margin-right:10px;}
+span.right a { text-decoration:none;}
+
+

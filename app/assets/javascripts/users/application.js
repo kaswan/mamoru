@@ -21,8 +21,12 @@
 //= require fancybox
 //= require ../init_fancybox
 //= require ../infinite_table
+//= require ../import_mypage
+//= require ../rollover
+//= require ../slide
 //= require turbolinks
 //= require_tree .
+
 
 $(function(){
   alertify.parent(document.body);
