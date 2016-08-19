@@ -153,7 +153,7 @@ main .contents .w960 img { width:100%; height:auto;}
 /*timeline*/
 main .tmenu { border-bottom:1px solid #ccc; overflow:hidden; margin-bottom:20px;}
 main .tmenu li {display:block; padding:0; background:#333;margin-top:1px;}
-main .tmenu li a {display:block; width:100%; line-height:3em; auto; color:#fff; text-align:center;}
+main .tmenu li a {display:block; width:100%; line-height:3em; color:#fff; text-align:center;}
 main .log {width:97%; height:auto; padding:1%; margin:auto; border:1px solid #ccc; border-top:3px solid #0677e7; margin-top:10px; overflow:hidden;}
 main .log .editor {margin-bottom:20px;}
 main .log .editor .editor_img {width:70px; height:70px;display:inline-block; margin-right:5px; vertical-align: middle;*zoom: 1; /* for IE6-7 */*display: inline; /* for IE6-7 */}

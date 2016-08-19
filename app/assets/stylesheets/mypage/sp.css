@@ -232,8 +232,8 @@ table.profile td label.blo {display:block;margin:20px auto;}
 table.profile td textarea {width:98%; height:300px; padding:1%;}
 #main .main_box2 h1 { font-size:2.0em; text-align:center; font-weight:bold;}
 #main .main_box2 h2 { font-size:1.5em; text-align:left; margin:40px auto 10px; border-bottom:1px dotted #666; clear:both;}
-#main .main_box2 .button { width:80%; max-width:300px; height:auto;background:#0a7def;margin:20px auto;border-radius:3px;text-align:center; font-size:1.2em;color:#fff;padding:0; }
-#main .main_box2 .button a { display:block; width:100%; height:auto;background:text-align:center; font-size:1.2em;color:#fff;padding:10px; cursor:pointer;}
+#main .main_box2 .button { width:80%; max-width:300px; height:auto; background:#0a7def;margin:20px auto;border-radius:3px;text-align:center; font-size:1.2em;color:#fff;padding:0; }
+#main .main_box2 .button a { display:block; width:100%; height:auto; text-align:center; font-size:1.2em;color:#fff;padding:10px; cursor:pointer;}
 /*/profile*/
 
 #main .tel {font-size:5em; text-align:center; margin:40px auto 0; }
@@ -346,7 +346,7 @@ h1.movieh2 { font-size:1.8em; height:auto; text-align:center; font-weight:bold; 
 
 #main ul.course_list {width:100%; margin:0 auto 20px; }
 #main ul.course_list li {width:98%; margin:0 auto; padding:10px 0 20px; font-size:1.2em; overflow:hidden; clear:both;}
-#main ul.course_list li+li { #ccc; padding:20px 0;}
+#main ul.course_list li+li {  padding:20px 0;}
 #main .course_img { width:100%; margin:0; padding:0; line-height:0; position:relative;}
 #main .course_img img{ width:100%; height:auto; }
 #main .course_txt {width:100%; margin:20px 0 0;  padding:0;  position:relative; text-align:left; font-size:1.0em; line-height:1em; }
@@ -615,8 +615,8 @@ table.profile td label.blo {display:block;margin:20px auto;}
 table.profile td textarea {width:98%; height:300px; padding:1%;}
 #main .main_box2 h1 { font-size:2.0em; text-align:center; font-weight:bold;}
 #main .main_box2 h2 { font-size:1.5em; text-align:left; margin:40px auto 10px; border-bottom:1px dotted #666; clear:both;}
-#main .main_box2 .button { width:80%; max-width:300px; height:auto;background:#0a7def;margin:20px auto;border-radius:3px;text-align:center; font-size:1.2em;color:#fff;padding:0; }
-#main .main_box2 .button a { display:block; width:100%; height:auto;background:text-align:center; font-size:1.2em;color:#fff;padding:10px; cursor:pointer;}
+#main .main_box2 .button { width:80%; max-width:300px; height:auto; background:#0a7def;margin:20px auto;border-radius:3px;text-align:center; font-size:1.2em;color:#fff;padding:0; }
+#main .main_box2 .button a { display:block; width:100%; height:auto; text-align:center; font-size:1.2em;color:#fff;padding:10px; cursor:pointer;}
 /*/profile*/
 
 #main .tel {font-size:5em; text-align:center; margin:40px auto 0; }
