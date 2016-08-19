@@ -6,6 +6,7 @@
   <% PostType.all.each do |type|%>
     <label><%= f.radio_button :post_type_id, type.id %><span><%= icon_post_type type.id %></span></label>
   <% end %>
+  <br>  
   <%=f.input :message, placeholder: "ここにメッセージを入力", label: false %>
   <%= f.hidden_field  :pending_status %>
 </div>
