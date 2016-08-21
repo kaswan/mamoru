@@ -195,6 +195,7 @@ ja:
       long: ! '%Y年%m月%d日(%a) %H時%M分%S秒 %z'
       short: ! '%y/%m/%d %H:%M'
       hour_minute: ! '%H時%M分'
+      day_hour_minute: ! '%Y年%m月%d日(%a) %H時%M分'
     pm: 午後
   # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
   activemodel:

@@ -7,7 +7,21 @@ Rails.application.routes.draw do
     root :to => 'welcome#index'
     resources :profiles, only: [:index, :edit, :update]
     resources :posts
-    resources :schedules
+    resources :schedules do
+      collection do
+        get :reservations
+      end
+    end
+    
+    resources :live_chat do      
+      collection do
+        post 'connect', :action => :connect, :as => 'connect'
+        get :chat_update
+      end
+      member do
+        get :talk
+      end
+    end
   end
   devise_for :specialists, path: :specialists, path_names: { sign_in: :login, sign_out: :logout }, controllers: { sessions: "specialists/sessions", passwords: "specialists/passwords", registrations: "specialists/registrations", unlocks: "specialists/unlocks" }
     
@@ -25,7 +39,11 @@ Rails.application.routes.draw do
       resources :tutorials
     end
     resources :tutorials
-    resources :schedules    
+    resources :schedules do
+      collection do
+        get :reservations
+      end
+    end
   end
   
   
@@ -49,9 +67,14 @@ Rails.application.routes.draw do
       end
     end
     
-    resources :live_chat, only: [:index, :show, :update] do      
+    resources :live_chat do      
       collection do
-        get :connect
+        post 'connect', :action => :connect, :as => 'connect'
+        get :chat_update
+      end
+      
+      member do
+        get :talk
       end
     end
       

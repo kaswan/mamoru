@@ -84,3 +84,4 @@ gem 'fancybox2-rails'
 gem 'holiday_jp'
 
 gem "squeel"
+gem 'thin'

@@ -63,6 +63,11 @@ class Specialists::SchedulesController < Specialists::ApplicationController
     end
   end
 
+  # 予約
+  def reservations
+    @reservations = current_specialist.get_requests   
+  end
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_schedule

@@ -1,4 +1,4 @@
-class Users::LiveChatController < Users::ApplicationController
+class Specialists::LiveChatController < Specialists::ApplicationController
 
   def index    
   end
@@ -61,15 +61,15 @@ class Users::LiveChatController < Users::ApplicationController
             end
           end
           #message = message.gsub(patterns, replacements);
-          if current_user.try(:image) 
-            profile_image_path = current_user.image.url(:icon)
+          if current_specialist.try(:image) 
+            profile_image_path = current_specialist.image.url(:icon)
           else  
             profile_image_path = '/assets/mypage/user.png';
           end
           message = message.gsub(/(\r\n|\r|\n)/, "<br />")
           file = getChatfilePath(params[:room]);
           File.open(file, 'a') do |file|
-            file.write("<div class='chat-box'><div class='chat-face'><img src=#{profile_image_path} alt='担当者名' width='80' height='80'></div><div class='chat-area'><div class='chat-editor'><div class='name'>#{current_user.name}</div><div class='date'>#{(l Time.now, format: :day_hour_minute)} </div></div><div class='chat-hukidashi'>#{message} </div></div></div>\n")
+            file.write("<div class='chat-box'><div class='chat-face'><img src=#{profile_image_path} alt='担当者名' width='80' height='80'></div><div class='chat-area'><div class='chat-editor'><div class='name'>#{current_specialist.name}</div><div class='date'>#{(l Time.now, format: :day_hour_minute)} </div></div><div class='chat-hukidashi'>#{message} </div></div></div>\n")
           end
         end
         respond_to do |format|
