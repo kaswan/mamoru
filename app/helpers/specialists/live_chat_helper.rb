@@ -1,0 +1,2 @@
+module Specialists::LiveChatHelper
+end

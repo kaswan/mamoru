@@ -1,0 +1,33 @@
+<script type="text/javascript">
+  var chat = new Chat("<%= room %>");
+  chat.init(); 
+</script>
+<div class="wb">
+  <div class="img_wrap">
+    <div class="ws">
+      <div class="chat-inp">
+        <p>
+          <%= link_to "<img src='/assets/mypage/chat-video.png' />".html_safe, specialist ? talk_specialists_live_chat_path: talk_live_chat_path %>
+          <span id="sendie">送信</span>
+        </p>
+        <form id="send-message-area" action="">
+            <textarea id="message" placeholder="ここにメッセージを入力" ></textarea> 
+        </form>
+      </div>
+      
+      <div id="chatbox-area" style="height: 560px; overflow: auto;"></div>
+    </div>
+  </div>
+</div>
+  
+<script>
+  $('#sendie').click(function(e) {
+    var text = $('#message').val();
+    var length = text.length; 
+    if (length >= 1) {  
+      chat.send(text);  
+      $('#message').val("");
+    } 
+    e.preventDefault();
+  });
+</script>

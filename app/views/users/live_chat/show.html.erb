@@ -1,21 +1,2 @@
-<%= javascript_include_tag '/simple_webrtc/chat.js' %>
-<script type="text/javascript">
-  var chat = new Chat("<%= params['id'] %>");
-  chat.init();  
-</script>
-<div class="wb">
-    <div class="img_wrap">
-      <div class="ws">
-        <div class="chat-inp">
-          <p>
-            <span id="sendie">送信</span>
-          </p>
-          <form id="send-message-area" action="">
-              <textarea id="message" placeholder="ここにメッセージを入力" ></textarea> 
-          </form>
-        </div>
-        
-        <div id="chatbox-area" style="height: 560px; overflow: auto;"></div>
-      </div>
-    </div>
-  </div>
+<%= link_to '終了', reservations_consults_path, {class: 'second'} %>
+<%= render "/shared/live/chat", :room => params[:id], :specialist => false  %>

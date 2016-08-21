@@ -1,0 +1,205 @@
+<%= javascript_include_tag '/simple_webrtc/simplewebrtc.bundle.js' %>
+<script type="text/javascript">
+  var chat = new Chat("<%= room %>");
+  chat.init(); 
+</script>  
+<div class="wb">
+  <div class="img_wrap" style="width: 1211.19px; height: 807.46px;">
+    <div id="remotes-video" style="width: 1211.19px; height: 807.46px;" ></div>
+    <div class="ws" style="display:none;" id="chat-block">
+      <div class="chat-inp">
+        <p>
+          <span id="sendie">送信</span>
+        </p>
+        
+        <form id="send-message-area" action="">
+          <textarea id="message" placeholder="ここにメッセージを入力" ></textarea> 
+        </form>
+      </div>
+      <div id="chatbox-area" style="height: 560px; overflow: auto;"></div>
+    </div>
+  </div>
+    
+  <div class="wrap_box">
+    <div class="chat_wrap">
+      <div class="chat_img first_img" style="width: 257.7px; height: 171.8px;">
+        <video id="localVideo" style="width: 257.7px; height: 171.8px;" ></video>
+      </div>
+    </div>
+    <div class="chat_wrap2">
+      <div class="chat_img second_img" style="width: 257.7px; height: 171.8px;">
+        <img id="chat-link-view" src="/assets/chat/video2.jpg" width="640" height="427">
+      </div>
+      <div id="remotes-side-video" style="width: 257.7px; height: 171.8px;display:none;"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(".right").click(function(){ $("header").slideDown(); });
+  $("#mclose").click(function(){ $("header").slideUp(); });
+
+  $(".chat_wrap2").click(function(){ 
+    $('#chat-block').toggle();
+    $('#chat-block').css({'position': 'absolute','top': '0','overflow': 'auto'});
+    //$('#remotes-video').toggle();
+    $('#chat-link-view').toggle();
+    $('#remotes-side-video').toggle();
+    
+    var remotes = document.getElementById('remotes-side-video');
+//    if ( ('#remotes-side-video').css("visibility") == "hidden" ){
+//      //var remotes = document.getElementById('remotes-video');
+//    } 
+    if(remotes.style.display != 'none'){
+      $('#remotes-video').children($('video')).children().css({'width': remotes.style.width,'height':remotes.style.height,'position': 'fixed','bottom': '1%','left': '1%'});
+    }else{
+      var remotes = document.getElementById('remotes-video');
+      $('#remotes-video').children($('video')).children().css({'width': remotes.style.width,'height':remotes.style.height, 'position':'absolute'});
+    }
+//    $('#remotes-side-video').toggle();
+//    $('#remotes-side-video').append($('#remotes-video').children($('video')).html());
+  });
+</script>
+
+<script>
+  $('#sendie').click(function(e) {
+    var text = $('#message').val();
+    var length = text.length; 
+    if (length >= 1) {  
+      chat.send(text);  
+      $('#message').val("");
+    } 
+    e.preventDefault();
+  });
+</script>
+  
+<%= javascript_tag do %>
+            // grab the room from the URL
+            //var room = location.search && location.search.split('?')[1];
+            var room = "<%= room %>" ;
+            // create our webrtc connection
+            var webrtc = new SimpleWebRTC({
+                // the id/element dom element that will hold "our" video
+                localVideoEl: 'localVideo',
+                // the id/element dom element that will hold remote videos
+                remoteVideosEl: '',
+                // immediately ask for camera access
+                autoRequestMedia: true,
+                debug: false,
+                detectSpeakingEvents: true,
+                autoAdjustMic: false
+            });
+
+            // when it's ready, join if we got a room from the URL
+            webrtc.on('readyToCall', function () {
+                // you can name it anything
+                if (room) webrtc.joinRoom(room);
+            });
+
+            function showVolume(el, volume) {
+                if (!el) return;
+                if (volume < -45) { // vary between -45 and -20
+                    el.style.height = '0px';
+                } else if (volume > -20) {
+                    el.style.height = '100%';
+                } else {
+                    el.style.height = '' + Math.floor((volume + 100) * 100 / 25 - 220) + '%';
+                }
+            }
+            webrtc.on('channelMessage', function (peer, label, data) {
+                if (data.type == 'volume') {
+                    //showVolume(document.getElementById('volume_' + peer.id), data.volume);
+                }
+            });
+            webrtc.on('videoAdded', function (video, peer) {
+                //console.log('video added', peer);
+                var remotes = document.getElementById('remotes-video');
+                if (remotes) {
+                  //remotes.appendChild(video);
+                    var d = document.createElement('div');
+                    d.className = 'videoContainer';
+                    d.id = 'container_' + webrtc.getDomId(peer);
+                    d.appendChild(video);
+                    var vol = document.createElement('div');
+                    vol.id = 'volume_' + peer.id;
+                    vol.className = 'volume_bar';
+                    video.onclick = function () {
+//                         video.style.width = video.videoWidth + 'px';
+//                         video.style.height = video.videoHeight + 'px';
+                    };
+                    //d.appendChild(vol);
+                    video.style.width = remotes.style.width;
+                    video.style.height= remotes.style.height;
+                    remotes.appendChild(d);
+                }
+            });
+
+            
+            
+            webrtc.on('videoRemoved', function (video, peer) {
+                console.log('video removed ', peer);
+                var remotes = document.getElementById('remotes-video');
+                var el = document.getElementById('container_' + webrtc.getDomId(peer));
+                if (remotes && el) {
+                    remotes.removeChild(el);
+                }
+            });
+            webrtc.on('volumeChange', function (volume, treshold) {
+                //console.log('own volume', volume);
+                //showVolume(document.getElementById('localVolume'), volume);
+            });
+
+            // Since we use this twice we put it here
+            function setRoom(name) {
+                //$('form').remove();
+                $('h1').text(name);
+                $('#subTitle').text('Link to join: ' + location.href);
+                $('body').addClass('active');
+            }
+
+            if (room) {
+                setRoom(room);
+            } else {
+                // $('form').submit(function () {
+                //     var val = $('#sessionInput').val().toLowerCase().replace(/\s/g, '-').replace(/[^A-Za-z0-9_\-]/g, '');
+                //     webrtc.createRoom(val, function (err, name) {
+                //         console.log(' create room cb', arguments);
+                    
+                //         var newUrl = location.pathname + '?' + name;
+                //         if (!err) {
+                //             history.replaceState({foo: 'bar'}, null, newUrl);
+                //             setRoom(name);
+                //         } else {
+                //             console.log(err);
+                //         }
+                //     });
+                //     return false;          
+                // });
+            }
+
+            var button = $('#screenShareButton'),
+                setButton = function (bool) {
+                    button.text(bool ? 'share screen' : 'stop sharing');
+                };
+            webrtc.on('localScreenStopped', function () {
+                setButton(true);
+            });
+
+            setButton(true);
+
+            button.click(function () {
+                if (webrtc.getLocalScreen()) {
+                    webrtc.stopScreenShare();
+                    setButton(true);
+                } else {
+                    webrtc.shareScreen(function (err) {
+                        if (err) {
+                            setButton(true);
+                        } else {
+                            setButton(false);
+                        }
+                    });
+                    
+                }
+            });
+                <% end %>

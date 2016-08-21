@@ -24,8 +24,8 @@
 //= require ../import_mypage
 //= require ../rollover
 //= require ../slide
-//= require turbolinks
 //= require_tree .
+//= require turbolinks
 
 
 $(function(){

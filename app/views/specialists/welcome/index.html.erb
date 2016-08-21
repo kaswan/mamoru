@@ -1,16 +1,22 @@
 <% if current_specialist %>
-  <div class="page-header">
-    <h1><%= current_specialist.name %></h1>
-  </div>
-  <div class="panel panel-default">
-    <div class="panel-body">
-      <ul>
-        <li><strong><%= link_to "Posts", specialists_posts_path %></strong></li>
-        <li><strong><%= link_to "Schedules", specialists_schedules_path %></strong></li>
-        <li><strong><%= link_to 'Change Password', edit_specialist_registration_path %></strong></li>
-      </ul>
-    </div>
-  </div>
+  
+<div id="main_top">
+  <div id="tlogo"><%= image_tag 'common/flogo.png'%></div>
+  <h1 class="top"><%= current_specialist.name %> さん、こんにちは</h1>
+  <ul id="box5">
+    <li><%= link_to '<img src="/assets/common/menu1.png" class="over" />'.html_safe, specialists_posts_path %></li>
+    <li><%= link_to '<img src="/assets/common/menu2.png" class="over"'.html_safe, "#" %></li>
+    <li><%= link_to '<img src="/assets/common/menu20.png" class="over" />'.html_safe, specialists_schedules_path %></li>
+    
+    <li><%= link_to '<img src="/assets/common/menu3.png" class="over">'.html_safe, specialists_profiles_path %></li>
+    <li><a href="help.html"><img src="/assets/common/menu4.png" class="over"></a></li>
+    <li><a href="privacy.html"><img src="/assets/common/menu7.png" class="over"></a></li>
+    <li><a href="terms.html"><img src="/assets/common/menu8.png" class="over"></a></li>
+    <li><a href="contact.html"><img src="/assets/common/menu9.png" class="over"></a></li>
+    <li><%= link_to '<img src="/assets/common/menu5.png" class="over">'.html_safe, destroy_specialist_session_path, method: :delete %></li>
+  </ul>
+</div>  
+  
 <% else %>
   <%= render 'welcome' %>
 <% end %>

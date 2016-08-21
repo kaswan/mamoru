@@ -1,7 +1,10 @@
-<h1>Schedules</h1>
-<div id="schedules_calendar">
-  <%= render '/shared/schedules/calendar', user: current_specialist %>
-</div>
-<br>
 
-<%= link_to 'New Schedule', new_specialists_schedule_path, class: "fancybox fancybox.iframe btn btn-default btn-sm", style: 'float:right;', 'data-width' => "640", 'data-height' => "360" %>
+<div class="ws2">
+<h1>Schedules</h1> <%= link_to "予約一覧", reservations_specialists_schedules_path %>
+  <div class="log">
+    <div id="schedules_calendar">
+      <%= render '/shared/schedules/calendar', user: current_specialist %>
+    </div>
+  </div>    
+</div>  
+

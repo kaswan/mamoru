@@ -4,7 +4,7 @@ var room;
 var numOfUsers = 0;
 var roomid;
 var usernameid;
-
+var timer;
 function Chat (roomName) {
 	room = roomName;
 	this.init = chatInit;
@@ -31,7 +31,7 @@ $.ajaxSetup({
 function getStateOfChat(){
 	 $.ajax({
 		   type: "POST",
-		   url: "/live_chat/connect",
+		   url: "/specialists/live_chat/connect",
 		   data: {
 			  room: room,
 			  task: 'getState',
@@ -47,10 +47,11 @@ function getStateOfChat(){
 		 
 //Updates the chat
 function updateChat(){
+	clearTimeout(timer);
      $.ajax({
      
         type: "GET",
-        url: "/live_chat/chat_update",
+        url: "/specialists/live_chat/chat_update",
         data: {  
             state: state,
             room: room
@@ -69,29 +70,26 @@ function updateChat(){
         
         instanse = false;
         state = data.state;
-        setTimeout('updateChat()', 1);
-        
+        timer = setTimeout('updateChat()', 5000);
         },
     });
 }
 
 //send the message
 function sendChat(message) {  
-	alert("start");
-     $.ajax({
-		   type: "POST",
-		   url: "/live_chat/connect",
-		   data: {  
-			  room: room,
-		   	  task: 'send',
-		   	  message: message,					
-			},
-		   dataType: "json",
-		   success: function(data){
-			alert("enddddd");
-		   },
-		});
-
+  $.ajax({
+    type: "POST",
+    url: "/specialists/live_chat/connect",
+    data: {  
+	  room: room,
+   	  task: 'send',
+   	  message: message,					
+	},
+    dataType: "json",
+    success: function(data){
+    	setTimeout('updateChat()', 100);
+    },
+  });
 }
 
 function trimstr(s, limit) {
@@ -105,7 +103,7 @@ function getuserlist(room, username) {
 	
 	 $.ajax({
         type: "GET",
-        url: "/live_chat/userlist",
+        url: "/specialists/live_chat/userlist",
         data: {  
         		'room' : room,
         		'username': username,
@@ -125,7 +123,7 @@ function getuserlist(room, username) {
         		$('#userlist').html($("<ul>"+ list +"</ul>"));
         	}
         	
-            setTimeout('getuserlist(roomid, usernameid)', 1);
+            setTimeout('getuserlist(roomid, usernameid)', 10000);
            
         },
     });
