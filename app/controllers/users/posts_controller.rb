@@ -78,7 +78,7 @@ class Users::PostsController < Users::ApplicationController
     end
     
     def set_pending_post
-      current_user.build_pending_post(:pending_status => true).save(validate: false) unless current_user.pending_post
+      current_user.build_pending_post(:pending_status => true, :post_type_id => 1).save(validate: false) unless current_user.pending_post
       @post = current_user.pending_post
     end
     

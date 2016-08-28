@@ -1,11 +1,52 @@
-<%= show_for @user do |user| %>
-  <%= user.attribute :name %>
-  <%= user.attribute :email %>
-  <%= @user.try(:gender).camelize if @user.try(:gender)%>
+<%= image_tag((@user.image.exists? ? @user.image.url(:square) : @user.image_url), class: 'media-object') if @user.image.url %>
+<table class="profile">
+  <tr>
+    <th>名前</th>
+    <td><%= @user.try(:name) %></td>
+  </tr>
+  
+  <tr>
+    <th>ふりがな</th>
+    <td><%= @user.profile.try(:furigana) %></td>
+  </tr>
+  
+  <tr>
+    <th>性別</th>
+    <td><%= @user.try(:gender).camelize if @user.try(:gender)%></td>
+  </tr>
 
-  <%= user.attribute :image do %>
-    <%= image_tag((@user.image.exists? ? @user.image.url(:square) : @user.image_url), class: 'media-object') if @user.image.url %>
-  <% end  %>
-	<%= user.attribute :last_sign_in_at, :format => :short, :if_blank => "Administrator did not access yet", :wrapper_html => { :id => "sign_in_timestamp" } %>
-  <%= user.attribute :created_at, :format => :short %>
-<% end %>
+  <tr>  
+    <th>メールアドレス</th>
+    <td><%= @user.try(:email) %></td>
+  </tr>
+  
+  <tr>
+    <th>お住まい（都道府県）</th>
+    <td><%= @user.profile.prefecture.name if @user.profile.prefecture %></td>
+  </tr>
+  
+  <tr>
+    <th>連絡先</th>
+    <td><%= @user.profile.try(:contact_info) %></td>
+  </tr>
+
+  <tr>
+    <th>職業</th>
+    <td><%= @user.profile.try(:occupation) %></td>
+  </tr>
+  
+  <tr>
+    <th>興味があること</th>
+    <td><%= @user.profile.try(:interest) %></td>
+  </tr>
+
+  <tr>
+    <th>備考</th>
+    <td><%= @user.profile.try(:remarks) %></td>
+  </tr>
+ 
+    
+  
+	<%#= user.attribute :last_sign_in_at, :format => :short, :if_blank => "Administrator did not access yet", :wrapper_html => { :id => "sign_in_timestamp" } %>
+  <%#= user.attribute :created_at, :format => :short %>
+</table>

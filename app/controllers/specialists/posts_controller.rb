@@ -78,7 +78,7 @@ class Specialists::PostsController < Specialists::ApplicationController
     end
     
     def set_pending_post
-      current_specialist.build_pending_post(:pending_status => true).save(validate: false) unless current_specialist.pending_post
+      current_specialist.build_pending_post(:pending_status => true, :post_type_id => 1).save(validate: false) unless current_specialist.pending_post
       @post = current_specialist.pending_post
     end
     
