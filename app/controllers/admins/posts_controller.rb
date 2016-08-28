@@ -78,7 +78,7 @@ class Admins::PostsController < Admins::ApplicationController
     end
     
     def set_pending_post
-      current_admin_user.build_pending_post(:pending_status => true).save(validate: false) unless current_admin_user.pending_post
+      current_admin_user.build_pending_post(:pending_status => true, :post_type_id => 1).save(validate: false) unless current_admin_user.pending_post
       @post = current_admin_user.pending_post
     end
     

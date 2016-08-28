@@ -38,7 +38,7 @@ module ApplicationHelper
     when 5    #compare to 2
       return raw("<img src='/assets/mypage/health.png' />")
     else
-      return false
+      return raw("<img src='/assets/mypage/diary.png' />")
     end 
   end
 end

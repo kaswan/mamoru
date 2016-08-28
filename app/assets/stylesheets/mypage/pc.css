@@ -225,6 +225,8 @@ table.profile td {width:68%; padding:10px 1%;}
 table.profile td span {display:inline-block;vertical-align: middle;*zoom: 1; margin:10px 15px;  /* for IE6-7 */*display: inline; /* for IE6-7 */white-space: nowrap;}
 table.profile td span label {display:inline-block;vertical-align: middle;*zoom: 1; margin:0; /* for IE6-7 */*display: inline; /* for IE6-7 */white-space: nowrap;}
 table.profile td input[type="text"] {width:98%; padding:1%; }
+table.profile td input[type="email"] {width:98%; padding:1%; }
+table.profile td input[type="password"] {width:98%; padding:1%; }
 table.profile td select {width:60%; padding:1%;}
 table.profile td label {display:inline-block;vertical-align: middle;*zoom: 1; margin:5px auto; margin-left:10px; /* for IE6-7 */*display: inline; /* for IE6-7 */white-space: nowrap;}
 table.profile td label.blo {display:block;margin:20px auto;}
