@@ -19,9 +19,11 @@ var _ua = (function(u){
 if(_ua.Mobile || _ua.Tablet){
 		document.write('<link rel="stylesheet" type="text/css" href="/assets/common/common.css">');
         document.write('<link rel="stylesheet" type="text/css" href="/assets//mypage/sp.css">');
+        document.write('<link rel="stylesheet" type="text/css" href="/assets//mypage/posts.css">');
 		document.write('<script type="text/javascript" src="/assets/chat_sp.js"></script>');
 }else{
 	document.write('<link rel="stylesheet" type="text/css" href="/assets/common/common.css">');
     document.write('<link rel="stylesheet" type="text/css" href="/assets/mypage/pc.css">');
+    document.write('<link rel="stylesheet" type="text/css" href="/assets//mypage/posts.css">');
 	document.write('<script type="text/javascript" src="/assets/chat.js"></script>');
 }

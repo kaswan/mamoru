@@ -8,7 +8,7 @@
       <div class="chat-inp">
         <p>
           <%= link_to "<img src='/assets/mypage/chat-video.png' />".html_safe, specialist ? talk_specialists_live_chat_path: talk_live_chat_path %>
-          <span id="sendie">送信</span>
+          <span id="sendie"><%= _('Send') %></span>
         </p>
         <form id="send-message-area" action="">
             <textarea id="message" placeholder="ここにメッセージを入力" ></textarea> 

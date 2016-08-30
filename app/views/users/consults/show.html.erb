@@ -1,28 +1,32 @@
 <%= link_to '戻る', consults_path, {class: 'second'} %>
 <div class="main_box2">
   <div class="main_box_in">
-    <h1>専門家相談予約</h1>
-    <h2>名前</h2>
+    <h1><%= _('Specialist Profile') %></h1>
+    <h2><%= _('Name') %></h2>
       <div class="stwo">
         <%= image_tag @specialist.image.url(:thumb)%>
       </div>
       <div class="stwo1">
         <h3><%= @specialist.specialist_profile.try(:name) + "（#{@specialist.specialist_profile.furigana}）"%></h3>
-        <p>所属：<%=@specialist.specialist_profile.try(:enterprise)%>&nbsp;<%= link_to_if @specialist.specialist_profile.home_page_url, "（ホームページ）", @specialist.specialist_profile.home_page_url, target: '_blank' %>
+        <p><%= _('Enterprise') %>：<%=@specialist.specialist_profile.try(:enterprise)%>&nbsp;<%= link_to_if @specialist.specialist_profile.home_page_url, _("Website Page"), @specialist.specialist_profile.home_page_url, target: '_blank' %>
       </div>
 
-      <h2>専門分野</h2>
-      <p><%=@specialist.specialist_profile.try(:specialized_field)%></p>
+      <h2><%= _('Specialized Field') %></h2>
+      <p>
+        <% @specialist.specialized_field_relations.each do |s| %>
+          <%= s.specialized_field.name %>&nbsp;&nbsp;&nbsp;
+        <% end %>
+      </p>
       
-      <h2>自己紹介</h2>
+      <h2><%= _('Introduction')%></h2>
       <p><%=@specialist.specialist_profile.try(:introduction)%></p>
       <% schedule_date_time = {} %>
       <% @specialist.schedules.joins(:schedule_entities).where(:schedule_type => 'Reservation', :start_date => Date.today..Date.today+7, :schedule_entities => {:editable => true}).map(&:schedule_entities).each{|entity| entity.each {|e| ((schedule_date_time[l(e.schedule_date,format: :short)] ||={})[e.start_time.strftime("%H:%M")] ||=[]) << e }} %>
-      <h2>予約日時選択</h2>
+      <h2><%= _('Select Reservation date and time')%></h2>
       <table class="sche">
         <thead>
           <tr>
-            <th>時間</th>
+            <th><%= _('Time') %></th>
             <% (Date.today..Date.today+7).each do |day| %>
             <td><%= l day, format: :short %><br>（<%= t('date.abbr_day_names')[day.wday] %>）</td>
             <% end %>

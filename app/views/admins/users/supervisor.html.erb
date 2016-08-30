@@ -1,4 +1,4 @@
-<h1>Supervisors</h1>
+<h1><%= _('Supervisors') %></h1>
 
 <%= simple_nested_form_for  ([:admins, @user]) do |f| %>
   <% if @user.errors.any? %>
@@ -26,4 +26,4 @@
   </div>
 <% end %>
 
-<%= link_to 'Back', admins_users_path %>
+<%= link_to _('Back'), admins_users_path %>

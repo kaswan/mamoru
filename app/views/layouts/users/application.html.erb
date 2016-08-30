@@ -24,7 +24,7 @@
 <div id="main">
   <% if controller.controller_name != 'welcome' %>
     <a href="#wss" class="right">設定</a>
-    <% if controller.controller_name == 'posts' %>
+    <% if controller.controller_name == 'posts' && controller.action_name != 'edit' %>
       <a href="#head" class="left">投稿</a>
     <% end %>
   <% end %>
@@ -36,6 +36,4 @@
   <%= yield %>
 </div>
 </body>
-
-
 </html>

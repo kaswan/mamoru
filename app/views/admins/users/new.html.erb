@@ -1,5 +1,5 @@
-<h1>New User</h1>
+<h1><%= _('New User') %></h1>
 <%= simple_nested_form_for  ([:admins, @user]) do |f| %>
   <%= render '/shared/users/registration', :f => f %>
 <% end %>
-<%= link_to 'Back', admins_users_path %>
+<%= link_to _('Back'), admins_users_path %>

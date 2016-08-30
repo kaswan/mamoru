@@ -4,8 +4,8 @@
     <div class="editor">
       <div class="editor_img"><%= icon_post_type post.post_type_id %></div>
       <div class="editor_txt"><span><%= l post.created_at, format: :long %></span> 
-      <%= link_to 'Edit', {:controller => 'posts', :action => :edit, :id => post} %>
-        <%= link_to 'Destroy', {:controller => 'posts', :action => :destroy, :id => post}, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+      <%= link_to _('Edit'), {controller: :posts, action: :edit, id: post} %>
+      <%= link_to _('Destroy'), {controller: :posts, action: :destroy, id: post, anchor: 'head' }, method: :delete, data: { confirm: _('Are you sure?') } %></div>
     </div>
     <div class="logarea">
       <%= h nl2br(post.try(:message)) %><br>

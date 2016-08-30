@@ -1,30 +1,30 @@
 <%= link_to '戻る', detail_consults_path(id: @specialist.id, specialized_field_id: @specialized_field.try(:id) || 0 ), {class: 'second'} %>
 <div class="main_box2">
   <div class="main_box_in">
-    <h1>専門家相談予約</h1>
-    <h2>相談内容の記入</h2>
+    <h1><%= _('Consultation Reservation') %>%></h1>
+    <h2><%= _('Consultation Content')%></h2>
     <%= simple_form_for(@conversation, url: appointment_create_consults_path(id: @specialist.id, specialized_field_id: @specialized_field.try(:id) || 0, schedule_entity_id: @schedule_entity.id)) do |f| %>
       <%= f.error_notification %>
       <table class="user">
         <tr>
-          <th>相談カテゴリ</th>
+          <th><%= _('Consultation category')%></th>
           <td><%= @specialized_field.try(:name)%>に関する相談</td>
         </tr>
         <tr>
-          <th>専門家</th>
+          <th><%= _('Specialist') %></th>
           <td><%= @specialist.name %></td>
         </tr>
         <tr>
-          <th>相談日時</th>
+          <th><%= _('Consultation Time')%></th>
           <td><%= l @schedule_entity.schedule_date, format: :long %> <%= l @schedule_entity.start_time, format: :hour_minute %> </td>
         </tr>
       </table>
 
       <table class="user">
         <tr>
-          <th class="active">相談内容</th>
+          <th class="active"><%= _('Content of Consultation') %></th>
           <td>
-             <%= f.input :remarks, label: false, placeholder: '相談内容を入力してください' %>
+             <%= f.input :remarks, label: false, placeholder: _('Please enter the consultation content') %>
           </td>
         </tr>
       </table>
@@ -35,7 +35,7 @@
         <%= f.hidden_field :recipient_type, value: @specialist.class %>
         <%= f.hidden_field :recipient_id, value: @specialist.id %>
         <%= f.hidden_field :specialized_field_id, value: @specialized_field.id %>
-        <%= f.button :submit, '予約内容を確認', :onclick => "return confirm('入力内容で予約します。よろしいでしょうか？')"  %>
+        <%= f.button :submit, _('Confirm reservation content'), :onclick => "return confirm('入力内容で予約します。よろしいでしょうか？')"  %>
       </div>
     <% end %>
   </div>

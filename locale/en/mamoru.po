@@ -1,0 +1,255 @@
+# English translations for mamoru package.
+# Copyright (C) 2016 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the mamoru package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: mamoru 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2016-08-30 11:17+0900\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: English\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"\n"
+
+msgid "%s characters minimum"
+msgstr ""
+
+msgid "Admin account"
+msgstr ""
+
+msgid "Are you sure?"
+msgstr ""
+
+msgid "Back"
+msgstr ""
+
+msgid "Basic Information"
+msgstr ""
+
+msgid "Basic Profile"
+msgstr ""
+
+msgid "Cancel"
+msgstr ""
+
+msgid "Cancel account"
+msgstr ""
+
+msgid "Change Basic Information"
+msgstr ""
+
+msgid "Change Password"
+msgstr ""
+
+msgid "Change Profile Information"
+msgstr ""
+
+msgid "Confirm reservation content"
+msgstr ""
+
+msgid "Consultation Content"
+msgstr ""
+
+msgid "Consultation Reservation"
+msgstr ""
+
+msgid "Consultation Time"
+msgstr ""
+
+msgid "Consultation category"
+msgstr ""
+
+msgid "Content of Consultation"
+msgstr ""
+
+msgid "Created"
+msgstr ""
+
+msgid "Demo"
+msgstr ""
+
+msgid "Destroy"
+msgstr ""
+
+msgid "Edit"
+msgstr ""
+
+msgid "Edit Basic Profile"
+msgstr ""
+
+msgid "Edit Inheritor Profile"
+msgstr ""
+
+msgid "Edit Supervisor"
+msgstr ""
+
+msgid "Edit User Information"
+msgstr ""
+
+msgid "Editing Post"
+msgstr ""
+
+msgid "Editing Specialist"
+msgstr ""
+
+msgid "Editing Study Course"
+msgstr ""
+
+msgid "Editing Tutorial"
+msgstr ""
+
+msgid "Email"
+msgstr ""
+
+msgid "End"
+msgstr ""
+
+msgid "Enterprise"
+msgstr ""
+
+msgid "Gender"
+msgstr ""
+
+msgid "Inheritor Information"
+msgstr ""
+
+msgid "Introduction"
+msgstr ""
+
+msgid "Is free"
+msgstr ""
+
+msgid "Listing Specialists"
+msgstr ""
+
+msgid "Listing Study Courses"
+msgstr ""
+
+msgid "Listing Tutorials"
+msgstr ""
+
+msgid "Listing Users"
+msgstr ""
+
+msgid "Listings Reservation"
+msgstr ""
+
+msgid "Live Chat"
+msgstr ""
+
+msgid "Log in"
+msgstr ""
+
+msgid "Name"
+msgstr ""
+
+msgid "New Specialist"
+msgstr ""
+
+msgid "New Study Course"
+msgstr ""
+
+msgid "New Tutorial"
+msgstr ""
+
+msgid "New User"
+msgstr ""
+
+msgid "Next Page"
+msgstr ""
+
+msgid "Please enter the consultation content"
+msgstr ""
+
+msgid "Please select"
+msgstr ""
+
+msgid "Posts"
+msgstr ""
+
+msgid "Price"
+msgstr ""
+
+msgid "Profile Information"
+msgstr ""
+
+msgid "Reserve Closest Date"
+msgstr ""
+
+msgid "Schedules"
+msgstr ""
+
+msgid "Select Reservation date and time"
+msgstr ""
+
+msgid "Select Specialists"
+msgstr ""
+
+msgid "Send"
+msgstr ""
+
+msgid "Show"
+msgstr ""
+
+msgid "Specialist"
+msgstr ""
+
+msgid "Specialist Profile"
+msgstr ""
+
+msgid "Specialists List"
+msgstr ""
+
+msgid "Specialized Field"
+msgstr ""
+
+msgid "Study Course Information"
+msgstr ""
+
+msgid "Study Courses"
+msgstr ""
+
+msgid "Submit"
+msgstr ""
+
+msgid "Summary"
+msgstr ""
+
+msgid "Supervisor Informations"
+msgstr ""
+
+msgid "Supervisors"
+msgstr ""
+
+msgid "Teacher"
+msgstr ""
+
+msgid "Time"
+msgstr ""
+
+msgid "Title"
+msgstr ""
+
+msgid "Update"
+msgstr ""
+
+msgid "User Registration"
+msgstr ""
+
+msgid "Users List"
+msgstr ""
+
+msgid "Video Chat"
+msgstr ""
+
+msgid "View Profile"
+msgstr ""
+
+msgid "Website Page"
+msgstr ""
