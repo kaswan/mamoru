@@ -1,19 +1,18 @@
-<p id="notice"><%= notice %></p>
-<h2>Basic Profile</h2>
+<h2><%= _('Basic Profile') %></h2>
 <%= render '/shared/users/profile' %>
-<%= link_to 'Edit Basic Profile ', edit_admins_user_path(@user) %> |
-<%= link_to 'Back', admins_users_path %>
+<%= link_to _('Edit Basic Profile'), edit_admins_user_path(@user) %> |
+<%= link_to _('Back'), admins_users_path %>
 
 <hr>
 
-<h2>Inheritor Information</h2>
+<h2><%= _('Inheritor Information') %></h2>
 <%= render '/shared/users/inheritor' %>
-<%= link_to 'Edit Inheritor Profile ', inheritor_admins_user_path(@user) %> |
+<%= link_to _('Edit Inheritor Profile'), inheritor_admins_user_path(@user) %> |
 <%= link_to 'Back', admins_users_path %>
 
 <hr>
 
-<h2>Supervisor Informations</h2>
+<h2><%= _('Supervisor Informations') %></h2>
 <%= render '/shared/users/supervised' %>
-<%= link_to 'Edit Supervisor ', supervisor_admins_user_path(@user) %> |
-<%= link_to 'Back', admins_users_path %>
+<%= link_to _('Edit Supervisor'), supervisor_admins_user_path(@user) %> |
+<%= link_to _('Back'), admins_users_path %>

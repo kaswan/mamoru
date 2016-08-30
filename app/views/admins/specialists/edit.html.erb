@@ -1,8 +1,8 @@
-<h1>Editing Specialist</h1>
+<h1><%= _('Editing Specialist') %></h1>
 
 <%= simple_nested_form_for  ([:admins, @specialist]) do |f| %>
   <%= render '/shared/specialists/form', :f => f %>
 <% end %>
 
-<%= link_to 'Show', [:admins, @specialist] %> |
-<%= link_to 'Back', admins_specialists_path %>
+<%= link_to _('Show'), [:admins, @specialist] %> |
+<%= link_to _('Back'), admins_specialists_path %>

@@ -1,13 +1,11 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Users</h1>
+<h1><%= _('Listing Users') %></h1>
 
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Gender</th>
+      <th><%= _('Name') %></th>
+      <th><%= _('Email') %></th>
+      <th><%= _('Gender') %></th>
       <th></th>
       <th></th>
       <th></th>
@@ -20,9 +18,9 @@
         <td><%= user.try(:name) %></td>
         <td><%= user.try(:email) %></td>
         <td><%= user.try(:gender) %></td>
-        <td><%= link_to 'Show', [:admins, user], :class => 'btn btn-show' %></td>
-        <td><%= link_to 'Edit', edit_admins_user_path(user), :class => 'btn btn-edit' %></td>
-        <td><%#= link_to 'Destroy', [:admins, user], method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-delete' %></td>
+        <td><%= link_to _('Show'), [:admins, user], :class => 'btn btn-show' %></td>
+        <td><%= link_to _('Edit'), edit_admins_user_path(user), :class => 'btn btn-edit' %></td>
+        <td><%#= link_to _('Destroy'), [:admins, user], method: :delete, data: { confirm: _('Are you sure?') }, :class => 'btn btn-delete' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New User', new_admins_user_path %>
+<%= link_to _('New User'), new_admins_user_path %>

@@ -1,10 +1,10 @@
 <div class="main_box2">
   <div class="main_box_in">
-    <h1>専門家相談予約</h1>
-    <h2>専門家の選択 <%=link_to '予約一落', reservations_consults_path %></h2>
+    <h1><%= ('Consultation Reservation') %></h1>
+    <h2><%= _('Select Specialists') %> <%= link_to _('Listings Reservation'), reservations_consults_path %></h2>
    
-    <label>相談内容の選択</label>
-    <%= select_tag :field_select, options_for_select(SpecializedField.where(:deleted => false).order(:sort_no).map{|f|["#{f.name}に関する相談", f.id]}), {:prompt =>"相談内容を選んでください"}%>
+    <label><%= _('Content of Consultation')%></label>
+    <%= select_tag :field_select, options_for_select(SpecializedField.where(:deleted => false).order(:sort_no).map{|f|["#{f.name}に関する相談", f.id]}), {:prompt => _("Please select")}%>
     
       <div class="infinite-table">
         <table>
@@ -13,7 +13,7 @@
           </tbody>
         </table>
         <p class="pagination">
-          <%= link_to_next_page(@specialists, 'Next Page', :remote => true) if @specialists %>
+          <%= link_to_next_page(@specialists, _('Next Page'), :remote => true) if @specialists %>
         </p>
       </div>
   </div>

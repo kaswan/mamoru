@@ -1,13 +1,11 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Tutorials</h1>
+<h1><%= _('Listing Tutorials') %></h1>
 
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Summary</th>
-      <th>Is free</th>
+      <th><%= _('Title') %></th>
+      <th><%= _('Summary') %></th>
+      <th><%= _('Is free') %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,9 +16,9 @@
         <td><%= tutorial.title %></td>
         <td><%= tutorial.summary %></td>
         <td><%= tutorial.is_free %></td>
-        <td><%= link_to 'Show', [:admins, tutorial] %></td>
-        <td><%= link_to 'Edit', edit_admins_tutorial_path(tutorial) %></td>
-        <td><%= link_to 'Destroy', [:admins, tutorial], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to _('Show'), [:admins, tutorial] %></td>
+        <td><%= link_to _('Edit'), edit_admins_tutorial_path(tutorial) %></td>
+        <td><%= link_to _('Destroy'), [:admins, tutorial], method: :delete, data: { confirm: _('Are you sure?') } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Tutorial', new_admins_tutorial_path %>
+<%= link_to _('New Tutorial'), new_admins_tutorial_path %>

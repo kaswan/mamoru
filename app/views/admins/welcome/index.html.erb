@@ -1,16 +1,16 @@
 <% if current_admin_user %>
   <div class="page-header">
-    <h1>Admin account</h1>
+    <h1><%= _('Admin account') %></h1>
   </div>
   <div class="panel panel-default">
     <div class="panel-body">
       <ul>
-        <li><strong><%= link_to "Posts", admins_posts_path %></strong></li>
-        <li><strong><%= link_to "Users List", admins_users_path %></strong></li>
-        <li><strong><%= link_to "Specialists List", admins_specialists_path %></strong></li>
-        <li><strong><%= link_to "Study Courses", admins_study_courses_path %></strong></li>
-        <li><strong><%= link_to "Schedules", admins_schedules_path %></strong></li>
-        <li><strong><%= link_to 'Change Password', edit_admin_user_registration_path %></strong></li>
+        <li><strong><%= link_to _("Posts"), admins_posts_path %></strong></li>
+        <li><strong><%= link_to _("Users List"), admins_users_path %></strong></li>
+        <li><strong><%= link_to _("Specialists List"), admins_specialists_path %></strong></li>
+        <li><strong><%= link_to _("Study Courses"), admins_study_courses_path %></strong></li>
+        <li><strong><%= link_to _("Schedules"), admins_schedules_path %></strong></li>
+        <li><strong><%= link_to _('Change Password'), edit_admin_user_registration_path %></strong></li>
       </ul>
     </div>
   </div>

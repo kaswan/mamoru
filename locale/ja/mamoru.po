@@ -1,0 +1,255 @@
+# Japanese translations for mamoru package.
+# Copyright (C) 2016 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the mamoru package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: mamoru 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2016-08-30 11:17+0900\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Japanese\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"\n"
+
+msgid "%s characters minimum"
+msgstr "%s文字以上"
+
+msgid "Admin account"
+msgstr "管理者アカウント"
+
+msgid "Are you sure?"
+msgstr "よろしいでしょうか？"
+
+msgid "Back"
+msgstr "戻る"
+
+msgid "Basic Information"
+msgstr "基本情報"
+
+msgid "Basic Profile"
+msgstr "基本情報"
+
+msgid "Cancel"
+msgstr "キャンセル"
+
+msgid "Cancel account"
+msgstr "解約する"
+
+msgid "Change Basic Information"
+msgstr "基本情報の変更"
+
+msgid "Change Password"
+msgstr "パスワード変更"
+
+msgid "Change Profile Information"
+msgstr "登録情報の変更"
+
+msgid "Confirm reservation content"
+msgstr "予約内容を確認"
+
+msgid "Consultation Content"
+msgstr "相談内容の記入"
+
+msgid "Consultation Reservation"
+msgstr "専門家相談予約"
+
+msgid "Consultation Time"
+msgstr "相談日時"
+
+msgid "Consultation category"
+msgstr "相談カテゴリ"
+
+msgid "Content of Consultation"
+msgstr "相談内容"
+
+msgid "Created"
+msgstr "登録日"
+
+msgid "Demo"
+msgstr "デモ"
+
+msgid "Destroy"
+msgstr "削除"
+
+msgid "Edit"
+msgstr "編集"
+
+msgid "Edit Basic Profile"
+msgstr "基本情報【編集】"
+
+msgid "Edit Inheritor Profile"
+msgstr "相続人情報【編集】"
+
+msgid "Edit Supervisor"
+msgstr "コンシェルジュ"
+
+msgid "Edit User Information"
+msgstr "ユーザ情報【編集】"
+
+msgid "Editing Post"
+msgstr "編集"
+
+msgid "Editing Specialist"
+msgstr "専門家情報【編集】"
+
+msgid "Editing Study Course"
+msgstr "学習コース情報【編集】"
+
+msgid "Editing Tutorial"
+msgstr "チュートリアル情報【編集】"
+
+msgid "Email"
+msgstr "メールアドレス"
+
+msgid "End"
+msgstr "終了"
+
+msgid "Enterprise"
+msgstr "所属"
+
+msgid "Gender"
+msgstr "性別"
+
+msgid "Inheritor Information"
+msgstr "相続人情報"
+
+msgid "Introduction"
+msgstr "自己紹介"
+
+msgid "Is free"
+msgstr "無料"
+
+msgid "Listing Specialists"
+msgstr "専門家一覧"
+
+msgid "Listing Study Courses"
+msgstr "学習コース一覧"
+
+msgid "Listing Tutorials"
+msgstr "チュートリアル一覧"
+
+msgid "Listing Users"
+msgstr "ユーザ一覧"
+
+msgid "Listings Reservation"
+msgstr "予約一覧"
+
+msgid "Live Chat"
+msgstr "チャット"
+
+msgid "Log in"
+msgstr "ログイン"
+
+msgid "Name"
+msgstr "名前"
+
+msgid "New Specialist"
+msgstr "新規専門家"
+
+msgid "New Study Course"
+msgstr "新規学習コース"
+
+msgid "New Tutorial"
+msgstr "新規チュートリアル"
+
+msgid "New User"
+msgstr "新規ユーザ"
+
+msgid "Next Page"
+msgstr "次へ"
+
+msgid "Please enter the consultation content"
+msgstr "相談内容を入力してください"
+
+msgid "Please select"
+msgstr "選んでください"
+
+msgid "Posts"
+msgstr "日記投稿"
+
+msgid "Price"
+msgstr "単価"
+
+msgid "Profile Information"
+msgstr "登録情報"
+
+msgid "Reserve Closest Date"
+msgstr "一番近い日時で予約"
+
+msgid "Schedules"
+msgstr "スケジュール"
+
+msgid "Select Reservation date and time"
+msgstr "予約日時選択"
+
+msgid "Select Specialists"
+msgstr "専門家の選択"
+
+msgid "Send"
+msgstr "送信"
+
+msgid "Show"
+msgstr "詳細"
+
+msgid "Specialist"
+msgstr "専門家"
+
+msgid "Specialist Profile"
+msgstr "専門家プロフィール"
+
+msgid "Specialists List"
+msgstr "専門家一覧"
+
+msgid "Specialized Field"
+msgstr "専門分野"
+
+msgid "Study Course Information"
+msgstr "学習コース情報"
+
+msgid "Study Courses"
+msgstr "学習コース"
+
+msgid "Submit"
+msgstr "登録する"
+
+msgid "Summary"
+msgstr "概要"
+
+msgid "Supervisor Informations"
+msgstr "コンシェルジュ情報"
+
+msgid "Supervisors"
+msgstr "コンシェルジュ"
+
+msgid "Teacher"
+msgstr "講師"
+
+msgid "Time"
+msgstr "時間"
+
+msgid "Title"
+msgstr "タイトル"
+
+msgid "Update"
+msgstr "更新"
+
+msgid "User Registration"
+msgstr "会員登録"
+
+msgid "Users List"
+msgstr "ユーザ一覧"
+
+msgid "Video Chat"
+msgstr "ビデオチャット"
+
+msgid "View Profile"
+msgstr "詳細をみて予約"
+
+msgid "Website Page"
+msgstr "ホームページ"

@@ -1,8 +1,8 @@
-<h1>Editing User</h1>
+<h1><%= _('Edit User Information')%></h1>
 
 <%= simple_nested_form_for  ([:admins, @user]) do |f| %>
   <%= render '/shared/users/form', :f => f %>
 <% end %>
 
-<%= link_to 'Show', [:admins, @user] %> |
-<%= link_to 'Back', admins_users_path %>
+<%= link_to _('Show'), [:admins, @user] %> |
+<%= link_to _('Back'), admins_users_path %>

@@ -1,12 +1,12 @@
 
-<h1>Listing Specialists</h1>
+<h1><%= _('Listing Specialists') %></h1>
 
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Gender</th>
+      <th><%= _('Name') %></th>
+      <th><%= _('Email') %></th>
+      <th><%= _('Gender') %></th>
       <th></th>
       <th></th>
       <th></th>
@@ -19,9 +19,9 @@
         <td><%= specialist.try(:name) %></td>
         <td><%= specialist.try(:email) %></td>
         <td><%= specialist.try(:gender) %></td>
-        <td><%= link_to 'Show', [:admins, specialist], :class => 'btn btn-show' %></td>
-        <td><%= link_to 'Edit', edit_admins_specialist_path(specialist), :class => 'btn btn-edit' %></td>
-        <td><%#= link_to 'Destroy', [:admins, specialist], method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-delete' %></td>
+        <td><%= link_to _('Show'), [:admins, specialist], :class => 'btn btn-show' %></td>
+        <td><%= link_to _('Edit'), edit_admins_specialist_path(specialist), :class => 'btn btn-edit' %></td>
+        <td><%#= link_to _('Destroy'), [:admins, specialist], method: :delete, data: { confirm: _('Are you sure?') }, :class => 'btn btn-delete' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -29,4 +29,4 @@
 
 <br>
 
-<%= link_to 'New User', new_admins_specialist_path %>
+<%= link_to _('New Specialist'), new_admins_specialist_path %>

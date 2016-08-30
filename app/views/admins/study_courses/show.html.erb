@@ -1,3 +1,4 @@
+<h2><%= _('Study Course Information')%></h2>
 <table class="table table-reflow">
   <tr><th>講師</th><td><%= @study_course.parent.try(:name) %></td></tr>
   <tr><th>講座カテゴリ</th><td><%= @study_course.specialized_field.try(:name) %></td></tr>
@@ -7,15 +8,16 @@
   <tr><th>無料</th><td><%= @study_course.try(:is_free) ? 'Yes' : 'No' %></td></tr>
   <tr><th>セット料金</th><td><%= number_to_currency @study_course.try(:price) %></td></tr>
 </table>
-<%= link_to 'Edit', edit_admins_study_course_path(@study_course) %> |
-<%= link_to 'Back', admins_study_courses_path %>
+<%= link_to _('Edit'), edit_admins_study_course_path(@study_course) %> |
+<%= link_to _('Back'), admins_study_courses_path %>
 
 <br>
+<h2><%= _('Listing Tutorials')%></h2>
 <table class="table table-striped">
   <thead>
-  	<th>Title</th>
-  	<th>Demo</th>
-  	<th>Update</th>
+  	<th><%= _('Title') %></th>
+  	<th><%= _('Demo') %></th>
+  	<th><%= _('Update') %></th>
   	<th></th>
   	<th></th>
   </thead>
@@ -24,10 +26,10 @@
   <td><%= tutorial.try :title %></td>
   <td><%= tutorial.try(:is_free) ? 'Yes' : 'No' %></td>
   <td><%= tutorial.try :updated_at %></td>
-  <td><%= link_to 'Show', admins_study_course_tutorial_path(@study_course,tutorial) %></td>
-  <td><%= link_to 'Edit', edit_admins_study_course_tutorial_path(@study_course,tutorial) %></td>
-  <td><%= link_to 'Destroy', [:admins, @study_course, tutorial], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  <td><%= link_to _('Show'), admins_study_course_tutorial_path(@study_course,tutorial) %></td>
+  <td><%= link_to _('Edit'), edit_admins_study_course_tutorial_path(@study_course,tutorial) %></td>
+  <td><%= link_to _('Destroy'), [:admins, @study_course, tutorial], method: :delete, data: { confirm: _('Are you sure?') } %></td>
   </tr>
 <% end %>
 </table>
-<%= link_to 'New Tutorial', new_admins_study_course_tutorial_path(@study_course.id) %>
+<%= link_to _('New Tutorial'), new_admins_study_course_tutorial_path(@study_course.id) %>

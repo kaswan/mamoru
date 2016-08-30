@@ -1,7 +1,7 @@
 <div class="main_box2">
   <div class="main_box_in">
-    <h2>新規会員登録</h2>
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <h2><%= _('User Registration')%></h2>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= devise_error_messages! %>
       <table class="profile">
         <tr>
@@ -13,7 +13,7 @@
           <th><%= f.label :password %></th>
           <td>
             <% if @minimum_password_length %>
-              <em>(<%= @minimum_password_length %> characters minimum)</em>
+              <em>(<%= _('%s characters minimum')%[@minimum_password_length]%>)</em>
             <% end %><br />
             <%= f.password_field :password, autocomplete: "off" %>
           </td>  
@@ -24,7 +24,7 @@
         </tr>
       </table>
       <div class="top_second">
-        <%= f.submit "登録する" %>
+        <%= f.submit _("Submit") %>
       </div>
     <% end %>
     <%= render "devise/shared/links" %>

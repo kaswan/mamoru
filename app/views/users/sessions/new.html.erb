@@ -1,7 +1,7 @@
 <div class="main_box2">
   <div class="main_box_in">
-    <h2>ログイン</h2>
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <h2><%= _('Log in')%></h2>
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <table class="profile">
         <tr>
           <th><%= f.label :email %></th>
@@ -23,9 +23,9 @@
         <% end -%>
       </table>
       <div class="top_second">
-        <%= f.submit "ログイン" %>
+        <%= f.submit _('Log in') %>
       </div>
     <% end %>
     <%= render "devise/shared/links" %>
   </div>
-</div>      
+</div>

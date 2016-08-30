@@ -1,9 +1,9 @@
-<%= link_to '戻る', profiles_path, {class: 'second'} %>
+<%= link_to _('Back'), profiles_path, {class: 'second'} %>
 <div class="main_box2">
   <div class="main_box_in">
-    <h1>登録情報変更</h1>
-    <h2>パスワード変更</h2>
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <h1><%= _('Change Profile Information')%></h1>
+    <h2><%= _('Change Password')%></h2>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= devise_error_messages! %>
       <table class="profile">
         <tr>
@@ -37,12 +37,12 @@
         </tr>
       </table>
       <div class="top_second">
-        <%= f.submit "更新する" %>
+        <%= f.submit _("Update") %>
       </div>
     <% end %>
     <!--
-    <h2>アカウント解約</h2>
-    <p><%= button_to "解約する", registration_path(resource_name), data: { confirm: "アカウント削除します。よろしいでしょうか？" }, method: :delete %></p>
+    <h2><%= _('Cancel account') %></h2>
+    <p><%= button_to _("Cancel"), registration_path(resource_name), data: { confirm: _("Are you sure?") }, method: :delete %></p>
     -->
   </div>
 </div>

@@ -1,15 +1,13 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Study Courses</h1>
+<h1><%= _('Listing Study Courses') %></h1>
 
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Summary</th>
-      <th>Is free</th>
-      <th>Price</th>
-      <th>Teacher</th>
+      <th><%= _('Name') %></th>
+      <th><%= _('Summary') %></th>
+      <th><%= _('Is free') %></th>
+      <th><%= _('Price') %></th>
+      <th><%= _('Teacher') %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,13 +16,13 @@
     <% @study_courses.each do |study_course| %>
       <tr>
         <td><%= study_course.name %></td>
-        <td><%= study_course.summary %></td>
-        <td><%= study_course.is_free %></td>
+        <td><%= study_course.summary.slice(0..29) + "..." %></td>
+        <td><%= study_course.is_free ? "○" : "×" %></td>
         <td><%= study_course.price %></td>
         <td><%= study_course.parent.name %></td>
-        <td><%= link_to 'Show', [:admins, study_course] %></td>
-        <td><%= link_to 'Edit', edit_admins_study_course_path(study_course) %></td>
-        <td><%= link_to 'Destroy', [:admins, study_course], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to _('Show'), [:admins, study_course] %></td>
+        <td><%= link_to _('Edit'), edit_admins_study_course_path(study_course) %></td>
+        <td><%= link_to _('Destroy'), [:admins, study_course], method: :delete, data: { confirm: _('Are you sure?') } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Study course', new_admins_study_course_path %>
+<%= link_to _('New Study Course'), new_admins_study_course_path %>

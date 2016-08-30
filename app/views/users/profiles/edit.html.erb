@@ -1,8 +1,8 @@
-<%= link_to '戻る', profiles_path, {class: 'second'} %>
+<%= link_to _('Back'), profiles_path, {class: 'second'} %>
 <div class="main_box2">
   <div class="main_box_in">
-    <h1>登録情報変更</h1>
-    <h2 class="title">基本情報</h2>
+    <h1><%= _('Change Profile Information') %></h1>
+    <h2 class="title"><%= _('Basic Information') %></h2>
     <%= simple_nested_form_for @user, {:url => "/profiles/#{current_user.id}"} do |f| %>
       <%= render '/shared/users/form', :f => f %>
     <% end %>
