@@ -1,4 +1,3 @@
-
   <% if @specialist.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@specialist.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -19,9 +18,7 @@
 	<%= f.simple_fields_for :specialist_profile do |p| %>
 		<%= render '/shared/specialists/specialist_profile_fields', :p => p, :f => f %>
 	<% end %>
-	
 
-  <div class="actions">
+  <div class="top_second">
     <%= f.submit %>
   </div>
-

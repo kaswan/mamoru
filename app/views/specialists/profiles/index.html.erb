@@ -1,13 +1,7 @@
-<p id="notice"><%= notice %></p>
-<h1>Specialist Profile</h1>
-
-<%= render '/shared/specialists/profile' %>
-
-<br>
-
-<%= link_to 'Edit Profile', edit_specialists_profile_path(@specialist) %> |
-<%= link_to 'Change Password', edit_specialist_registration_path %>
-
-
-<br>
-
+<div class="main_box2">
+  <div class="main_box_in">
+    <h1><%= _('Profile Information') %></h1>
+    <h2><%= _('Basic Information') %><span><%= link_to _('Change Basic Information'), edit_specialists_profile_path(@specialist) %></span><span><%= link_to _('Change Password'), edit_specialist_registration_path %></span></h2>
+    <%= render '/shared/specialists/profile' %>
+  </div>  
+</div>

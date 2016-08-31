@@ -1,23 +1,80 @@
-<%= p.input :name %>
-<%= p.input :furigana %>
-<div class="form-group">
-	<%= f.label :gender %>
-	<%= f.radio_button :gender, 'male' %>男性
-	<%= f.radio_button :gender, 'female' %>女性
-</div>
-<%= p.label :date_of_birth %>
-<%= p.date_field :date_of_birth %>
-<%= p.input :postalcode %>
-<%= p.association :prefecture %>
-<%= p.input :address %>
-<%= p.input :enterprise %>
-<%= p.input :qualification %>
-<%= p.label :specialized_field %>
-<%= f.fields_for :specialized_field_relations do |f|%>
-   <%= f.select :specialized_field_id, SpecializedField.order(:sort_no).map{|sf| [sf.name, sf.id]}, {:prompt =>"選択してください"}, :class => "specialized-field"%>
-   <%= f.link_to_remove "削除", :class => "btn btn-delete" %>
-<% end %>
-<span><%= f.link_to_add "追加", :specialized_field_relations, :class => "btn btn-add" %></span>
-<%= p.input :introduction %>
-<%= p.input :home_page_url %>
-<%= p.input :remarks %>
+<table class="profile">
+  <tr>
+    <th><%= p.label :name %></th>
+    <td><%= p.input :name, label: false %></td>
+  </tr>
+  <tr>
+    <th><%= p.label :furigana %></th>
+    <td><%= p.input :furigana, label: false %></td>
+  </tr>
+  <tr>
+	  <th><%= f.label :gender %></th>
+	  <td>
+	    <%= f.radio_button :gender, 'male' %>男性
+	    <%= f.radio_button :gender, 'female' %>女性
+	  </td>
+  </tr>
+  <tr>
+    <th><%= p.label :date_of_birth %></th>
+    <td><%= p.date_field :date_of_birth, label: false %></td>
+  </tr>
+
+  <tr>
+    <th><%= p.label :postalcode %></th>
+    <td><%= p.input :postalcode, label: false %></td>
+  </tr>  
+  <tr>
+    <th><%= p.label :prefecture_id %></th>
+    <td><%= p.association :prefecture, label: false %></td>
+  </tr>
+  <tr>
+    <th><%= p.label :address %></th>
+    <td><%= p.input :address, label: false %></td>
+  </tr>
+
+  <tr>
+    <th><%= p.label :tel %></th>
+    <td><%= p.input :tel, label: false %></td>
+  </tr>
+  
+  <tr>
+    <th><%= p.label :fax %></th>
+    <td><%= p.input :fax, label: false %></td>
+  </tr>
+  
+  <tr>
+    <th><%= p.label :enterprise %></th>
+    <td><%= p.input :enterprise, label: false %></td>
+  </tr>
+
+  <tr>
+    <th><%= p.label :qualification %></th>
+    <td><%= p.input :qualification, label: false %></td>
+  </tr>
+
+  <tr>
+    <th><%= p.label :specialized_field %></th>
+    <td>
+      <%= f.fields_for :specialized_field_relations do |f|%>
+        <%= f.select :specialized_field_id, SpecializedField.order(:sort_no).map{|sf| [sf.name, sf.id]}, {:prompt => _('Please select')}, :class => "specialized-field"%>
+        <%= f.link_to_remove _("Delete"), :class => "btn btn-delete" %>
+      <% end %>
+      <span><%= f.link_to_add _('Add'), :specialized_field_relations, :class => "btn btn-add" %></span>
+    </td>
+  </tr>
+
+  <tr>
+    <th><%= p.label :home_page_url %></th>
+    <td><%= p.input :home_page_url, label: false %></td>
+  </tr>
+  
+  <tr>
+    <th><%= p.label :introduction %></th>
+    <td><%= p.input :introduction, label: false %></td>
+  </tr>
+  
+  <tr>
+    <th><%= p.label :remarks %></th>
+    <td><%= p.input :remarks, label: false %></td>
+  </tr>
+</table>

@@ -1,7 +1,10 @@
-<h1>Editing Specialist Profile</h1>
-
-<%= simple_nested_form_for @specialist, {:url => "/specialists/profiles/#{current_specialist.id}"} do |f| %>
-  <%= render '/shared/specialists/form', :f => f %>
-<% end %>
-
-<%= link_to 'Back', specialists_profiles_path %>
+<%= link_to _('Back'), specialists_profiles_path, {class: 'second'} %>
+<div class="main_box2">
+  <div class="main_box_in">
+    <h1><%= _('Change Profile Information') %></h1>
+    <h2 class="title"><%= _('Basic Information') %></h2>
+    <%= simple_nested_form_for @specialist, {:url => "/specialists/profiles/#{current_specialist.id}"} do |f| %>
+      <%= render '/shared/specialists/form', :f => f %>
+    <% end %>
+  </div>
+</div>
