@@ -20,6 +20,9 @@ msgstr ""
 msgid "%s characters minimum"
 msgstr ""
 
+msgid "Add"
+msgstr ""
+
 msgid "Admin account"
 msgstr ""
 
@@ -69,6 +72,9 @@ msgid "Content of Consultation"
 msgstr ""
 
 msgid "Created"
+msgstr ""
+
+msgid "Delete"
 msgstr ""
 
 msgid "Demo"
@@ -161,6 +167,9 @@ msgstr ""
 msgid "New User"
 msgstr ""
 
+msgid "Next"
+msgstr ""
+
 msgid "Next Page"
 msgstr ""
 
@@ -171,6 +180,9 @@ msgid "Please select"
 msgstr ""
 
 msgid "Posts"
+msgstr ""
+
+msgid "Previous"
 msgstr ""
 
 msgid "Price"

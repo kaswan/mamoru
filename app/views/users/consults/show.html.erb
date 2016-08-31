@@ -1,4 +1,4 @@
-<%= link_to '戻る', consults_path, {class: 'second'} %>
+<%= link_to _('Back'), consults_path, {class: 'second'} %>
 <div class="main_box2">
   <div class="main_box_in">
     <h1><%= _('Specialist Profile') %></h1>
@@ -12,11 +12,7 @@
       </div>
 
       <h2><%= _('Specialized Field') %></h2>
-      <p>
-        <% @specialist.specialized_field_relations.each do |s| %>
-          <%= s.specialized_field.name %>&nbsp;&nbsp;&nbsp;
-        <% end %>
-      </p>
+      <p><%= @specialist.specialized_field_relations.map(&:specialized_field).map(&:name).join('、') unless @specialist.specialized_field_relations.blank? %></p>
       
       <h2><%= _('Introduction')%></h2>
       <p><%=@specialist.specialist_profile.try(:introduction)%></p>

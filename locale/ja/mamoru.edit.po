@@ -20,6 +20,9 @@ msgstr ""
 msgid "%s characters minimum"
 msgstr "%s文字以上"
 
+msgid "Add"
+msgstr "追加"
+
 msgid "Admin account"
 msgstr "管理者アカウント"
 
@@ -70,6 +73,9 @@ msgstr "相談内容"
 
 msgid "Created"
 msgstr "登録日"
+
+msgid "Delete"
+msgstr "削除"
 
 msgid "Demo"
 msgstr "デモ"
@@ -161,6 +167,9 @@ msgstr "新規チュートリアル"
 msgid "New User"
 msgstr "新規ユーザ"
 
+msgid "Next"
+msgstr "次 ≫"
+
 msgid "Next Page"
 msgstr "次へ"
 
@@ -172,6 +181,9 @@ msgstr "選んでください"
 
 msgid "Posts"
 msgstr "日記投稿"
+
+msgid "Previous"
+msgstr "≪ 前"
 
 msgid "Price"
 msgstr "単価"

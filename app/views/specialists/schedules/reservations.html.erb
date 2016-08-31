@@ -1,6 +1,6 @@
+<%= link_to _('Back'), specialists_schedules_path, {class: 'second'} %>
 <div class="main_box1">
 <% @reservations.joins(:schedule_entity).where(:schedule_entity => {:deleted => false, :editable => false}).includes(:schedule_entity).each do |r| %>
-
   <div class="main_box_in">
     <div class="intro">
       <div class="pic2">
@@ -8,14 +8,15 @@
       </div>
       <div class="ctxt2">
         <h2><%=r.sender.profile.name %>(<%=r.sender.profile.furigana %>)</h2>
-        <div class="intro_txt"><h3>相談日時: <%= l r.schedule_entity.schedule_date, format: :long %> <%= l r.schedule_entity.start_time, format: :hour_minute %></h3>
-        相談カテゴリ：<%= r.specialized_field.name %>に関する相談<br>
-        相談内容：<%= nl2br r.remarks %><br>
-        <%= link_to "chat", specialists_live_chat_path(r.token)%>
+        <div class="intro_txt">
+          <h3><%= _('Consultation Time')%>: <%= l r.schedule_entity.schedule_date, format: :long %> <%= l r.schedule_entity.start_time, format: :hour_minute %></h3>
+          <%= _('Consultation category') %>：<%= r.specialized_field.name %>に関する相談<br>
+          <%= ('Consultation content') %>：<%= nl2br r.remarks %><br>
+          <%= link_to _("Live Chat"), specialists_live_chat_path(r.token) %>
+          <%= link_to _("Video Chat"), talk_specialists_live_chat_path(r.token) %>
         </div>
       </div>
     </div>
   </div>
-
 <% end %>
 </div>

@@ -46,7 +46,7 @@ class Specialists::ProfilesController < Specialists::ApplicationController
     def specialists_profile_params
       params.require(:specialist).permit(:name, :email, :gender, :image, 
                      specialist_profile_attributes: [:id, :name, :furigana, :date_of_birth, :postalcode, :prefecture_id, :address, :qualification, :enterprise, :introduction, :home_page_url, :remarks],
-                     specialized_field_relations_attributes: [:id, :specialized_field_id]
+                     specialized_field_relations_attributes: [:id, :specialized_field_id, :_destroy]
                     )
     end
 end

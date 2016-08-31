@@ -1,11 +1,71 @@
-<%= show_for @specialist do |specialist| %>
-  <%= specialist.attribute :name %>
-  <%= specialist.attribute :email %>
-  <%= (specialist.attribute :gender, :value => :camelize) if @specialist.try(:gender) %>
+<%= image_tag((@specialist.image.exists? ? @specialist.image.url(:square) : @specialist.image_url), class: 'media-object') if @specialist.image.url %>
+<table class="profile">
+  <tr>
+    <th>名前</th>
+    <td><%= @specialist.try(:name) %></td>
+  </tr>
+  
+  <tr>
+    <th>ふりがな</th>
+    <td><%= @specialist.profile.try(:furigana) %></td>
+  </tr>
+  
+  <tr>
+    <th>性別</th>
+    <td><%= @specialist.try(:gender).camelize if @specialist.try(:gender)%></td>
+  </tr>
 
-  <%= specialist.attribute :image do %>
-    <%= image_tag((@specialist.image.exists? ? @specialist.image.url(:square) : @specialist.image_url), class: 'media-object') if @specialist.image.url %>
-  <% end  %>
-	<%= specialist.attribute :last_sign_in_at, :format => :short, :if_blank => "Administrator did not access yet", :wrapper_html => { :id => "sign_in_timestamp" } %>
-  <%= specialist.attribute :created_at, :format => :short %>
-<% end %>
+  <tr>  
+    <th>メールアドレス</th>
+    <td><%= @specialist.try(:email) %></td>
+  </tr>
+  
+  <tr>
+    <th>お住まい（郵便番号）</th>
+    <td><%= @specialist.profile.postalcode %></td>
+  </tr>
+  
+  <tr>
+    <th>お住まい（都道府県）</th>
+    <td><%= @specialist.profile.prefecture.name if @specialist.profile.prefecture %></td>
+  </tr>
+    
+  <tr>
+    <th>お住まい（住所）</th>
+    <td><%= @specialist.profile.address %></td>
+  </tr>
+  
+  
+  <tr>
+    <th>所属</th>
+    <td><%= @specialist.profile.enterprise %></td>
+  </tr>
+  
+  <tr>
+    <th>保有資格</th>
+    <td><%= @specialist.profile.qualification %></td>
+  </tr>
+  
+  <tr>
+    <th>専門分野</th>
+    <td><%= @specialist.specialized_field_relations.map(&:specialized_field).map(&:name).join('、') unless @specialist.specialized_field_relations.blank? %></td>
+  </tr>
+  
+  <tr>
+    <th>ホームページ</th>
+    <td><%= @specialist.profile.home_page_url %></td>
+  </tr>
+  
+  <tr>
+    <th>紹介文</th>
+    <td><%= nl2br @specialist.profile.introduction %></td>
+  </tr>
+  
+  <tr>
+    <th>備考</th>
+    <td><%= nl2br @specialist.profile.try(:remarks) %></td>
+  </tr>
+  
+	<%#= specialist.attribute :last_sign_in_at, :format => :short, :if_blank => "Administrator did not access yet", :wrapper_html => { :id => "sign_in_timestamp" } %>
+  <%#= specialist.attribute :created_at, :format => :short %>
+</table>

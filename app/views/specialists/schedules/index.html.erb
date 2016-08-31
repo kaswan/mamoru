@@ -1,10 +1,12 @@
+<div class="main_box2">
+  <div class="main_box_in">
+    <h1><%= _('Schedules') %></h1>
+    <h2><%= link_to _('Listings Reservation'), reservations_specialists_schedules_path %></h2>
 
-<div class="ws2">
-<h1>Schedules</h1> <%= link_to "予約一覧", reservations_specialists_schedules_path %>
-  <div class="log">
-    <div id="schedules_calendar">
-      <%= render '/shared/schedules/calendar', user: current_specialist %>
-    </div>
+      <div class="log">
+        <div id="schedules_calendar">
+          <%= render '/shared/schedules/calendar', user: current_specialist %>
+        </div>
+      </div>    
   </div>    
-</div>  
-
+</div>

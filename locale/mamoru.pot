@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mamoru 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-30 14:53+0900\n"
-"PO-Revision-Date: 2016-08-30 14:53+0900\n"
+"POT-Creation-Date: 2016-08-31 11:11+0900\n"
+"PO-Revision-Date: 2016-08-31 11:11+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -19,6 +19,9 @@ msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
 msgid "%s characters minimum"
+msgstr ""
+
+msgid "Add"
 msgstr ""
 
 msgid "Admin account"
@@ -70,6 +73,9 @@ msgid "Content of Consultation"
 msgstr ""
 
 msgid "Created"
+msgstr ""
+
+msgid "Delete"
 msgstr ""
 
 msgid "Demo"
@@ -162,6 +168,9 @@ msgstr ""
 msgid "New User"
 msgstr ""
 
+msgid "Next"
+msgstr ""
+
 msgid "Next Page"
 msgstr ""
 
@@ -172,6 +181,9 @@ msgid "Please select"
 msgstr ""
 
 msgid "Posts"
+msgstr ""
+
+msgid "Previous"
 msgstr ""
 
 msgid "Price"

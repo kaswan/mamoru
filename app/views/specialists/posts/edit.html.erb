@@ -1,4 +1,5 @@
-<h1>Editing Post</h1>
+<%= link_to _('Back'), specialists_posts_path, {class: 'second'} %>
+<h1><%= _('Editing Post') %></h1>
 
 <%= render 'form' %>
 
@@ -6,4 +7,6 @@
   <%= render "/shared/posts/attachment" %>
 </div>
 
-<%= link_to 'Back', specialists_posts_path %>
+<script>
+  $("#head").show();
+</script>

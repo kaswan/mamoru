@@ -1,3 +1,4 @@
+<%= link_to _('Back'), consults_path, {class: 'second'} %>
 <div class="main_box1">
   <% @reservations.where(:deleted => false, :editable => false).includes(:conversation).each do |r| %>
   <div class="main_box_in">
@@ -7,11 +8,12 @@
       </div>
       <div class="ctxt2">
         <h2><%=r.conversation.recipient.profile.name %>(<%=r.conversation.recipient.profile.furigana %>)</h2>
-        <div class="intro_txt"><h3><%= _('Consultation Time')%>: <%= l r.schedule_date, format: :long %> <%= l r.start_time, format: :hour_minute %></h3>
-        <%= _('Consultation category') %>：<%= r.conversation.specialized_field.name %>に関する相談<br>
-        <%= ('Consultation content') %>：<%= nl2br r.conversation.remarks %><br>
-        <%= link_to _("Live Chat"), live_chat_path(r.conversation.token) %>
-        <%= link_to _("Video Chat"), talk_live_chat_path(r.conversation.token) %>
+        <div class="intro_txt">
+          <h3><%= _('Consultation Time')%>: <%= l r.schedule_date, format: :long %> <%= l r.start_time, format: :hour_minute %></h3>
+          <%= _('Consultation category') %>：<%= r.conversation.specialized_field.name %>に関する相談<br>
+          <%= ('Consultation content') %>：<%= nl2br r.conversation.remarks %><br>
+          <%= link_to _("Live Chat"), live_chat_path(r.conversation.token) %>
+          <%= link_to _("Video Chat"), talk_live_chat_path(r.conversation.token) %>
         </div>
       </div>
     </div>
