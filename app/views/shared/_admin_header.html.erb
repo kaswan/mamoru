@@ -1,0 +1,19 @@
+<!-- Header　ここから -->
+<header>
+  <div id="logo"><img src="/assets/common/flogo.png"></div>
+  <nav>
+    <ul id="box">
+    <li><%= link_to '<img src="/assets/common/menu0.png" class="over" />'.html_safe, admins_root_path %></li>
+    <li><%= link_to '<img src="/assets/common/menu1.png" class="over" />'.html_safe, admins_posts_path %></li>
+    <li><%= link_to '<img src="/assets/common/menu15.png" class="over" />'.html_safe, admins_users_path %></li>
+    <li><%= link_to '<img src="/assets/common/menu21.png" class="over" />'.html_safe, admins_study_courses_path %></li>
+    <li><%= link_to '<img src="/assets/common/menu26.png" class="over" />'.html_safe, admins_specialists_path %></li>
+    <li><%= link_to '<img src="/assets/common/menu26.png" class="over" />'.html_safe, admins_schedules_path %></li>
+    <li><%= link_to '<img src="/assets/common/menu18.png" class="over" />'.html_safe, edit_admin_user_registration_path %></li>
+    <li><%= link_to '<img src="/assets/common/menu5.png" class="over">'.html_safe, destroy_admin_user_session_path, method: :delete %></li>
+    <li id="mclose"><a><img src="/assets/common/menu6.png" class="over"></a></li>
+    </ul>
+  </nav>
+  <div class="clear-both">&nbsp;</div>
+</header>
+<!-- Header　ここまで -->

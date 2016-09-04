@@ -4,7 +4,7 @@
   <div class="main_box_in">
     <div class="intro">
       <div class="pic2">
-         <%= image_tag r.conversation.recipient.image.url(:thumb)%>
+         <%= image_tag r.conversation.recipient.image.exists? ? r.conversation.recipient.image.url(:thumb) : '/assets/mypage/user.png' %>
       </div>
       <div class="ctxt2">
         <h2><%=r.conversation.recipient.profile.name %>(<%=r.conversation.recipient.profile.furigana %>)</h2>

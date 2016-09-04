@@ -1,18 +1,19 @@
-<h1><%= _('Listing Users') %></h1>
-
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th><%= _('Name') %></th>
-      <th><%= _('Email') %></th>
-      <th><%= _('Gender') %></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="main_box2">
+  <div class="main_box_in">
+    <h1><%= _('Listing Users')%></h1>
+    <%= link_to _('New User'), new_admins_user_path %>
+    <table class="history">
+     <thead>
+      <tr>
+        <th><%= _('Name') %></th>
+        <th><%= _('Email') %></th>
+        <th><%= _('Gender') %></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
     <% @users.each do |user| %>
       <tr>
         <td><%= user.try(:name) %></td>
@@ -20,12 +21,20 @@
         <td><%= user.try(:gender) %></td>
         <td><%= link_to _('Show'), [:admins, user], :class => 'btn btn-show' %></td>
         <td><%= link_to _('Edit'), edit_admins_user_path(user), :class => 'btn btn-edit' %></td>
-        <td><%#= link_to _('Destroy'), [:admins, user], method: :delete, data: { confirm: _('Are you sure?') }, :class => 'btn btn-delete' %></td>
+        <td><%= link_to _('Destroy'), [:admins, user], method: :delete, data: { confirm: _('Are you sure?') }, :class => 'btn btn-delete' %></td>
       </tr>
     <% end %>
-  </tbody>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th><%= _('Name') %></th>
+        <th><%= _('Email') %></th>
+        <th><%= _('Gender') %></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </tfoot>
 </table>
 
-<br>
-
-<%= link_to _('New User'), new_admins_user_path %>
+</div></div>

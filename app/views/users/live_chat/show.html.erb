@@ -1,2 +1,2 @@
-<%= link_to _('End'), reservations_consults_path, {class: 'second'} %>
-<%= render "/shared/live/chat", :room => params[:id], :specialist => false  %>
+<%= link_to _('End'), {controller: :live_chat, action: :index}, {class: 'second'} %>
+<%= render "/shared/live/chat", :room => params[:id], :specialist => false, :admin => false  %>

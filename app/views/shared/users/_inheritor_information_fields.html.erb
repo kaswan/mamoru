@@ -1,14 +1,50 @@
-<%= i.input :name %>
-<%= i.input :furigana %>
-<div class="form-group">
-	<%= i.label :gender %>
-	<%= i.radio_button :gender, 'male' %>男性
-	<%= i.radio_button :gender, 'female' %>女性
-</div>
-<%= i.label :date_of_birth %>
-<%= i.date_field :date_of_birth %>
-<%= i.input :postalcode %>
-<%= i.association :prefecture %>
-<%= i.input :address %>
-<%= i.input :occupation %>
-<%= i.input :remarks %>
+<table class="profile user">
+  <tr>
+    <th><%= i.label :name %></th>
+    <td><%= i.input :name, label: false %></td>
+  </tr>
+  <tr>
+    <th><%= i.label :furigana %></th>
+    <td><%= i.input :furigana, label: false %></td>
+  </tr>
+  <tr>
+    <th><%= f.label :gender %></th>
+    <td>
+      <%= f.radio_button :gender, 'male' %>男性
+      <%= f.radio_button :gender, 'female' %>女性
+    </td>
+  </tr>
+  <tr>
+    <th><%= i.label :date_of_birth %></th>
+    <td><%= i.date_field :date_of_birth, label: false %></td>
+  </tr>
+  
+  <tr>
+    <th><%= i.label :postalcode %></th>
+    <td><%= i.input :postalcode, label: false %></td>
+  </tr>  
+  <tr>
+    <th><%= i.label :prefecture_id %></th>
+    <td><%= i.association :prefecture, label: false %></td>
+  </tr>
+  <tr>
+    <th><%= i.label :address %></th>
+    <td><%= i.input :address, label: false %></td>
+  </tr>
+  
+  <tr>
+    <th><%= i.label :relationship %></th>
+    <td><%= i.input :relationship, label: false %></td>
+  </tr>
+  
+  <tr>
+    <th><%= i.label :occupation %></th>
+    <td><%= i.input :occupation, label: false %></td>
+  </tr>
+  
+  <tr>
+    <th><%= i.label :remarks %></th>
+    <td><%= i.input :remarks, label: false %></td>
+  </tr>
+
+</table>

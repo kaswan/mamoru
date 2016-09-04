@@ -1,4 +1,4 @@
-<% if @user.errors.any? %>
+  <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
@@ -13,10 +13,11 @@
 	
 	<%= f.simple_fields_for :inheritor_informations do |i| %>
 		<%= render '/shared/users/inheritor_information_fields', :i => i, :f => f %>
-		<%= i.link_to_remove "Remove this Inheritor" %>
+		<%= i.link_to_remove _("Delete"), {class: 'remove'} %>
 	<% end %>
-	<p><%= f.link_to_add "Add Inheritor", :inheritor_informations %></p>
+	<br>
+  <p><%= f.link_to_add _("Add"), :inheritor_informations, {class: 'add'} %></p>
   <%= hidden_field_tag :page_type, 'inheritor' %>
-  <div class="actions">
+  <div class="top_second">
     <%= f.submit %>
   </div>
