@@ -1,8 +1,11 @@
-<h1><%= _('Editing Specialist') %></h1>
-
-<%= simple_nested_form_for  ([:admins, @specialist]) do |f| %>
-  <%= render '/shared/specialists/form', :f => f %>
-<% end %>
-
-<%= link_to _('Show'), [:admins, @specialist] %> |
-<%= link_to _('Back'), admins_specialists_path %>
+<%= link_to _('Show'), [:admins, @specialist], {class: 'third'} %>
+<%= link_to _('Back'), admins_specialists_path, {class: 'second'} %>
+<div class="main_box2">
+  <div class="main_box_in">
+    <h1><%= _('Change Profile Information') %></h1>
+    <h2 class="title"><%= _('Basic Information') %></h2>
+    <%= simple_nested_form_for  ([:admins, @specialist]) do |f| %>
+      <%= render '/shared/specialists/form', :f => f %>
+    <% end %>
+  </div>
+</div>    

@@ -1,18 +1,15 @@
-<h2><%= _('Basic Profile') %></h2>
-<%= render '/shared/users/profile' %>
-<%= link_to _('Edit Basic Profile'), edit_admins_user_path(@user) %> |
-<%= link_to _('Back'), admins_users_path %>
+<%= link_to _('Back'), admins_users_path, {class: 'second'} %>
+<div class="main_box2">
+  <div class="main_box_in">
+   <h1><%= _('Profile Information') %></h1>
+   <h2><%= _('Basic Profile') %> <span><%= link_to _('Change Basic Information'), edit_admins_user_path(@user) %> </span></h2>
+   <%= render '/shared/users/profile' %>
 
-<hr>
+   <h2><%= _('Inheritor Information') %><span><%= link_to _('Edit Inheritor Profile'), inheritor_admins_user_path(@user) %></span></h2>
+   <%= render '/shared/users/inheritor' %>
 
-<h2><%= _('Inheritor Information') %></h2>
-<%= render '/shared/users/inheritor' %>
-<%= link_to _('Edit Inheritor Profile'), inheritor_admins_user_path(@user) %> |
-<%= link_to 'Back', admins_users_path %>
+   <h2><%= _('Supervisor Informations') %><span><%= link_to _('Edit Supervisor'), supervisor_admins_user_path(@user) %></span></h2>
+   <%= render '/shared/users/supervised' %>
 
-<hr>
-
-<h2><%= _('Supervisor Informations') %></h2>
-<%= render '/shared/users/supervised' %>
-<%= link_to _('Edit Supervisor'), supervisor_admins_user_path(@user) %> |
-<%= link_to _('Back'), admins_users_path %>
+  </div>  
+</div>

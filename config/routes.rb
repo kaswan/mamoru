@@ -44,6 +44,17 @@ Rails.application.routes.draw do
         get :reservations
       end
     end
+    
+    resources :live_chat do      
+      collection do
+        post 'connect', :action => :connect, :as => 'connect'
+        get :chat_update
+      end
+      member do
+        get :talk
+        get :admin_talk
+      end
+    end
   end
   
   

@@ -50,6 +50,9 @@ h1.top { color:#fff; text-align:center; margin:1% auto 0;}
 #main .third { position: fixed; bottom:25%; right:1%; background:#238e62; font-size:2.0em; padding:2%; color:#fff; text-align:center; font-weight:bold; z-index:9999; cursor:pointer;  }
 #main .fourth { position: fixed; bottom:0; left:1%; background:#333; font-size:2.0em; padding:2%; color:#fff; text-align:center; font-weight:bold; z-index:9999; cursor:pointer;  }
 
+#main .remove { background:#a13b55; font-size:1.0em;margin:auto; padding:1%; color:#fff; text-align:center; font-weight:bold; z-index:9999; cursor:pointer; }
+#main .add { background:#238e62; font-size:1.0em; padding:1%; color:#fff; text-align:center; font-weight:bold; z-index:9999; cursor:pointer;  }
+
 #main .chat_button {margin:auto; color:#fff; text-align:center;}
 #main .chat_button a { display:block;width:100%; height:100%; margin:auto; color:#fff; text-align:center;}
 

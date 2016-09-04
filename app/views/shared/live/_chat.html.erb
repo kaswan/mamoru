@@ -7,7 +7,7 @@
     <div class="ws">
       <div class="chat-inp">
         <p>
-          <%= link_to "<img src='/assets/mypage/chat-video.png' />".html_safe, specialist ? talk_specialists_live_chat_path: talk_live_chat_path %>
+          <%= link_to "<img src='/assets/mypage/chat-video.png' />".html_safe, specialist ? talk_specialists_live_chat_path: admin ? talk_admins_live_chat_path : talk_live_chat_path %>
           <span id="sendie"><%= _('Send') %></span>
         </p>
         <form id="send-message-area" action="">

@@ -1,7 +1,11 @@
-<h1>Inheritor Information</h1>
-
-<%= simple_nested_form_for  ([:admins, @user]) do |f| %>
-  <%= render '/shared/users/inheritor_form', :f => f %>
-<% end %>
-
-<%= link_to 'Back', admins_users_path %>
+<%= link_to _('Show'), [:admins, @user], {class: 'third'} %>
+<%= link_to _('Back'), admins_users_path, {class: 'second'} %>
+<div class="main_box2">
+  <div class="main_box_in">
+    <h1><%= _('Change Profile Information') %></h1>
+    <h2 class="title"><%= _('Inheritor Information') %></h2>
+    <%= simple_nested_form_for  ([:admins, @user]) do |f| %>
+      <%= render '/shared/users/inheritor_form', :f => f %>
+    <% end %>
+  </div>
+</div>    

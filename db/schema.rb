@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160826055751) do
+ActiveRecord::Schema.define(version: 20160904065025) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -353,11 +353,12 @@ ActiveRecord::Schema.define(version: 20160826055751) do
   add_index "study_courses", ["specialized_field_id"], name: "index_study_courses_on_specialized_field_id", using: :btree
 
   create_table "supervised_users", force: :cascade do |t|
-    t.integer  "admin_user_id", limit: 4,                 null: false
-    t.integer  "user_id",       limit: 4,                 null: false
-    t.boolean  "deleted",                 default: false
-    t.datetime "created_at",                              null: false
-    t.datetime "updated_at",                              null: false
+    t.string   "token",         limit: 255
+    t.integer  "admin_user_id", limit: 4,                   null: false
+    t.integer  "user_id",       limit: 4,                   null: false
+    t.boolean  "deleted",                   default: false
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
   end
 
   add_index "supervised_users", ["admin_user_id", "user_id"], name: "index_supervised_users_on_admin_user_id_and_user_id", unique: true, using: :btree

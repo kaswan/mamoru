@@ -1,4 +1,4 @@
-<table>
+<table class="history">
   <thead>
     <tr>
       <th><%= _('Name') %></th>
@@ -9,7 +9,7 @@
     <% @user.supervised_users.each do |supervisor|%>
       <tr>
         <td><%= supervisor.admin_user.try(:name)%></td>
-        <td><%= supervisor.try(:created_at)%></td>        
+        <td><%= l supervisor.try(:created_at), format: :day_hour_minute %></td>        
       </tr>
     <% end %>
   </tbody>

@@ -5,7 +5,7 @@
     
   <div class="two2">
     <div class="stwo">
-      <%= image_tag specialist.image.url(:thumb)%>
+      <%= image_tag specialist.image.exists? ? specialist.image.url(:thumb) : '/assets/mypage/user.png' %>
     </div> 
     <div class="stwo1">
       <div class="course_button2"><a href="#nearest-date-<%= specialist.id %>" class="fancybox"><%= _('Reserve Closest Date')%></a></div>

@@ -1,0 +1,50 @@
+<% i = 0 %>
+<% current_user.supervised_users.each do |supervised| %>
+  <div class="main_box" id="user-<%= supervised.admin_user_id %>" style="display:<%= 'none' if i > 0 %>">    
+    <div class="main_box_in">
+      <div class="intro">
+        <div class="pic2">
+          <%= image_tag supervised.admin_user.image.exists? ? supervised.admin_user.image.url(:thumb) : '/assets/mypage/user.png' %>
+        </div>
+        <div class="ctxt2">
+          <table>
+            <tr>
+              <th>名前</th>
+              <td><%= supervised.admin_user.name %></td>
+            </tr>
+          </table>
+        </div>
+        <div class="top_first">
+          <%= link_to _("Start Video Chat"), talk_live_chat_path(supervised.token) %>
+        </div>
+        <div class="top_second">
+          <%= link_to _("Start Live Chat"), live_chat_path(supervised.token) %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% i += 1 %>
+<% end %>
+
+<div id="chat_list">
+  <h2>コンシェルジュ</h2>
+  <ul>
+    <% current_user.supervised_users.each do |supervised| %>
+      <li>
+        <div class="pic">
+          <%= image_tag supervised.admin_user.image.exists? ? supervised.admin_user.image.url(:icon) : '/assets/mypage/user.png' %>
+        </div>
+        <div class="ctxt">
+          <p class="user-name" id="<%= supervised.admin_user_id %>"><%= supervised.admin_user.name %></p>
+        </div>
+      </li>
+    <% end %>   
+  </ul>
+</div>
+
+<script>
+  $(".user-name").click(function(){
+    $(".main_box").hide(500);
+    $("#user-"+$(this).attr('id')).show(500);
+  });
+</script>

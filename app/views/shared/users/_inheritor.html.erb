@@ -1,9 +1,9 @@
-<table>
+<table class="history">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Gender</th>
-      <th>Relationship</th>
+      <th><%= _('Name') %></th>
+      <th><%= _('Gender') %></th>
+      <th><%= _('Relationship') %></th>
     </tr>    
   </thead>
   <tbody>
@@ -11,7 +11,7 @@
       <tr>
         <td><%= inheritor.try(:name)%></td>
         <td><%= inheritor.try(:gender)%></td>
-        <td><%= inheritor.try(:occupation)%></td>
+        <td><%= inheritor.try(:relationship)%></td>
       </tr>
     <% end %>
   </tbody>

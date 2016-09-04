@@ -1,32 +1,40 @@
-
-<h1><%= _('Listing Specialists') %></h1>
-
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th><%= _('Name') %></th>
-      <th><%= _('Email') %></th>
-      <th><%= _('Gender') %></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @specialists.each do |specialist| %>
-      <tr>
-        <td><%= specialist.try(:name) %></td>
-        <td><%= specialist.try(:email) %></td>
-        <td><%= specialist.try(:gender) %></td>
-        <td><%= link_to _('Show'), [:admins, specialist], :class => 'btn btn-show' %></td>
-        <td><%= link_to _('Edit'), edit_admins_specialist_path(specialist), :class => 'btn btn-edit' %></td>
-        <td><%#= link_to _('Destroy'), [:admins, specialist], method: :delete, data: { confirm: _('Are you sure?') }, :class => 'btn btn-delete' %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to _('New Specialist'), new_admins_specialist_path %>
+<div class="main_box2">
+  <div class="main_box_in">
+    <h1><%= _('Listing Specialists')%></h1>
+    <h2><%= link_to _('New Specialist'), new_admins_specialist_path %></h2>
+    <table class="history">
+      <thead>
+        <tr>
+          <th><%= _('Name') %></th>
+          <th><%= _('Email') %></th>
+          <th><%= _('Gender') %></th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @specialists.each do |specialist| %>
+        <tr>
+          <td><%= specialist.try(:name) %></td>
+          <td><%= specialist.try(:email) %></td>
+          <td><%= specialist.try(:gender) %></td>
+          <td><%= link_to _('Show'), [:admins, specialist], :class => 'btn btn-show' %></td>
+          <td><%= link_to _('Edit'), edit_admins_specialist_path(specialist), :class => 'btn btn-edit' %></td>
+          <td><%= link_to _('Destroy'), [:admins, specialist], method: :delete, data: { confirm: _('Are you sure?') }, :class => 'btn btn-delete' %></td>
+        </tr>
+        <% end %>
+      </tbody>
+      <tfoot>
+        <tr>
+          <th><%= _('Name') %></th>
+          <th><%= _('Email') %></th>
+          <th><%= _('Gender') %></th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+</div>

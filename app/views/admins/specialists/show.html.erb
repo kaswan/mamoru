@@ -1,5 +1,8 @@
-<h2><%= _('Basic Profile') %></h2>
-<%= render '/shared/specialists/profile' %>
-<%= link_to _('Edit Basic Profile'), edit_admins_specialist_path(@specialist) %> |
-<%= link_to _('Back'), admins_specialists_path %>
-<hr>
+<%= link_to _('Back'), admins_specialists_path, {class: 'second'} %>
+<div class="main_box2">
+  <div class="main_box_in">
+   <h1><%= _('Profile Information') %></h1>
+   <h2><%= _('Basic Profile') %> <span><%= link_to _('Change Basic Information'), edit_admins_specialist_path(@specialist) %> </span></h2>
+   <%= render '/shared/specialists/profile' %>
+  </div>  
+</div>

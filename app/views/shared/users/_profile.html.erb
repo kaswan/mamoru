@@ -1,5 +1,5 @@
 <%= image_tag((@user.image.exists? ? @user.image.url(:square) : @user.image_url), class: 'media-object') if @user.image.url %>
-<table class="profile">
+<table class="profile user">
   <tr>
     <th>名前</th>
     <td><%= @user.try(:name) %></td>

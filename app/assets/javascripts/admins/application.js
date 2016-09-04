@@ -19,9 +19,14 @@
 //= require jquery.infinite-pages
 //= require alertify
 //= require fancybox
+//= require ../init_fancybox
 //= require ../infinite_table
-//= require turbolinks
+//= require ../import_mypage
+//= require ../rollover
+//= require ../slide
 //= require_tree .
+//= require turbolinks
+
 
 //$(function(){
 //  alertify.parent(document.body);
