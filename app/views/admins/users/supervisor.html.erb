@@ -1,29 +1,30 @@
-<h1><%= _('Supervisors') %></h1>
-
-<%= simple_nested_form_for  ([:admins, @user]) do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
-      <ul>
-      <% @user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+<%= link_to _('Show'), [:admins, @user], {class: 'third'} %>
+<%= link_to _('Back'), admins_users_path, {class: 'second'} %>
+<div class="main_box2">
+  <div class="main_box_in">
+    <h1><%= _('Supervisor Informations') %></h1>
+    <h2 class="title"><%= _('Edit Supervisor') %></h2>
+    <%= simple_nested_form_for  ([:admins, @user]) do |f| %>
+      <% if @user.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+          <ul>
+            <% @user.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
-  
-	
-	<%= f.simple_fields_for :supervised_users do |su| %>
-		<%= su.association :admin_user %>
-		<%= su.input :deleted %>		
-	<% end %>
-	
-	<p><%= f.link_to_add "Add Inheritor", :supervised_users %></p>
-  <%= hidden_field_tag :page_type, 'supervisor' %>
-  <div class="actions">
-    <%= f.submit %>
+      <%= f.simple_fields_for :supervised_users do |su| %>
+		    <%= su.association :admin_user %>
+		    <%= su.input :deleted %>		
+	    <% end %>
+	 	  <p><%= f.link_to_add _("Add"), :supervised_users %></p>
+      <%= hidden_field_tag :page_type, 'supervisor' %>
+      <div class="top_second">
+        <%= f.submit %>
+      </div>
+    <% end %>
   </div>
-<% end %>
+</div>
 
-<%= link_to _('Back'), admins_users_path %>

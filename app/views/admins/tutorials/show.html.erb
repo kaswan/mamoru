@@ -1,10 +1,33 @@
-<%= show_for @tutorial do |s| %>
-  <%= s.attribute :title %>
-  <%= h nl2br(s.attribute :summary) %>
-  <%= s.attribute :is_free %>
-  <%= (link_to @tutorial.attachment.try(:upload_file_name), @tutorial.attachment.try(:upload).url, target: '_blank') if @tutorial.attachment && @tutorial.attachment.upload.exists? %><br>
-  <%= video_tag  @tutorial.attachment.video.url(:medium), controls: true, style: "max-width: 50%;" if @tutorial.attachment && @tutorial.attachment.video.exists? %>
-<% end %>
-
-<%= link_to _('Edit'), edit_admins_study_course_tutorial_path(@study_course, @tutorial) %> |
-<%= link_to _('Back'), [:admins, @study_course] %>
+<%= link_to _('Back'), [:admins, @study_course], {class: 'second'} %>
+<div class="main_box2">
+  <div class="main_box_in">
+    <h1><%= _('Tutorial Information')%></h1>
+    <h2><%= link_to _('Change Tutorial'), edit_admins_study_course_tutorial_path(@study_course, @tutorial) %></h2>
+    <table class="profile user">
+      <tbody>      
+      <%= show_for @tutorial do |s| %>
+        <tr>
+          <th><%= s.label :title %></th>
+          <td><%= s.attribute :title, label: false %></td>
+        </tr>
+        <tr>
+          <th><%= s.label :summary %></th>
+          <td><%= h nl2br(s.attribute :summary, label: false) %></td>
+        </tr>
+        <tr>
+          <th><%= s.label :is_free %></th>
+          <td><%= s.attribute :is_free, label: false %></td>
+        </tr>
+        <tr>
+           <th><%= s.label :upload %></th>
+           <td><%= (link_to @tutorial.attachment.try(:upload_file_name), @tutorial.attachment.try(:upload).url, target: '_blank') if @tutorial.attachment && @tutorial.attachment.upload.exists? %></td>
+        </tr>
+        <tr>
+           <th><%= s.label :video %></th>
+           <td><%= video_tag  @tutorial.attachment.video.url(:medium), controls: true, style: "max-width: 50%;" if @tutorial.attachment && @tutorial.attachment.video.exists? %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>  
+</div>
