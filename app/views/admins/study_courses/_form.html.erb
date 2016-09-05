@@ -5,23 +5,45 @@
     <%= image_tag((a.object.image.exists? ? a.object.image.url(:icon) : ''))%>
     <%= a.file_field :image %>
   <% end %>
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :summary %>
-    <%= f.input :recommend_for, placeholder: 'こんな方におすすめ！！
-・認知症が不安な方
-・親の介護に不安を感じている方' %>
-    <%= f.input :is_free %>
-    <%= f.input :price %>
-  </div>
-  <%= f.label :parent %>
-  <%= f.select :parent_id, Specialist.all.collect {|c| [ c.name, c.id ] } %>
+  
+  <table class="profile user">
+    <tr>
+      <th><%= f.label :name %></th>
+      <td><%= f.input :name, label: false %></td>
+    </tr>
+  
+    <tr>
+      <th><%= f.label :summary %></th>
+      <td><%= f.input :summary, label: false %></td>
+    </tr>
+  
+    <tr>
+      <th><%= f.label :recommend_for %></th>
+      <td><%= f.input :recommend_for, label: false, placeholder: 'こんな方におすすめ！！・認知症が不安な方・親の介護に不安を感じている方' %></td>
+    </tr>
+  
+    <tr>
+      <th><%= f.label :is_free %></th>
+      <td><%= f.input :is_free %></td>
+    </tr>
+  
+    <tr>
+      <th><%= f.label :price %></th>
+      <td><%= f.input :price, label: false %></td>
+    </tr>
+  
+    <tr>
+      <th><%= f.label :parent %></th>
+      <td><%= f.select :parent_id, Specialist.all.collect {|c| [ c.name, c.id ] } %></td>
+    </tr>
+  
+    <tr>
+      <th><%= f.label :specialized_field %></th>
+      <td><%= f.association :specialized_field, label: false %></td>
+    </tr>
+  </table> 
   <%= f.hidden_field :parent_type, value: 'Specialist'%>
-  
-  <%= f.association :specialized_field %>
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="top_second">
+    <%= f.submit %>
   </div>
-  
-  
 <% end %>
