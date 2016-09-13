@@ -14,7 +14,11 @@
       <li><%= link_to _("Login"), new_admin_user_session_path %></li>          
     </ul>
   <% end %>
-<body>
+<% if controller.controller_name == 'live_chat' %>
+  <body data-turbolinks="false">
+<% else %>
+  <body>
+<% end %>
 
 <%= render "/shared/admin_header" %>
 <div id="main">
