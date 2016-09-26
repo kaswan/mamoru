@@ -23,10 +23,10 @@
           </table>
         </div>
         <div class="top_first">
-          <%= link_to _("Start Video Chat"), talk_admins_live_chat_path(supervised.token) %>
+          <%= link_to _("Start Video Chat"), talk_admins_live_chat_path(supervised.token), :"data-no-turbolink" => true  %>
         </div>
         <div class="top_second">
-          <%= link_to _("Start Live Chat"), admins_live_chat_path(supervised.token) %>
+          <%= link_to _("Start Live Chat"), admins_live_chat_path(supervised.token), :"data-no-turbolink" => true  %>
         </div>
       </div>
     </div>

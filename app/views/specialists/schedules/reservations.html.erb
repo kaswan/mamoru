@@ -12,8 +12,8 @@
           <h3><%= _('Consultation Time')%>: <%= l r.schedule_entity.schedule_date, format: :long %> <%= l r.schedule_entity.start_time, format: :hour_minute %></h3>
           <%= _('Consultation category') %>：<%= r.specialized_field.name %>に関する相談<br>
           <%= ('Consultation content') %>：<%= nl2br r.remarks %><br>
-          <%= link_to _("Live Chat"), specialists_live_chat_path(r.token) %>
-          <%= link_to _("Video Chat"), talk_specialists_live_chat_path(r.token) %>
+          <%= link_to _("Live Chat"), specialists_live_chat_path(r.token), :"data-no-turbolink" => true  %>
+          <%= link_to _("Video Chat"), talk_specialists_live_chat_path(r.token), :"data-no-turbolink" => true  %>
         </div>
       </div>
     </div>
