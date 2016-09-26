@@ -27,7 +27,7 @@ class Specialists::LiveChatController < Specialists::ApplicationController
       line_num = 0
       getfile(file).each do |line|
         line_num += 1
-        if line_num.to_i >= state.to_i
+        if line_num.to_i > state.to_i
           text << line.gsub("\n", "")
         end
       end

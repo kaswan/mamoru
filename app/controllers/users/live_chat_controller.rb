@@ -15,7 +15,7 @@ class Users::LiveChatController < Users::ApplicationController
     finish = Time.now + 0.1
     count = getlines(getfile(file))
     while count.to_i <= state.to_i do
-      sleep 0.01
+      sleep 0.25
       if Time.now <= finish 
         count = getlines(getfile(file))
       else 
@@ -27,7 +27,7 @@ class Users::LiveChatController < Users::ApplicationController
       line_num = 0
       getfile(file).each do |line|
         line_num += 1
-        if line_num.to_i >= state.to_i
+        if line_num.to_i > state.to_i
           text << line.gsub("\n", "")
         end
       end
