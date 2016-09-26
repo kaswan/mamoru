@@ -1,2 +1,2 @@
-<%= link_to '終了', {controller: :live_chat, action: :index}, {class: 'second'} %>
+<%= link_to '終了', {controller: :live_chat, action: :index}, {class: 'second', :"data-no-turbolink" => true } %>
 <%= render "/shared/live/talk", :room => params[:id], :specialist => false, :admin => true %>
