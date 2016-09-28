@@ -2,7 +2,7 @@
 /* チャットレイアウト */
 @media only screen and (orientation : portrait) {
 
-#main {width:100%;}
+#main {width:100%; height:100%;}
 #main .img_wrap { position:relative; width:100%; height:auto;}
 #main .main_img { display:block; margin:auto;  position:relative; width:100%; height:auto;}
 #main .wrap_box { text-align:center; position:relative;}
