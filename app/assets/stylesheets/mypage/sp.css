@@ -19,7 +19,7 @@ h1.top { color:#fff; text-align:center; margin:1% auto 2%;}
 #box5 > li img{ width:100%; height:auto;}
 
 /* contents */
-#main {width:100%; }
+#main {width:100%; height:100%;}
 #main .img_wrap { position: absolute; top:0; bottom:0; left:0; right:0; margin:auto; overflow:hidden; }
 #main .main_img { display:block; width:100%; height:auto;}
 #main .chat_wrap { position:absolute; top:1%; left:1%;}
