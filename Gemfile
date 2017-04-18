@@ -56,7 +56,7 @@ gem 'omniauth-oauth2','~> 1.3.1'
 
 gem 'omniauth-yahoojp'
 gem "omniauth-google-oauth2"
-gem 'omniauth-facebook'
+gem 'omniauth-facebook', '~> 4.0.0'
 
 gem 'posix-spawn'
 gem 'aws-sdk', '< 2.0'
